@@ -1841,46 +1841,55 @@ i.icon:before {
   height: 1.6em;
 }
 .highlight {
-  color: #a9b7c6;
-  background: #282b2e;
-}
-.highlight .code .number,
-.highlight .code .literal,
-.highlight .code .symbol,
-.highlight .code .bullet {
-  color: #6897bb;
+  color: #dcdcdc;
+  background: #3f3f3f;
 }
 .highlight .code .keyword,
 .highlight .code .selector-tag,
-.highlight .code .deletion {
-  color: #cc7832;
+.highlight .code .tag {
+  color: #e3ceab;
+}
+.highlight .code .template-tag {
+  color: #dcdcdc;
+}
+.highlight .code .number {
+  color: #8cd0d3;
 }
 .highlight .code .variable,
 .highlight .code .template-variable,
-.highlight .code .link {
-  color: #629755;
+.highlight .code .attribute {
+  color: #efdcbc;
 }
-.highlight .code .comment,
-.highlight .code .quote {
-  color: #808080;
+.highlight .code .literal {
+  color: #efefaf;
 }
-.highlight .code .meta {
-  color: #bbb529;
+.highlight .code .subst {
+  color: #8f8f8f;
 }
-.highlight .code .string,
-.highlight .code .attribute,
-.highlight .code .addition {
-  color: #6a8759;
-}
-.highlight .code .section,
 .highlight .code .title,
-.highlight .code .type {
-  color: #ffc66d;
-}
 .highlight .code .name,
 .highlight .code .selector-id,
-.highlight .code .selector-class {
-  color: #e8bf6a;
+.highlight .code .selector-class,
+.highlight .code .section,
+.highlight .code .type {
+  color: #efef8f;
+}
+.highlight .code .symbol,
+.highlight .code .bullet,
+.highlight .code .link {
+  color: #dca3a3;
+}
+.highlight .code .deletion,
+.highlight .code .string,
+.highlight .code .built_in,
+.highlight .code .builtin-name {
+  color: #cc9393;
+}
+.highlight .code .addition,
+.highlight .code .comment,
+.highlight .code .quote,
+.highlight .code .meta {
+  color: #7f9f7f;
 }
 .highlight .code .emphasis {
   font-style: italic;
