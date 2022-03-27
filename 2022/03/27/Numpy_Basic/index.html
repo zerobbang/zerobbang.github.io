@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Numpy | Zero</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="list와 array 비교123456789math_scores &#x3D; [10,9,7]eng_scores &#x3D; [6,9,8]math_arr &#x3D; np.array(math_scores)eng_arr &#x3D; np.array(eng_scores)total_scores &#x3D; math_scores + eng_scores,  total_arr &#x3D; math_arr + eng_arrt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Numpy">
+<meta property="og:url" content="http://zerobbang.com/2022/03/27/Numpy_Basic/index.html">
+<meta property="og:site_name" content="Zero">
+<meta property="og:description" content="list와 array 비교123456789math_scores &#x3D; [10,9,7]eng_scores &#x3D; [6,9,8]math_arr &#x3D; np.array(math_scores)eng_arr &#x3D; np.array(eng_scores)total_scores &#x3D; math_scores + eng_scores,  total_arr &#x3D; math_arr + eng_arrt">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-26T19:56:56.000Z">
+<meta property="article:modified_time" content="2022-03-27T05:09:11.746Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+
+    
+        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Numpy_Basic" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Numpy
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/03/27/Numpy_Basic/" class="article-date">
+       <time datetime="2022-03-26T19:56:56.000Z" itemprop="datePublished">2022-03-27</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/03/27/Numpy_Basic/" class="article-date">
+     <time datetime="2022-03-27T05:09:11.746Z" itemprop="dateModified">2022-03-27</time>
+  </a>
+</div>
+
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="list와-array-비교"><a href="#list와-array-비교" class="headerlink" title="list와 array 비교"></a>list와 array 비교</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">math_scores = [<span class="number">10</span>,<span class="number">9</span>,<span class="number">7</span>]</span><br><span class="line">eng_scores = [<span class="number">6</span>,<span class="number">9</span>,<span class="number">8</span>]</span><br><span class="line">math_arr = np.array(math_scores)</span><br><span class="line">eng_arr = np.array(eng_scores)</span><br><span class="line"></span><br><span class="line">total_scores = math_scores + eng_scores,  </span><br><span class="line">total_arr = math_arr + eng_arr</span><br><span class="line"></span><br><span class="line">total_scores, total_arr</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>total_scores  → list</p>
+  <aside>
+  🍒 ([10, 9, 7, 6, 9, 8])
+  
+  </aside>
+  </li>
+<li><p>total_arr → array</p>
+  <aside>
+  🍒 array([16, 18, 15])
+  
+  </aside>
+  </li>
+<li><p>list 는 연산이 불가하고 numpy를 이용한 array는 가능하다.</p>
+</li>
+</ul>
+<h2 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">math_scores = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line">eng_scores = [<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>]</span><br><span class="line">math_arr = np.array(math_scores)</span><br><span class="line">eng_arr = np.array(eng_scores)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;덧셈 : &quot;</span>, np.add(math_arr,eng_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;뺄셈 : &quot;</span>, np.subtract(math_arr,eng_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;곱셈 : &quot;</span>,np.multiply(math_arr,eng_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;나눗셈 &quot;</span>, np.divide(math_arr,eng_arr))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;거듭제곱 : &quot;</span>,np.power(math_arr,eng_arr))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 덧셈 :  [3 3 7]
+  뺄셈 :  [-1  1  1]
+  곱셈 :  [ 2  2 12]
+  나눗셈  [0.5        2.         1.33333333]
+  거듭제곱 :  [ 1  2 64]
+  
+  </aside>
+  
+<p>  → numpy의 연산 함수를 이용하여 간단하게 계산 가능</p>
+</li>
+</ul>
+<h2 id="차원별-배열-생성"><a href="#차원별-배열-생성" class="headerlink" title="차원별 배열 생성"></a>차원별 배열 생성</h2><ul>
+<li><p>0차원</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.array(<span class="number">20</span>)</span><br><span class="line"><span class="built_in">print</span>(t_arr,<span class="built_in">type</span>(t_arr), t_arr.shape, t_arr.ndim)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 20 <class 'numpy.ndarray'> () 0
+  
+  </aside></li>
+</ul>
+</li>
+<li><p>1차원</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(t_arr,<span class="built_in">type</span>(t_arr), t_arr.shape,t_arr.ndim)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 [1 2 3] <class 'numpy.ndarray'> (3,) 1
+  
+  </aside></li>
+</ul>
+</li>
+<li><p>2차원</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="built_in">print</span>(t_arr,<span class="built_in">type</span>(t_arr), t_arr.shape,t_arr.ndim)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 [[1 2]
+  [3 4]] <class 'numpy.ndarray'> (2, 2) 2
+  
+  </aside></li>
+</ul>
+</li>
+<li><p>3차원</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.array([[[<span class="number">1</span>],[<span class="number">2</span>]],[[<span class="number">3</span>],[<span class="number">4</span>]],[[<span class="number">5</span>],[<span class="number">6</span>]]])</span><br><span class="line"><span class="built_in">print</span>(t_arr,<span class="built_in">type</span>(t_arr), t_arr.shape,t_arr.ndim)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 [[[1]
+  [2]] 
+  
+<p>  [[3]<br>  [4]]</p>
+<p>  [[5]<br>  [6]]] &lt;class ‘numpy.ndarray’&gt; (3, 2, 1) 3</p>
+  </aside>
+  
+<ul>
+<li>t_arr는 (2행, 1열)의 2차원 데이터가 3개가 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>차원 변경</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1차원 -&gt; 2차원</span></span><br><span class="line">t_arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],ndmin =<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(t_arr,<span class="built_in">type</span>(t_arr), t_arr.shape,t_arr.ndim)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 [[1 2 3 4]] <class 'numpy.ndarray'> (1, 4) 2
+  
+  </aside></li>
+</ul>
+</li>
+</ul>
+<h3 id="차원값-행값-열값-x3D-axis-0-axis-1-axis-2"><a href="#차원값-행값-열값-x3D-axis-0-axis-1-axis-2" class="headerlink" title="(차원값, 행값, 열값) &#x3D; axis 0, axis 1, axis 2"></a>(차원값, 행값, 열값) &#x3D; axis 0, axis 1, axis 2</h3><ul>
+<li>즉, axis 0 축을 따라서 배열이 쌓여있다고 생각</li>
+<li>axis 0에 따라 압축하면?</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.<span class="built_in">sum</span>(t_arr, axis=<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<aside>
+🍒 [[ 9]
+[12]]
+
+</aside>
+
+<p>→ axis 0 에따라 압축되어<br>1행1열 &#x3D; 1 + 3 + 5 &#x3D; 9<br>1행 2열 &#x3D; 2 + 4 + 6 &#x3D; 12</p>
+<ul>
+<li>참고 사이트<br><a target="_blank" rel="noopener" href="https://steadiness-193.tistory.com/50">https://steadiness-193.tistory.com/50</a></li>
+</ul>
+<h2 id="소수점-정리"><a href="#소수점-정리" class="headerlink" title="소수점 정리"></a>소수점 정리</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t_arr = ([-<span class="number">1.2</span>, -<span class="number">1.6</span>, <span class="number">2.2</span>, <span class="number">2.5</span>, <span class="number">3.7</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>trunc 소수 버림</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.trunc(t_arr))</span><br></pre></td></tr></table></figure>
+  <aside>
+  🍒 [-1. -1. 2. 2. 3.]
+  
+  </aside>
+  </li>
+<li><p>fix   0 방향으로 가장 가까운 정수로 내림 혹은 올림</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.fix(t_arr))</span><br></pre></td></tr></table></figure>
+  <aside>
+  🍒 [-1. -1. 2. 2. 3.]
+  
+  </aside>
+  </li>
+<li><p>around, round 반올림</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.around(t_arr))</span><br><span class="line"><span class="built_in">print</span>(np.<span class="built_in">round</span>(t_arr))</span><br></pre></td></tr></table></figure>
+  <aside>
+  🍒 [-1. -2.  2.  2.  4.]
+  [-1. -2.  2.  2.  4.]
+  
+  </aside>
+  </li>
+<li><p>floor 내림</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.floor(t_arr)</span><br></pre></td></tr></table></figure>
+  <aside>
+  🍒 [-2. -2. 2. 2. 3.]
+  
+  </aside>
+  </li>
+<li><p>ceil 올림</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(np.ceil(t_arr))</span><br></pre></td></tr></table></figure>
+  <aside>
+  🍒 [-1. -1. 3. 3. 4.]
+  
+  </aside></li>
+</ul>
+<h2 id="자동으로-배열-생성"><a href="#자동으로-배열-생성" class="headerlink" title="자동으로 배열 생성"></a>자동으로 배열 생성</h2><ul>
+<li><p>arange ()</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.arange(<span class="number">1</span>,<span class="number">11</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(t_arr)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 [1 3 5 7 9]
+  
+  </aside></li>
+</ul>
+</li>
+<li><p>zeros</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.zeros((<span class="number">2</span>,<span class="number">4</span>))</span><br><span class="line"><span class="built_in">print</span>(t_arr)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 [[0. 0. 0. 0.]
+  [0. 0. 0. 0.]]
+  
+  </aside></li>
+</ul>
+</li>
+<li><p>ones</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.ones((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(t_arr)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 [[1. 1. 1.]
+  [1. 1. 1.]
+  [1. 1. 1.]]
+  
+  </aside></li>
+</ul>
+</li>
+</ul>
+<h2 id="dtype"><a href="#dtype" class="headerlink" title="dtype"></a>dtype</h2><ul>
+<li>데이터 종류가 같아도 길이에 따라 오류 가능</li>
+<li>dtype 이용해 확인해 주기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t_arr0 = np.ones((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">t_arr1 = np.ones((<span class="number">3</span>,<span class="number">3</span>),dtype=<span class="string">&quot;int32&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(t_arr0.dtype, t_arr.dtype1)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 float64,  int32
+  
+  </aside></li>
+</ul>
+<h2 id="Reshape"><a href="#Reshape" class="headerlink" title="Reshape"></a>Reshape</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.ones((<span class="number">4</span>,<span class="number">4</span>),dtype = <span class="string">&quot;int32&quot;</span>)</span><br><span class="line">t_re_arr = t_arr.reshape(<span class="number">2</span>,-<span class="number">1</span>)</span><br><span class="line"><span class="comment"># t_re_arr = t_arr.reshape(5,-1)   -&gt;   cannot reshape array of size 16 into shape (5,newaxis)</span></span><br><span class="line"><span class="built_in">print</span>(t_arr,<span class="built_in">type</span>(t_arr), t_arr.shape, t_arr.ndim,t_arr.dtype)</span><br><span class="line"><span class="built_in">print</span>(t_re_arr,<span class="built_in">type</span>(t_re_arr), t_re_arr.shape, t_re_arr.ndim,t_re_arr.dtype)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 [[1 1 1 1]
+  [1 1 1 1]
+  [1 1 1 1]
+  [1 1 1 1]] <class 'numpy.ndarray'> (4, 4) 2 int32
+  
+  </aside>
+  
+  <aside>
+  🍒 [[1 1 1 1 1 1 1 1]
+  [1 1 1 1 1 1 1 1]] <class 'numpy.ndarray'> (2, 8) 2 int32
+  
+  </aside>
+  
+<p>  → (4,4) 에서 (2,8)로 바꿔주었다.</p>
+<p>  이 때 사이즈에 맞게 바꿔줘야 하는데 만약 2행으로 바꾸고 싶은데 열 사이즈를 모른다면 -1을 이용하여 자동으로 맞춰준다. (반대로도 가능)</p>
+</li>
+</ul>
+<h2 id="조건식"><a href="#조건식" class="headerlink" title="조건식"></a>조건식</h2><ul>
+<li><p>조건 1 -  where ()</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.arange(<span class="number">10</span>)</span><br><span class="line">np.where(t_arr &lt; <span class="number">5</span>, t_arr, t_arr * <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+  <aside>
+  🍒 array([ 0, 1, 2, 3, 4, 50, 60, 70, 80, 90])
+  
+  </aside></li>
+</ul>
+</li>
+<li><p>조건 2개 이상</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t_arr = np.arange(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5 보다 큰 값 *2, 2 작은 값 + 100, 나머지 유지</span></span><br><span class="line">condlist = [t_arr &gt; <span class="number">5</span> , t_arr &lt;<span class="number">2</span>]</span><br><span class="line">choicelist = [t_arr *<span class="number">2</span>, t_arr + <span class="number">100</span>]</span><br><span class="line"><span class="comment"># np.select( cond, choice, default)</span></span><br><span class="line"><span class="built_in">print</span>(t_arr)</span><br><span class="line"><span class="built_in">print</span>(np.select(condlist, choicelist))</span><br><span class="line"><span class="built_in">print</span>(np.select(condlist, choicelist, t_arr))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>default 지정 X</p>
+  <aside>
+  🍒 [0 1 2 3 4 5 6 7 8 9]
+  [100 101 0 0 0 0 12 14 16 18]
+  
+  </aside>
+  </li>
+<li><p>default 지정 O</p>
+  <aside>
+  🍒 [0 1 2 3 4 5 6 7 8 9]
+  [100 101 2 3 4 5 12 14 16 18]
+  
+  </aside></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/03/27/Numpy_Basic/" data-id="cl18vhhvb0001k0v7h8ay3bmr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "John Doe"
+        },
+        "headline": "Numpy",
+        "image": "http://zerobbang.com",
+        "keywords": "",
+        "genre": "Python",
+        "datePublished": "2022-03-27",
+        "dateCreated": "2022-03-27",
+        "dateModified": "2022-03-27",
+        "url": "http://zerobbang.com/2022/03/27/Numpy_Basic/",
+        "description": "list와 array 비교123456789math_scores = [10,9,7]eng_scores = [6,9,8]math_arr = np.array(math_scores)eng_arr = np.array(eng_scores)total_scores = math_scores + eng_scores,  total_arr = math_arr + eng_arrt",
+        "wordCount": 1163
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+<!--     <div class="sidebar-top"> -->
+<!--         <p>follow:</p> -->
+<!--         <ul class="social-links"> -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-twitter"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-facebook"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-stack-overflow"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-github"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-weibo"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-rss"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--         </ul> -->
+<!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/03/27/Pandas_Basic/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Pandas
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/03/27/Python_Basic/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Python 기초 문법 정리</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/27/python_def/" class="title">파이썬 함수 생성</a></p>
+                            <p class="item-date"><time datetime="2022-03-26T20:19:04.000Z" itemprop="datePublished">2022-03-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/27/Class/" class="title">Class 만들기</a></p>
+                            <p class="item-date"><time datetime="2022-03-26T20:17:54.000Z" itemprop="datePublished">2022-03-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/27/Pandas_Basic/" class="title">Pandas</a></p>
+                            <p class="item-date"><time datetime="2022-03-26T20:05:18.000Z" itemprop="datePublished">2022-03-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/27/Numpy_Basic/" class="title">Numpy</a></p>
+                            <p class="item-date"><time datetime="2022-03-26T19:56:56.000Z" itemprop="datePublished">2022-03-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/27/Python_Basic/" class="title">Python 기초 문법 정리</a></p>
+                            <p class="item-date"><time datetime="2022-03-26T19:51:02.000Z" itemprop="datePublished">2022-03-27</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 John Doe</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zerobbang.com/2022/03/27/Numpy_Basic/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
