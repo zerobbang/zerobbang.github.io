@@ -6,17 +6,25 @@
     
 
     
-    <title>Zero</title>
+    <title>Python - 가상 환경 생성 (PyCharm) | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Zero">
-<meta property="og:url" content="http://zerobbang.com/index.html">
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="이번에는 PyCharm 통해서 가상 환경 설정하는 법을 알아보려 한다. 가상 환경이 왜 필요한가 우선 가상 환경을 설정하기 전에 가상 환경이 왜 필요한지 알아보면 다음과 같다.  예를 들어 파이썬 기본 엔진을 통해서 파이썬의 버전이 다른 웹 2개를 생성했는데 동일한 라이브러리가 필요하다면 에러가 발생할 수 있다.  그 이유는 버전이 다른 파이썬에서 동일한">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python - 가상 환경 생성 (PyCharm)">
+<meta property="og:url" content="http://zerobbang.com/2022/03/28/venv_setting/index.html">
 <meta property="og:site_name" content="Zero">
+<meta property="og:description" content="이번에는 PyCharm 통해서 가상 환경 설정하는 법을 알아보려 한다. 가상 환경이 왜 필요한가 우선 가상 환경을 설정하기 전에 가상 환경이 왜 필요한지 알아보면 다음과 같다.  예를 들어 파이썬 기본 엔진을 통해서 파이썬의 버전이 다른 웹 2개를 생성했는데 동일한 라이브러리가 필요하다면 에러가 발생할 수 있다.  그 이유는 버전이 다른 파이썬에서 동일한">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/venv_setting/Untitled.png">
+<meta property="article:published_time" content="2022-03-28T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-28T13:46:01.623Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/venv_setting/Untitled.png">
     
 
     
@@ -147,293 +155,208 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="home">Home</em>
+    <a class="page-title-link" href="/categories/Python/">Python</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-venv_setting" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-28T00:00:00.000Z" itemprop="datePublished">2022-03-28</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/28/venv_setting/">Python - 가상 환경 생성 (PyCharm)</a>
+        Python - 가상 환경 생성 (PyCharm)
         </h1>
     
 
-        <p class="article-excerpt">
-            이번에는 PyCharm 통해서 가상 환경 설정하는 법을 알아보려 한다.
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/03/28/venv_setting/" class="article-date">
+       <time datetime="2022-03-28T00:00:00.000Z" itemprop="datePublished">2022-03-28</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/03/28/venv_setting/" class="article-date">
+     <time datetime="2022-03-28T13:46:01.623Z" itemprop="dateModified">2022-03-28</time>
+  </a>
+</div>
+
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>이번에는 PyCharm 통해서 가상 환경 설정하는 법을 알아보려 한다.</p>
+<h3 id="가상-환경이-왜-필요한가"><a href="#가상-환경이-왜-필요한가" class="headerlink" title="가상 환경이 왜 필요한가"></a>가상 환경이 왜 필요한가</h3><p> 우선 가상 환경을 설정하기 전에 가상 환경이 왜 필요한지 알아보면 다음과 같다.</p>
+<p> 예를 들어 파이썬 기본 엔진을 통해서 파이썬의 버전이 다른 웹 2개를 생성했는데 동일한 라이브러리가 필요하다면 에러가 발생할 수 있다.</p>
+<p> 그 이유는 버전이 다른 파이썬에서 동일한 라이브러리를 불러오게 되면 두 웹에서는 각각 다른 버전의 라이브러리를 필요로 하는데 한 환경에서 라이브러리는 하나의 버전만 갖고 있을 수 있기 때문이다.</p>
+<h2 id="가상-환경-설정하기"><a href="#가상-환경-설정하기" class="headerlink" title="가상 환경 설정하기"></a>가상 환경 설정하기</h2><ul>
+<li><p>PyCharm에서 새로운 프로젝트를 생성하는데 다음과 같이 생성해준다.</p>
+</li>
+<li><p>(사진)</p>
+</li>
+<li><p>새로운  프로젝트가 생성이 되었으면 가상 환경이 잘 생성되었는지 다음 코드를 입력하여 확인한다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which python</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/venv_setting/Untitled.png" alt="Untitled"></p>
+<p>  위 에서 보는 것처럼 가상 환경이 잘 생성되었다면 &#x2F;(파일명)&#x2F; venv&#x2F;Scripts&#x2F;python 을 확인 할 수 있다.</p>
+</li>
+<li><p>생성이 안되어 있다면 다음과 같이 직접 입력하여 생성한다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source venv/Scripts/activate</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>가상환경이 생성되었다면 기본 코드를 실행해보자.</p>
+<p>  <img src="/images/venv_setting/Untitled%201.png" alt="Untitled"></p>
+<p>  Hi, PyCharm을 프린트하는 코드가 잘 실행되었다.</p>
+</li>
+<li><p>버전 충돌을 막기위해 가상환경을 생성 했기 때문에 새로 환경을 만들 때마다 필요한 라이브럴리를 다운받아줘야 한다.</p>
+</li>
+<li><p>다운 받지 않고 그냥 실행 할 경우 다음과 같은 에러가 발생한다.</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ModuleNotFoundError: No moduled named &#x27;numpy’</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다음과 같은 방법으로 필요 라이브러리를 설치하여 사용</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>main.py 코드</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">print_hi</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="comment"># Use a breakpoint in the code line below to debug your script.</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;Hi, <span class="subst">&#123;name&#125;</span>&#x27;</span>)  <span class="comment"># Press Ctrl+F8 to toggle the breakpoint.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    print_hi(<span class="string">&#x27;PyCharm&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;numpy version : &quot;</span>, np.__version__)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>잘 설치 되면 다음과 같이 잘 실행된다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python [main.py](http://main.py/)</span><br><span class="line">Hi, PyCharm</span><br><span class="line">numpy version :  <span class="number">1.22</span><span class="number">.3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>라이브러리 설치 확인하는 또 다른 방법</p>
+<p>  &#x2F;venv&#x2F;Lib들어가면 해당 가상환경에서 설치한 라이브러리들을 확인 가능하다.</p>
+<p>  <img src="/images/venv_setting/Untitled%202.png" alt="Untitled"></p>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/03/28/venv_setting/" data-id="cl1arnx8y000adcv7ekrecgri" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "John Doe"
+        },
+        "headline": "Python - 가상 환경 생성 (PyCharm)",
+        "image": "http://zerobbang.com/images/venv_setting/Untitled.png",
+        "keywords": "",
+        "genre": "Python",
+        "datePublished": "2022-03-28",
+        "dateCreated": "2022-03-28",
+        "dateModified": "2022-03-28",
+        "url": "http://zerobbang.com/2022/03/28/venv_setting/",
+        "description": "이번에는 PyCharm 통해서 가상 환경 설정하는 법을 알아보려 한다.
 가상 환경이 왜 필요한가 우선 가상 환경을 설정하기 전에 가상 환경이 왜 필요한지 알아보면 다음과 같다.
  예를 들어 파이썬 기본 엔진을 통해서 파이썬의 버전이 다른 웹 2개를 생성했는데 동일한 라이브러리가 필요하다면 에러가 발생할 수 있다.
- 그 이유는 버전이 다른 파이썬에서 동일한 
-        </p>
-    </div>
+ 그 이유는 버전이 다른 파이썬에서 동일한 ",
+        "wordCount": 346
+    }
+</script>
+
 </article>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-            </div>
-            <div class="date"><time datetime="2022-03-26T16:46:15.120Z" itemprop="datePublished">2022-03-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/27/hello-world/">Hello World</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/23/Numpy_Basic/">Python 기초 - Numpy</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            list와 array 비교123456789math_scores = [10,9,7]eng_scores = [6,9,8]math_arr = np.array(math_scores)eng_arr = np.array(eng_scores)total_scores = math_scores + eng_scores,  total_arr = math_arr + eng_arrt
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/23/Pandas_Basic/">Python 기초 - Pandas</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-Pandas 자료 구조 살펴보기
 
 
-Data Frame
- 123456t_dict = &#123;&quot;col1&quot; : [1,2,3],          &quot;col2&quot; : [3,4,5]&#125;df = pd.DataFrame(t_dict)print(type(df))df
- 
-
-Series
- 1234t_dict = &#123;&#x2
-        </p>
-    </div>
-</article>
     
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-22T00:00:00.000Z" itemprop="datePublished">2022-03-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/22/Class/">Python 기초 - Class 생성</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-class 예
-
-12345678910111213141516class Person:  # class attribute  country = &#x27;korean&#x27;  # instance attribute  # def __init__(self, ____ ) 고정 표기 변수 담기 위해  def __init__(self,name,age):    self.
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-22T00:00:00.000Z" itemprop="datePublished">2022-03-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/22/python_fun/">Python 기초 - 사용자 함수 생성</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-사용자 함수 만들기 (피타고라스)
-
-1234567891011121314151617181920import mathdef pt(a,b):  &#x27;&#x27;&#x27;피타고라스 정리 - 긴 변의 길이를 구하는 함수    Args:    m(two int or float)      Returns:   긴 변의 길이는 : float      &#x27;&#
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-21T00:00:00.000Z" itemprop="datePublished">2022-03-21</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/21/Python_Basic/">Python 기초 - 기초 문법 정리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            형변환 하기123x = input(&quot;숫자를 입력하세요 : &quot;)y = int(input(&quot;숫자를 입력하세요 : &quot;))print(type(x),type(y))
-
-→ x : str 문자열, y : int 정수형
-이런 방법으로 문자열을 정수형, 실수형, 논리형으로 바꿀 수 있다.
-인덱싱
-문자열에서 원하는 자리값의 문자를 가져온다
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-            </div>
-            <div class="date"><time datetime="2022-03-17T00:00:00.000Z" itemprop="datePublished">2022-03-17</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/17/Hexo_blog/">Hexo Blog - Hexo Blog 만들기</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            사전 작업source&#x2F;images&#x2F;Hexo_blog
-
-다음 주소 참고https://dschloe.github.io/settings/hexo_blog&#x2F;
-
-hexo를 쓰기 위해 node 설치하기
-  
-
-LTS 버전 다운받아 관리자 권한으로 설치하면 끝(관리자 권한이 없을 수도 있음)
-
-다음 옵션으로 설정해주기
-  
-  
-
-
-설치 확인
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
+    </section>
 
 
 
@@ -495,6 +418,19 @@ LTS 버전 다운받아 관리자 권한으로 설치하면 끝(관리자 권한
 <!--              -->
 <!--         </ul> -->
 <!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/03/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Hello World</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -637,11 +573,13 @@ LTS 버전 다운받아 관리자 권한으로 설치하면 끝(관리자 권한
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://zerobbang.com/2022/03/28/venv_setting/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
