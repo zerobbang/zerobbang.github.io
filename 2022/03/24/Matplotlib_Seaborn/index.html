@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Python - Matplotlib / Seaborn | Zero</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="Matplotlib1import matplotlib.pyplot as plt   주식 데이터 다운 !pip install yfinance –upgrade –no-cache-dir  1234import yfinance as yfdata &#x3D; yf.download(&quot;AAPL&quot;, start &#x3D; &quot;2019-08-01&quot;, end &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python - Matplotlib &#x2F; Seaborn">
+<meta property="og:url" content="http://zerobbang.com/2022/03/24/Matplotlib_Seaborn/index.html">
+<meta property="og:site_name" content="Zero">
+<meta property="og:description" content="Matplotlib1import matplotlib.pyplot as plt   주식 데이터 다운 !pip install yfinance –upgrade –no-cache-dir  1234import yfinance as yfdata &#x3D; yf.download(&quot;AAPL&quot;, start &#x3D; &quot;2019-08-01&quot;, end &#x3D;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/Matplotlib_Seaborn/Matplotlib_Seaborn_4_0.png">
+<meta property="article:published_time" content="2022-03-24T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-29T12:48:31.372Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/Matplotlib_Seaborn/Matplotlib_Seaborn_4_0.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Matplotlib_Seaborn" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Python - Matplotlib / Seaborn
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/03/24/Matplotlib_Seaborn/" class="article-date">
+       <time datetime="2022-03-24T00:00:00.000Z" itemprop="datePublished">2022-03-24</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/03/24/Matplotlib_Seaborn/" class="article-date">
+     <time datetime="2022-03-29T12:48:31.372Z" itemprop="dateModified">2022-03-29</time>
+  </a>
+</div>
+
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h1 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>주식 데이터 다운</li>
+<li>!pip install yfinance –upgrade –no-cache-dir</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> yfinance <span class="keyword">as</span> yf</span><br><span class="line">data = yf.download(<span class="string">&quot;AAPL&quot;</span>, start = <span class="string">&quot;2019-08-01&quot;</span>, end = <span class="string">&quot;2022-03-23&quot;</span> )</span><br><span class="line">ts = data[<span class="string">&#x27;Open&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(ts.head())</span><br></pre></td></tr></table></figure>
+
+<pre><code>[*********************100%***********************]  1 of 1 completed
+Date
+2019-08-01    53.474998
+2019-08-02    51.382500
+2019-08-05    49.497501
+2019-08-06    49.077499
+2019-08-07    48.852501
+Name: Open, dtype: float64
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(ts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># pyplot API</span></span><br><span class="line">plt.title(<span class="string">&quot;Stock Market of AAPL&quot;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&quot;Date&quot;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&quot;Open Price&quot;</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_4_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># fig는 틀만 관리.</span></span><br><span class="line">fig, ax = plt.subplots()</span><br><span class="line">ax.plot(ts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ax.title(&quot;Stock Market of AAPL&quot;)     -&gt;  Text&#x27; object is not callable</span></span><br><span class="line"><span class="comment"># ax.xlabel(&quot;Date&quot;)</span></span><br><span class="line"><span class="comment"># ax.ylabel(&quot;Open Price&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 객체지향 API</span></span><br><span class="line">ax.set_title(<span class="string">&quot;Stock Market of AAPL&quot;</span>)</span><br><span class="line">ax.set_xlabel(<span class="string">&quot;Date&quot;</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&quot;Open Price&quot;</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_5_0.png" alt="png"></p>
+<h2 id="막대-그래프"><a href="#막대-그래프" class="headerlink" title="막대 그래프"></a>막대 그래프</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line"></span><br><span class="line">month_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>]</span><br><span class="line">sold_list = [<span class="number">300</span>, <span class="number">400</span>, <span class="number">550</span>, <span class="number">900</span>, <span class="number">600</span>, <span class="number">960</span>, <span class="number">900</span>, <span class="number">910</span>, <span class="number">800</span>, <span class="number">700</span>, <span class="number">550</span>, <span class="number">450</span>]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(figsize = (<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 막대 그리기</span></span><br><span class="line">barplots = ax.bar(month_list, sold_list)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;barplots : &quot;</span>, barplots)</span><br><span class="line"><span class="comment"># &lt;BarContainer object of 12 artists&gt;   ====  맷플랏립의 아키텍트 중 아티스트 층이 12개가 있다.</span></span><br><span class="line"><span class="comment"># 달 하나하나가 artist layer에 존재</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 텍스트 올리기</span></span><br><span class="line"><span class="keyword">for</span> plot <span class="keyword">in</span> barplots:</span><br><span class="line">  <span class="comment"># print(plot)</span></span><br><span class="line">  <span class="comment"># print(plot.get_height())</span></span><br><span class="line">  height = plot.get_height()</span><br><span class="line">  ax.text(plot.get_x() + plot.get_width()/<span class="number">2</span> , height,height, ha = <span class="string">&quot;center&quot;</span>,va = <span class="string">&#x27;bottom&#x27;</span> )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.xticks(month_list, calendar.month_name[<span class="number">1</span>:<span class="number">13</span>], rotation = <span class="number">270</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<pre><code>barplots :  &lt;BarContainer object of 12 artists&gt;
+</code></pre>
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_8_1.png" alt="png"></p>
+<h2 id="산점도"><a href="#산점도" class="headerlink" title="산점도"></a>산점도</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">tips = sns.load_dataset(<span class="string">&quot;tips&quot;</span>)</span><br><span class="line"><span class="comment"># print(tips.info())</span></span><br><span class="line"></span><br><span class="line">x = tips[<span class="string">&#x27;total_bill&#x27;</span>]</span><br><span class="line">y = tips[<span class="string">&#x27;tip&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 산점도</span></span><br><span class="line">fig, ax = plt.subplots(figsize = (<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line">ax.scatter(x,y)</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;total bill&#x27;</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;tip&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_10_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 성별로 data를 묶는다.</span></span><br><span class="line">label, data = tips.groupby(<span class="string">&#x27;sex&#x27;</span>)</span><br><span class="line"><span class="comment"># print(label)</span></span><br><span class="line"><span class="comment"># print(data)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 색상 넣어주기</span></span><br><span class="line">tips[<span class="string">&#x27;sex_color&#x27;</span>] = tips[<span class="string">&#x27;sex&#x27;</span>].<span class="built_in">map</span>(&#123;<span class="string">&#x27;Male&#x27;</span> : <span class="string">&#x27;#36D6F7&#x27;</span>, <span class="string">&#x27;Female&#x27;</span> : <span class="string">&#x27;#F5DC73&#x27;</span>&#125;)</span><br><span class="line"><span class="comment"># print(tips.head())</span></span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line"><span class="keyword">for</span> label, data <span class="keyword">in</span> tips.groupby(<span class="string">&#x27;sex&#x27;</span>):</span><br><span class="line">  ax.scatter(data[<span class="string">&#x27;total_bill&#x27;</span>],data[<span class="string">&#x27;tip&#x27;</span>], label = label, color = data[<span class="string">&#x27;sex_color&#x27;</span>], alpha = <span class="number">0.9</span>)</span><br><span class="line">  ax.set_xlabel(<span class="string">&#x27;total bill&#x27;</span>)</span><br><span class="line">  ax.set_ylabel(<span class="string">&#x27;tip&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ax.legend()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_11_0.png" alt="png"></p>
+<h1 id="SeaBorn"><a href="#SeaBorn" class="headerlink" title="SeaBorn"></a>SeaBorn</h1><ul>
+<li>scatter - seaborn</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">tips = sns.load_dataset(<span class="string">&quot;tips&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># plt도 seaborn 적용 가능 - 사이즈 바꿔보기</span></span><br><span class="line">fig, ax = plt.subplots (figsize = (<span class="number">10</span>,<span class="number">6</span>))</span><br><span class="line">sns.scatterplot(x = <span class="string">&#x27;total_bill&#x27;</span>, y = <span class="string">&#x27;tip&#x27;</span>,hue = <span class="string">&#x27;sex&#x27;</span>, data = tips)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_14_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># plt 적용 전</span></span><br><span class="line">sns.scatterplot(x = <span class="string">&#x27;total_bill&#x27;</span>, y = <span class="string">&#x27;tip&#x27;</span>, data = tips)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fd71a8af310&gt;
+</code></pre>
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_15_1.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 두 개의 그래프를 동시에 반환</span></span><br><span class="line">fig, ax = plt.subplots(nrows = <span class="number">1</span>, ncols = <span class="number">2</span>, figsize = (<span class="number">15</span>,<span class="number">5</span>))</span><br><span class="line"><span class="comment"># fit_reg 회귀선?</span></span><br><span class="line">sns.regplot( x = <span class="string">&#x27;total_bill&#x27;</span>, y = <span class="string">&#x27;tip&#x27;</span>, data = tips , ax = ax[<span class="number">0</span>], fit_reg=<span class="literal">True</span>)</span><br><span class="line">sns.regplot( x = <span class="string">&#x27;total_bill&#x27;</span>, y = <span class="string">&#x27;tip&#x27;</span>, data = tips , ax = ax[<span class="number">1</span>], fit_reg=<span class="literal">False</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&quot;without linear regression line&quot;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&quot;with linear regression line&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>Text(0.5, 1.0, &#39;with linear regression line&#39;)
+</code></pre>
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_16_1.png" alt="png"></p>
+<ul>
+<li>barplot - seaborn</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sns.countplot(x=<span class="string">&#x27;day&#x27;</span>,data = tips)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_18_0.png" alt="png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(tips[<span class="string">&#x27;day&#x27;</span>].value_counts().index)</span><br><span class="line"><span class="built_in">print</span>(tips[<span class="string">&#x27;day&#x27;</span>].value_counts().values)</span><br><span class="line"><span class="built_in">print</span>(tips[<span class="string">&#x27;day&#x27;</span>].value_counts(ascending=<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+<p>결과)<br> CategoricalIndex([‘Sat’, ‘Sun’, ‘Thur’, ‘Fri’], categories&#x3D;[‘Thur’, ‘Fri’, ‘Sat’, ‘Sun’], ordered&#x3D;False, dtype&#x3D;’category’)<br> [87 76 62 19]<br> Fri     19<br> Thur    62<br> Sun     76<br> Sat     87<br> Name: day, dtype: int64</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots()</span><br><span class="line">ax = sns.countplot(x = <span class="string">&#x27;day&#x27;</span>, data = tips, order = tips[<span class="string">&#x27;day&#x27;</span>].value_counts().index)</span><br><span class="line"></span><br><span class="line"><span class="comment"># .patches seaborn도 matplot사용하기 위해</span></span><br><span class="line"><span class="keyword">for</span> plot <span class="keyword">in</span> ax.patches:</span><br><span class="line">    height = plot.get_height()</span><br><span class="line">    ax.text(plot.get_x() + plot.get_width()/<span class="number">2</span> , height,height, ha = <span class="string">&quot;center&quot;</span>,va = <span class="string">&#x27;bottom&#x27;</span> )</span><br><span class="line"></span><br><span class="line">ax.set_ylim(-<span class="number">5</span>,<span class="number">100</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>(-5.0, 100.0)
+</code></pre>
+<p><img src="/images/Matplotlib_Seaborn/Matplotlib_Seaborn_20_1.png" alt="png"></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/03/24/Matplotlib_Seaborn/" data-id="cl1c4lt89000068v7dr2cgl8i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "John Doe"
+        },
+        "headline": "Python - Matplotlib / Seaborn",
+        "image": "http://zerobbang.com/images/Matplotlib_Seaborn/Matplotlib_Seaborn_4_0.png",
+        "keywords": "",
+        "genre": "Python",
+        "datePublished": "2022-03-24",
+        "dateCreated": "2022-03-24",
+        "dateModified": "2022-03-29",
+        "url": "http://zerobbang.com/2022/03/24/Matplotlib_Seaborn/",
+        "description": "Matplotlib1import matplotlib.pyplot as plt
+
+
+주식 데이터 다운
+!pip install yfinance –upgrade –no-cache-dir
+
+1234import yfinance as yfdata = yf.download(&quot;AAPL&quot;, start = &quot;2019-08-01&quot;, end =",
+        "wordCount": 916
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+<!--     <div class="sidebar-top"> -->
+<!--         <p>follow:</p> -->
+<!--         <ul class="social-links"> -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-twitter"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-facebook"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-stack-overflow"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-github"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-weibo"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-rss"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--         </ul> -->
+<!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/03/27/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Hello World
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/03/23/Pandas_Basic/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Python 기초 - Pandas</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a></p>
+                            <p class="item-title"><a href="/2022/03/29/Rogistic_R/" class="title">Rogistic Regression</a></p>
+                            <p class="item-date"><time datetime="2022-03-29T00:00:00.000Z" itemprop="datePublished">2022-03-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a></p>
+                            <p class="item-title"><a href="/2022/03/29/Stochastic_R/" class="title">Stochastic Gradient Descent</a></p>
+                            <p class="item-date"><time datetime="2022-03-29T00:00:00.000Z" itemprop="datePublished">2022-03-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/28/venv_setting/" class="title">Python - 가상 환경 생성 (PyCharm)</a></p>
+                            <p class="item-date"><time datetime="2022-03-28T00:00:00.000Z" itemprop="datePublished">2022-03-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Hexo/">Hexo</a></p>
+                            <p class="item-title"><a href="/2022/03/27/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2022-03-26T16:46:15.120Z" itemprop="datePublished">2022-03-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/24/Matplotlib_Seaborn/" class="title">Python - Matplotlib / Seaborn</a></p>
+                            <p class="item-date"><time datetime="2022-03-24T00:00:00.000Z" itemprop="datePublished">2022-03-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 John Doe</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zerobbang.com/2022/03/24/Matplotlib_Seaborn/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
