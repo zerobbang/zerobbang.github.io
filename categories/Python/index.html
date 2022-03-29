@@ -85,7 +85,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li></ul>
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
                                 
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -210,12 +210,21 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/23/Numpy_Basic/">Python 기초 - Numpy</a>
+        <a href="/2022/03/23/Pandas_Basic/">Python 기초 - Pandas</a>
         </h1>
     
 
         <p class="article-excerpt">
-            list와 array 비교123456789math_scores = [10,9,7]eng_scores = [6,9,8]math_arr = np.array(math_scores)eng_arr = np.array(eng_scores)total_scores = math_scores + eng_scores,  total_arr = math_arr + eng_arrt
+            
+Pandas 자료 구조 살펴보기
+
+
+Data Frame
+ 123456t_dict = &#123;&quot;col1&quot; : [1,2,3],          &quot;col2&quot; : [3,4,5]&#125;df = pd.DataFrame(t_dict)print(type(df))df
+ 
+
+Series
+ 1234t_dict = &#123;&#x2
         </p>
     </div>
 </article>
@@ -241,21 +250,12 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/23/Pandas_Basic/">Python 기초 - Pandas</a>
+        <a href="/2022/03/23/Numpy_Basic/">Python 기초 - Numpy</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
-Pandas 자료 구조 살펴보기
-
-
-Data Frame
- 123456t_dict = &#123;&quot;col1&quot; : [1,2,3],          &quot;col2&quot; : [3,4,5]&#125;df = pd.DataFrame(t_dict)print(type(df))df
- 
-
-Series
- 1234t_dict = &#123;&#x2
+            list와 array 비교123456789math_scores = [10,9,7]eng_scores = [6,9,8]math_arr = np.array(math_scores)eng_arr = np.array(eng_scores)total_scores = math_scores + eng_scores,  total_arr = math_arr + eng_arrt
         </p>
     </div>
 </article>
@@ -439,6 +439,15 @@ class 예
                     <li>
                         
                         <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a></p>
+                            <p class="item-title"><a href="/2022/03/29/Stochastic_R/" class="title">Stochastic Gradient Descent</a></p>
+                            <p class="item-date"><time datetime="2022-03-29T00:00:00.000Z" itemprop="datePublished">2022-03-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
                             <p class="item-title"><a href="/2022/03/28/venv_setting/" class="title">Python - 가상 환경 생성 (PyCharm)</a></p>
                             <p class="item-date"><time datetime="2022-03-28T00:00:00.000Z" itemprop="datePublished">2022-03-28</time></p>
@@ -458,15 +467,6 @@ class 예
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2022/03/23/Numpy_Basic/" class="title">Python 기초 - Numpy</a></p>
-                            <p class="item-date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
                             <p class="item-title"><a href="/2022/03/23/Pandas_Basic/" class="title">Python 기초 - Pandas</a></p>
                             <p class="item-date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></p>
                         </div>
@@ -476,8 +476,8 @@ class 예
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2022/03/22/Class/" class="title">Python 기초 - Class 생성</a></p>
-                            <p class="item-date"><time datetime="2022-03-22T00:00:00.000Z" itemprop="datePublished">2022-03-22</time></p>
+                            <p class="item-title"><a href="/2022/03/23/Numpy_Basic/" class="title">Python 기초 - Numpy</a></p>
+                            <p class="item-date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></p>
                         </div>
                     </li>
                 
@@ -490,7 +490,7 @@ class 예
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -500,7 +500,7 @@ class 예
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">8</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">10</span></li></ul>
         </div>
     </div>
 

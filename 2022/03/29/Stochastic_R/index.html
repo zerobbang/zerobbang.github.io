@@ -6,17 +6,25 @@
     
 
     
-    <title>Archive: 2022 | Zero</title>
+    <title>Stochastic Gradient Descent | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Zero">
-<meta property="og:url" content="http://zerobbang.com/archives/2022/index.html">
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="Stochastic Gradient Descent?    확률적 경사 하강법은 간단히 말해서 데이터들 중 무작위로 하나의 샘플 데이터의 경사를 계산하는 법이다.  즉, 학습할 때 하나의 샘플 데이터를 다루기 때문에 한번에 다뤄야 할 데이터 수가 상대적으로 작아서 학습 속도가 빠르고 메모리 소모량이 매우 낮다는 장점이 있다.   반복적인 학습을 통해 기울기">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stochastic Gradient Descent">
+<meta property="og:url" content="http://zerobbang.com/2022/03/29/Stochastic_R/index.html">
 <meta property="og:site_name" content="Zero">
+<meta property="og:description" content="Stochastic Gradient Descent?    확률적 경사 하강법은 간단히 말해서 데이터들 중 무작위로 하나의 샘플 데이터의 경사를 계산하는 법이다.  즉, 학습할 때 하나의 샘플 데이터를 다루기 때문에 한번에 다뤄야 할 데이터 수가 상대적으로 작아서 학습 속도가 빠르고 메모리 소모량이 매우 낮다는 장점이 있다.   반복적인 학습을 통해 기울기">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/Stochastic_R/Untitled.png">
+<meta property="article:published_time" content="2022-03-29T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-29T11:15:42.121Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/Stochastic_R/Untitled.png">
     
 
     
@@ -147,357 +155,178 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2022
+    <a class="page-title-link" href="/categories/Study/">Study</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-Stochastic_R" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a>
-            </div>
-            <div class="date"><time datetime="2022-03-29T00:00:00.000Z" itemprop="datePublished">2022-03-29</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/29/Stochastic_R/">Stochastic Gradient Descent</a>
+        Stochastic Gradient Descent
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/03/29/Stochastic_R/" class="article-date">
+       <time datetime="2022-03-29T00:00:00.000Z" itemprop="datePublished">2022-03-29</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/03/29/Stochastic_R/" class="article-date">
+     <time datetime="2022-03-29T11:15:42.121Z" itemprop="dateModified">2022-03-29</time>
+  </a>
+</div>
+
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
             
+
+            
+
+            
+
+            <ul>
+<li><p>Stochastic Gradient Descent?</p>
+<p>   확률적 경사 하강법은 간단히 말해서 데이터들 중 무작위로 하나의 샘플 데이터의 경사를 계산하는 법이다.<br>  즉, 학습할 때 하나의 샘플 데이터를 다루기 때문에 한번에 다뤄야 할 데이터 수가 상대적으로 작아서 학습 속도가 빠르고 메모리 소모량이 매우 낮다는 장점이 있다.</p>
+<p>  반복적인 학습을 통해 기울기를 보정해가면서 오차를 보정한다.</p>
+<p>  수학적으로 보면 기울기를 뽑아내기 위한 미분에 해당하는 알고리즘이다.</p>
+<p>  다만 시각화를 통해 학습을 살펴보면 다음과 같이 불안정하게 움직이는데 이는 하나의 샘플 데이터를 추출 할 때 무작위로 추출하기 때문이다.<br>   그리고 무작위성을 갖고 있기 때문에  지역 최솟값에서 빠져나오기는 쉬우나 전역 최솟값에 다다르기에는 어렵다.</p>
+<p>  <img src="/images/Stochastic_R/Untitled.png" alt="Untitled"></p>
+</li>
+<li><p>왜 중요한가?</p>
+<p>   머신 러닝의 궁극적인 목표는 오차를 줄여 정확도를 높이는 것인데 이 SGDClassifier이 오차를 줄이는데 유용하기 때문이다.<br>   그리고 SGDClassifier에 해당하는 알고리즘의 예로는 딥러닝(이미지, 텍스트), 트리 알고리즘 + 경사 하강법 알고리즘 &#x3D; 부스팅 계열의 알고리즘이 있는데<br>  이 중 부스팅 계열에 해당하는 알고리즘에는 LightGBM, Xgboost, Catboost가 현장에서 많이 쓰이는 알고리즘 있기 때문이다. 참고로 이들의 하이퍼파라미터는 80개가 넘는다.</p>
+</li>
+</ul>
+<p>참조 : <a target="_blank" rel="noopener" href="https://gooopy.tistory.com/69">https://gooopy.tistory.com/69</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/03/29/Stochastic_R/" data-id="cl1c24jtd0008uov73ydqgzbn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "John Doe"
+        },
+        "headline": "Stochastic Gradient Descent",
+        "image": "http://zerobbang.com/images/Stochastic_R/Untitled.png",
+        "keywords": "",
+        "genre": "Study",
+        "datePublished": "2022-03-29",
+        "dateCreated": "2022-03-29",
+        "dateModified": "2022-03-29",
+        "url": "http://zerobbang.com/2022/03/29/Stochastic_R/",
+        "description": "
 Stochastic Gradient Descent?
    확률적 경사 하강법은 간단히 말해서 데이터들 중 무작위로 하나의 샘플 데이터의 경사를 계산하는 법이다.  즉, 학습할 때 하나의 샘플 데이터를 다루기 때문에 한번에 다뤄야 할 데이터 수가 상대적으로 작아서 학습 속도가 빠르고 메모리 소모량이 매우 낮다는 장점이 있다.
-  반복적인 학습을 통해 기울기
-        </p>
-    </div>
+  반복적인 학습을 통해 기울기",
+        "wordCount": 163
+    }
+</script>
+
 </article>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-28T00:00:00.000Z" itemprop="datePublished">2022-03-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/28/venv_setting/">Python - 가상 환경 생성 (PyCharm)</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            이번에는 PyCharm 통해서 가상 환경 설정하는 법을 알아보려 한다.
-가상 환경이 왜 필요한가 우선 가상 환경을 설정하기 전에 가상 환경이 왜 필요한지 알아보면 다음과 같다.
- 예를 들어 파이썬 기본 엔진을 통해서 파이썬의 버전이 다른 웹 2개를 생성했는데 동일한 라이브러리가 필요하다면 에러가 발생할 수 있다.
- 그 이유는 버전이 다른 파이썬에서 동일한 
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-            </div>
-            <div class="date"><time datetime="2022-03-26T16:46:15.120Z" itemprop="datePublished">2022-03-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/27/hello-world/">Hello World</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/23/Pandas_Basic/">Python 기초 - Pandas</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-Pandas 자료 구조 살펴보기
 
 
-Data Frame
- 123456t_dict = &#123;&quot;col1&quot; : [1,2,3],          &quot;col2&quot; : [3,4,5]&#125;df = pd.DataFrame(t_dict)print(type(df))df
- 
-
-Series
- 1234t_dict = &#123;&#x2
-        </p>
-    </div>
-</article>
     
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/23/Numpy_Basic/">Python 기초 - Numpy</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            list와 array 비교123456789math_scores = [10,9,7]eng_scores = [6,9,8]math_arr = np.array(math_scores)eng_arr = np.array(eng_scores)total_scores = math_scores + eng_scores,  total_arr = math_arr + eng_arrt
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-22T00:00:00.000Z" itemprop="datePublished">2022-03-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/22/Class/">Python 기초 - Class 생성</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-class 예
-
-12345678910111213141516class Person:  # class attribute  country = &#x27;korean&#x27;  # instance attribute  # def __init__(self, ____ ) 고정 표기 변수 담기 위해  def __init__(self,name,age):    self.
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-22T00:00:00.000Z" itemprop="datePublished">2022-03-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/22/python_fun/">Python 기초 - 사용자 함수 생성</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-사용자 함수 만들기 (피타고라스)
-
-1234567891011121314151617181920import mathdef pt(a,b):  &#x27;&#x27;&#x27;피타고라스 정리 - 긴 변의 길이를 구하는 함수    Args:    m(two int or float)      Returns:   긴 변의 길이는 : float      &#x27;&#
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-21T00:00:00.000Z" itemprop="datePublished">2022-03-21</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/21/Python_Basic/">Python 기초 - 기초 문법 정리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            형변환 하기123x = input(&quot;숫자를 입력하세요 : &quot;)y = int(input(&quot;숫자를 입력하세요 : &quot;))print(type(x),type(y))
-
-→ x : str 문자열, y : int 정수형
-이런 방법으로 문자열을 정수형, 실수형, 논리형으로 바꿀 수 있다.
-인덱싱
-문자열에서 원하는 자리값의 문자를 가져온다
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a>
-            </div>
-            <div class="date"><time datetime="2022-03-20T00:00:00.000Z" itemprop="datePublished">2022-03-20</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/20/Rogistic_R/">Rogistic Regression</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-Rogistic Regression?
-   지도 학습 알고리즘으로 이진 분류에서는 데이터가 범주에 속할 확률을 0 ~ 1로 두고, 0.5를 기준으로 0과 1 중 어디에 더 가까운 값인지 판단하여 데이터를 분류하는 모델이다.
-  Rogistic Regression의 식과 표를 나타내면 다음과 같다.  이 식을 로지스틱 함수 또는 시그모이드 함수 라고도 한다
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-            </div>
-            <div class="date"><time datetime="2022-03-17T00:00:00.000Z" itemprop="datePublished">2022-03-17</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/17/Hexo_blog/">Hexo Blog - Hexo Blog 만들기</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            사전 작업source&#x2F;images&#x2F;Hexo_blog
-
-다음 주소 참고https://dschloe.github.io/settings/hexo_blog&#x2F;
-
-hexo를 쓰기 위해 node 설치하기
-  
-
-LTS 버전 다운받아 관리자 권한으로 설치하면 끝(관리자 권한이 없을 수도 있음)
-
-다음 옵션으로 설정해주기
-  
-  
-
-
-설치 확인
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
+    </section>
 
 
 
@@ -559,6 +388,19 @@ LTS 버전 다운받아 관리자 권한으로 설치하면 끝(관리자 권한
 <!--              -->
 <!--         </ul> -->
 <!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/03/28/venv_setting/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Python - 가상 환경 생성 (PyCharm)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -701,11 +543,13 @@ LTS 버전 다운받아 관리자 권한으로 설치하면 끝(관리자 권한
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://zerobbang.com/2022/03/29/Stochastic_R/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
