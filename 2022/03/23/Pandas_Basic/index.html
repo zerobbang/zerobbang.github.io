@@ -21,7 +21,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://zerobbang.com/images/Pandas_Basic/Untitled.png">
 <meta property="article:published_time" content="2022-03-23T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-28T13:46:01.637Z">
+<meta property="article:modified_time" content="2022-03-30T10:54:38.049Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://zerobbang.com/images/Pandas_Basic/Untitled.png">
@@ -187,7 +187,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/03/23/Pandas_Basic/" class="article-date">
-     <time datetime="2022-03-28T13:46:01.637Z" itemprop="dateModified">2022-03-28</time>
+     <time datetime="2022-03-30T10:54:38.049Z" itemprop="dateModified">2022-03-30</time>
   </a>
 </div>
 
@@ -215,11 +215,11 @@
 <ol>
 <li><p>Data Frame</p>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t_dict = &#123;<span class="string">&quot;col1&quot;</span> : [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],</span><br><span class="line">          <span class="string">&quot;col2&quot;</span> : [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(t_dict)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(df))</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
-<p> <img src="/images/Pandas_Basic/Untitled.png" alt="Untitled"></p>
+<p> <img src="/images/Pandas_Basic/Untitled.png"></p>
 </li>
 <li><p>Series</p>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t_dict = &#123;<span class="string">&#x27;a&#x27;</span>:[<span class="number">1</span>,<span class="number">1</span>],<span class="string">&#x27;b&#x27;</span>:<span class="number">2</span>,<span class="string">&#x27;c&#x27;</span>:<span class="number">3</span>&#125;</span><br><span class="line">ser = pd.Series(t_dict)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(ser))</span><br><span class="line">ser</span><br></pre></td></tr></table></figure>
-<p> <img src="/images/Pandas_Basic/Untitled%201.png" alt="Untitled"></p>
+<p> <img src="/images/Pandas_Basic/Untitled%201.png"></p>
 </li>
 </ol>
 <ul>
@@ -242,7 +242,7 @@ Data columns (total 7 columns):
 <h3 id="Describe"><a href="#Describe" class="headerlink" title="Describe ( )"></a>Describe ( )</h3><ul>
 <li><p>기술 통계량 확인 함수 (문자는 취급 X)</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice.describe()</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%202.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%202.png"></p>
 </li>
 <li><p>문자 확인 → value_counts</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(juice[<span class="string">&#x27;Location&#x27;</span>].value_counts())</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(juice[<span class="string">&#x27;Location&#x27;</span>].value_counts()))</span><br></pre></td></tr></table></figure>
@@ -257,9 +257,9 @@ Data columns (total 7 columns):
 <h3 id="행과-열-다루기"><a href="#행과-열-다루기" class="headerlink" title="행과 열 다루기"></a>행과 열 다루기</h3><ul>
 <li><p>컬럼 추가</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">juice[<span class="string">&#x27;Sold&#x27;</span>] = <span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(juice.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%203.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%203.png"></p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 새로 생성한 컬럼에 값 추가하기</span></span><br><span class="line">juice[<span class="string">&#x27;Sold&#x27;</span>] = juice[<span class="string">&#x27;Lemon&#x27;</span>] + juice[<span class="string">&#x27;Orange&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(juice.head(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%204.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%204.png"></p>
 </li>
 <li><p>컬럼 삭제</p>
 <p>  drop (axis &#x3D; 0 or 1)</p>
@@ -268,31 +268,31 @@ Data columns (total 7 columns):
 <li>1로 설정시 열방향으로 드롭</li>
 </ul>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 열 삭제 axis = 1</span></span><br><span class="line">juice_column_drop = juice.drop(<span class="string">&#x27;Sold&#x27;</span>,axis = <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(juice_column_drop.head())</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%205.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%205.png"></p>
 <ul>
 <li>먄약 축 방향이 잘못될 경우 -&gt; [‘’] not found in axis. 에러</li>
 </ul>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 행 삭제 axis = 0</span></span><br><span class="line">juice_row_drop = juice.drop(<span class="number">0</span>,axis = <span class="number">0</span>)</span><br><span class="line"><span class="built_in">print</span>(juice_row_drop.head(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%206.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%206.png"></p>
 </li>
 </ul>
 <h3 id="Data-Indexing"><a href="#Data-Indexing" class="headerlink" title="Data Indexing"></a>Data Indexing</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice[<span class="number">2</span>:<span class="number">9</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/Pandas_Basic/Untitled%207.png" alt="Untitled"></p>
+<p><img src="/images/Pandas_Basic/Untitled%207.png"></p>
 <p>데이터프레임도 인덱싱이 가능하다.</p>
 <h3 id="조건-주기-논리값"><a href="#조건-주기-논리값" class="headerlink" title="조건 주기 (논리값)"></a>조건 주기 (논리값)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice[juice[<span class="string">&#x27;Location&#x27;</span>] == <span class="string">&#x27;Beach&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
 <p>juice[‘Location’] &#x3D;&#x3D; ‘Beach’에서 TRUE만 해당되는 값을 가져왔다.</p>
-<h3 id="iloc-x2F-loc"><a href="#iloc-x2F-loc" class="headerlink" title="iloc  &#x2F; loc"></a>iloc  &#x2F; loc</h3><p><img src="/images/Pandas_Basic/Untitled%208.png" alt="Untitled"></p>
+<h3 id="iloc-x2F-loc"><a href="#iloc-x2F-loc" class="headerlink" title="iloc  &#x2F; loc"></a>iloc  &#x2F; loc</h3><p><img src="/images/Pandas_Basic/Untitled%208.png"></p>
 <ul>
 <li><p>iloc</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># [행, 열]</span></span><br><span class="line">juice.iloc[<span class="number">0</span>:<span class="number">3</span>,<span class="number">0</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%209.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%209.png"></p>
 </li>
 <li><p>loc</p>
 <p>  라벨 기반이기때문에 입력한 값까지 출력이 된다. </p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">juice.loc[:<span class="number">2</span>,:<span class="string">&#x27;Location&#x27;</span>]</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%209.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%209.png"></p>
 </li>
 <li><p>조건 &#x2F; loc</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># boolen / iloc은 안된다. </span></span><br><span class="line">juice.loc[juice[<span class="string">&#x27;Leaflets&#x27;</span>] &gt;= <span class="number">100</span>, [<span class="string">&#x27;Date&#x27;</span>,<span class="string">&#x27;Location&#x27;</span>]]</span><br></pre></td></tr></table></figure></li>
@@ -303,7 +303,7 @@ Data columns (total 7 columns):
 <h3 id="Group-By"><a href="#Group-By" class="headerlink" title="Group By"></a>Group By</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">juice.groupby([<span class="string">&#x27;Location&#x27;</span>])[[<span class="string">&#x27;Revenue&#x27;</span>,<span class="string">&#x27;Lemon&#x27;</span>]].agg([<span class="built_in">max</span>, <span class="built_in">min</span>, <span class="built_in">sum</span>, np.mean])</span><br></pre></td></tr></table></figure>
 
 <p>→ Location별로 Revenue와 Lemon의 max,min,sum,mean을 구하여 정리한다.</p>
-<p><img src="/images/Pandas_Basic/Untitled%2010.png" alt="Untitled"></p>
+<p><img src="/images/Pandas_Basic/Untitled%2010.png"></p>
 <hr>
 <ul>
 <li>새로운 데이터로 연습</li>
@@ -324,7 +324,7 @@ Data columns (total 7 columns):
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict_1 = &#123;</span><br><span class="line"><span class="string">&#x27;Score_A&#x27;</span> : [<span class="number">80</span>,<span class="number">90</span>,np.nan,<span class="number">80</span>],</span><br><span class="line"><span class="string">&#x27;Score_B&#x27;</span> : [<span class="number">30</span>,<span class="number">45</span>,np.nan,np.nan],</span><br><span class="line"><span class="string">&#x27;Score_C&#x27;</span> : [np.nan, <span class="number">50</span>,<span class="number">25</span>,<span class="number">40</span>]</span><br><span class="line">&#125;</span><br><span class="line">df = pd.DataFrame(dict_1)</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/Pandas_Basic/Untitled%2011.png" alt="Untitled"></p>
+<p><img src="/images/Pandas_Basic/Untitled%2011.png"></p>
 <ul>
 <li><p>결측치 확인하기</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().<span class="built_in">sum</span>()</span><br></pre></td></tr></table></figure>
@@ -343,15 +343,15 @@ Data columns (total 7 columns):
 <ul>
 <li><p>결측치가 없는 열 넣어주기</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;Score_D&#x27;</span>] = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>]</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%2012.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%2012.png"></p>
 </li>
 <li><p>결측치가 있는 열 삭제 ( axis &#x3D; 1 )</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.dropna(axis = <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%2013.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%2013.png"></p>
 </li>
 <li><p>결측치가 있는 행 삭제 ( axis &#x3D; 0 )</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.dropna(axis=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>  <img src="/images/Pandas_Basic/Untitled%2014.png" alt="Untitled"></p>
+<p>  <img src="/images/Pandas_Basic/Untitled%2014.png"></p>
 </li>
 </ul>
 </li>
@@ -361,13 +361,16 @@ Data columns (total 7 columns):
 <li>이상치의 상한 경계값 : q3 + (1.5 * (q3 -q1))</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Q1 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.25</span>)</span><br><span class="line">Q3 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.75</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Q1 보다 낮은 값을 이상치로 간주</span></span><br><span class="line">outliers_q1 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &lt; Q1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Q3 보다 낮은 값을 이상치로 간주</span></span><br><span class="line">outliers_q3 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &gt; Q3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># outliers_q1  -&gt; True, False 값으로 나온다.</span></span><br><span class="line"><span class="comment"># 이상치 제거한 값 불러오기</span></span><br><span class="line"><span class="built_in">print</span>(sales[<span class="string">&#x27;Unit price&#x27;</span>][~(outliers_q1 | outliers_q3)])</span><br></pre></td></tr></table></figure>
+
+<p>&lt;이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩&gt;</p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://zerobbang.com/2022/03/23/Pandas_Basic/" data-id="cl1c24jt60002uov70rc6a5ml" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://zerobbang.com/2022/03/23/Pandas_Basic/" data-id="cl1dgjox60008fov7erqsfxoh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -443,7 +446,7 @@ Data columns (total 7 columns):
         "genre": "Python",
         "datePublished": "2022-03-23",
         "dateCreated": "2022-03-23",
-        "dateModified": "2022-03-28",
+        "dateModified": "2022-03-30",
         "url": "http://zerobbang.com/2022/03/23/Pandas_Basic/",
         "description": "
 Pandas 자료 구조 살펴보기
@@ -455,7 +458,7 @@ Data Frame
 
 Series
  1234t_dict = &#123;&#x2",
-        "wordCount": 1039
+        "wordCount": 1034
     }
 </script>
 
@@ -536,20 +539,20 @@ Series
         
 <nav id="article-nav">
     
-        <a href="/2022/03/24/Matplotlib_Seaborn/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2022/03/23/Numpy_Basic/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            Python - Matplotlib / Seaborn
+            Python 기초 - Numpy
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2022/03/23/Numpy_Basic/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2022/03/22/Class/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Python 기초 - Numpy</p>
+        <p class="article-nav-title">Python 기초 - Class 생성</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -567,6 +570,15 @@ Series
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a></p>
+                            <p class="item-title"><a href="/2022/03/30/DecisionTree/" class="title">Decision Tree</a></p>
+                            <p class="item-date"><time datetime="2022-03-30T00:00:00.000Z" itemprop="datePublished">2022-03-30</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -604,15 +616,6 @@ Series
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2022/03/24/Matplotlib_Seaborn/" class="title">Python - Matplotlib / Seaborn</a></p>
-                            <p class="item-date"><time datetime="2022-03-24T00:00:00.000Z" itemprop="datePublished">2022-03-24</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -622,7 +625,7 @@ Series
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -632,7 +635,7 @@ Series
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">11</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">12</span></li></ul>
         </div>
     </div>
 
