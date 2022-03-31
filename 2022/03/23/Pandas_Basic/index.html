@@ -21,7 +21,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://zerobbang.com/images/Pandas_Basic/Untitled.png">
 <meta property="article:published_time" content="2022-03-23T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-30T10:54:38.049Z">
+<meta property="article:modified_time" content="2022-03-31T12:48:45.271Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://zerobbang.com/images/Pandas_Basic/Untitled.png">
@@ -187,7 +187,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/03/23/Pandas_Basic/" class="article-date">
-     <time datetime="2022-03-30T10:54:38.049Z" itemprop="dateModified">2022-03-30</time>
+     <time datetime="2022-03-31T12:48:45.271Z" itemprop="dateModified">2022-03-31</time>
   </a>
 </div>
 
@@ -362,7 +362,7 @@ Data columns (total 7 columns):
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Q1 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.25</span>)</span><br><span class="line">Q3 = sales[<span class="string">&#x27;Unit price&#x27;</span>].quantile(<span class="number">0.75</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Q1 보다 낮은 값을 이상치로 간주</span></span><br><span class="line">outliers_q1 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &lt; Q1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Q3 보다 낮은 값을 이상치로 간주</span></span><br><span class="line">outliers_q3 = (sales[<span class="string">&#x27;Unit price&#x27;</span>] &gt; Q3)</span><br><span class="line"></span><br><span class="line"><span class="comment"># outliers_q1  -&gt; True, False 값으로 나온다.</span></span><br><span class="line"><span class="comment"># 이상치 제거한 값 불러오기</span></span><br><span class="line"><span class="built_in">print</span>(sales[<span class="string">&#x27;Unit price&#x27;</span>][~(outliers_q1 | outliers_q3)])</span><br></pre></td></tr></table></figure>
 
-<p>&lt;이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩&gt;</p>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
 
         </div>
         <footer class="article-footer">
@@ -370,7 +370,7 @@ Data columns (total 7 columns):
 
 
 
-    <a data-url="http://zerobbang.com/2022/03/23/Pandas_Basic/" data-id="cl1dgjox60008fov7erqsfxoh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://zerobbang.com/2022/03/23/Pandas_Basic/" data-id="cl1ezv30p00087wv7cpx7hrgl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -446,7 +446,7 @@ Data columns (total 7 columns):
         "genre": "Python",
         "datePublished": "2022-03-23",
         "dateCreated": "2022-03-23",
-        "dateModified": "2022-03-30",
+        "dateModified": "2022-03-31",
         "url": "http://zerobbang.com/2022/03/23/Pandas_Basic/",
         "description": "
 Pandas 자료 구조 살펴보기
@@ -458,7 +458,7 @@ Data Frame
 
 Series
  1234t_dict = &#123;&#x2",
-        "wordCount": 1034
+        "wordCount": 1037
     }
 </script>
 
