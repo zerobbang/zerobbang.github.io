@@ -6,17 +6,25 @@
     
 
     
-    <title>Zero</title>
+    <title>CNN | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Zero">
-<meta property="og:url" content="http://zerobbang.com/index.html">
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="CNN이란?    Convolutional Neural Network의 약자로 이미지 학습을 위한 효율적이 알고리즘인 합성곱 신경망을 의미한다.      컬러 사진을 수치 데이터로 변경하면 데이터의 크기가 커지게 되는데 이는 데이터 처리의 어려움을 야기 한다.   이 때 CNN을 이용해 데이터 처리를 하게 되는데 대상에 대한 특징을 인식하여 이미지 데이터">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CNN">
+<meta property="og:url" content="http://zerobbang.com/2022/04/06/CNN/index.html">
 <meta property="og:site_name" content="Zero">
+<meta property="og:description" content="CNN이란?    Convolutional Neural Network의 약자로 이미지 학습을 위한 효율적이 알고리즘인 합성곱 신경망을 의미한다.      컬러 사진을 수치 데이터로 변경하면 데이터의 크기가 커지게 되는데 이는 데이터 처리의 어려움을 야기 한다.   이 때 CNN을 이용해 데이터 처리를 하게 되는데 대상에 대한 특징을 인식하여 이미지 데이터">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/CNN/Untitled.png">
+<meta property="article:published_time" content="2022-04-06T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-06T03:15:35.272Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/CNN/Untitled.png">
     
 
     
@@ -147,361 +155,194 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="home">Home</em>
+    <a class="page-title-link" href="/categories/Study/">Study</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-CNN" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a>
-            </div>
-            <div class="date"><time datetime="2022-04-06T00:00:00.000Z" itemprop="datePublished">2022-04-06</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/06/CNN/">CNN</a>
+        CNN
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/04/06/CNN/" class="article-date">
+       <time datetime="2022-04-06T00:00:00.000Z" itemprop="datePublished">2022-04-06</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/04/06/CNN/" class="article-date">
+     <time datetime="2022-04-06T03:15:35.272Z" itemprop="dateModified">2022-04-06</time>
+  </a>
+</div>
+
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
             
+
+            
+
+            
+
+            <ul>
+<li><p>CNN이란?</p>
+<p>   Convolutional Neural Network의 약자로 이미지 학습을 위한 효율적이 알고리즘인 합성곱 신경망을 의미한다.  </p>
+<p>   컬러 사진을 수치 데이터로 변경하면 데이터의 크기가 커지게 되는데 이는 데이터 처리의 어려움을 야기 한다.<br>   이 때 CNN을 이용해 데이터 처리를 하게 되는데 대상에 대한 특징을 인식하여 이미지 데이터를 다양한 방법으로 필터링하여 학습시킨다.</p>
+</li>
+<li><p>CNN 구조<br> 주로 입력 부근 계층을 합성곱 계층으로 구성하고 출력 층들은 완전 연결 계층으로 분류한다.</p>
+<p>  <img src="/images/CNN/Untitled.png"></p>
+</li>
+<li><p>CNN 은닉 계층</p>
+</li>
+</ul>
+<ol>
+<li>합성곱 Layer<br>(1)  합성곱 연산<br>  입력 데이터에 필터를 적용해 일정 간격으로 이동해가면서 입력 데이터에 적용한다.</li>
+</ol>
+<p>(2)  채널<br>  컬러 이미지는 RGB로 표현한 각 픽셀을 3차원 데이터로 3개의 채널로 구성한다.</p>
+<p>(3) 패딩<br>  출력 이미지 사이즈를 그대로 유지 가능하게 한다.</p>
+<p>(4) 스트라이드<br>  입력 데이터와 필터를 합성곱할 때 이동할 간격을 제어한다.</p>
+<ol start="2">
+<li>Pooling Layer<br>(1)  Pooling<br>  sub_sampling을 사용하여 Feature-Map 크기 줄인다. 그 결과 이동에 강한 성질을 갖는 특징을 추출한다.</li>
+</ol>
+<p>(2)  Max Pooling<br>  각 픽셀의 최댓값을 뽑아낸다.</p>
+<p>(3)  Average Pooling<br>  각 픽셀의 평균값을 뽑아낸다.</p>
+<p>(4)  Flatten<br>  2차원, 3차원의 행렬 구조를 1차원의 Vector로 변환한다.</p>
+<ul>
+<li>완전 연결 계층 (Fully Connected)<br> 이전 계층의 모든 노드가 다음 계층의 모든 노드에 연결된 계층</li>
+</ul>
+<hr>
+<p>참고 : <a target="_blank" rel="noopener" href="http://contents2.kocw.or.kr/KOCW/data/document/2020/edu1/bdu/hongseungwook1118/041.pdf](http://contents2.kocw.or.kr/KOCW/data/document/2020/edu1/bdu/hongseungwook1118/041.pdf">PDF</a><br><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/04/06/CNN/" data-id="cl1n052xr0000hwv7fsqmdb7k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "John Doe"
+        },
+        "headline": "CNN",
+        "image": "http://zerobbang.com/images/CNN/Untitled.png",
+        "keywords": "",
+        "genre": "Study",
+        "datePublished": "2022-04-06",
+        "dateCreated": "2022-04-06",
+        "dateModified": "2022-04-06",
+        "url": "http://zerobbang.com/2022/04/06/CNN/",
+        "description": "
 CNN이란?
    Convolutional Neural Network의 약자로 이미지 학습을 위한 효율적이 알고리즘인 합성곱 신경망을 의미한다.  
-   컬러 사진을 수치 데이터로 변경하면 데이터의 크기가 커지게 되는데 이는 데이터 처리의 어려움을 야기 한다.   이 때 CNN을 이용해 데이터 처리를 하게 되는데 대상에 대한 특징을 인식하여 이미지 데이터
-        </p>
-    </div>
+   컬러 사진을 수치 데이터로 변경하면 데이터의 크기가 커지게 되는데 이는 데이터 처리의 어려움을 야기 한다.   이 때 CNN을 이용해 데이터 처리를 하게 되는데 대상에 대한 특징을 인식하여 이미지 데이터",
+        "wordCount": 196
+    }
+</script>
+
 </article>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a>
-            </div>
-            <div class="date"><time datetime="2022-03-31T00:00:00.000Z" itemprop="datePublished">2022-03-31</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/31/PCA/">PCA 주성분 분석</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-주성분 분석 PCA
-PCA는 분산이 가장 높은 데이터의 저차원 표현을 찾는 방법이다.
-
-
- 그 이유는 분산을 최대로  보존할 수 있어야 정보를 가장 적게 손실 할 수 있고 분산이 커야 데이터 사이의 차이점이 명확해지며 이는 좋은 모델을 만들 수 있기 때문이다. 
- n개의 관측치가 다차원에서 존재하는데 이 모든 관측치들이 동등하게 영향을 미치는 것이 아니다
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a>
-            </div>
-            <div class="date"><time datetime="2022-03-30T00:00:00.000Z" itemprop="datePublished">2022-03-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/30/DecisionTree/">Decision Tree</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-Deicision Tree
-
- 분류와 회귀가 모두 가능한 지도 학습 모델 중 하나로 조건문을 통해서 가지가 뻗어나가는 형태이다. 다시 말해 데이터의 특성들의 기준으로 데이터를 분류해나가는 모델이다.
-이를 토대로 랜덤 포레스트 알고리즘이 탄생했는데 이는 의사 결정 트리 모델 여러개를 훈련시켜 예측하는 앙상블 알고리즘이다. 이처럼 의사 결정 트리를 토대로 M
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a>
-            </div>
-            <div class="date"><time datetime="2022-03-29T00:00:00.000Z" itemprop="datePublished">2022-03-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/29/Rogistic_R/">Rogistic Regression</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-Rogistic Regression?
-
-지도 학습 알고리즘으로 이진 분류에서는 데이터가 범주에 속할 확률을 0 ~ 1로 두고, 0.5를 기준으로 0과 1 중 어디에 더 가까운 값인지 판단하여 데이터를 분류하는 모델이다.
-Rogistic Regression의 식과 표를 나타내면 다음과 같다.
-이 식을 로지스틱 함수 또는 시그모이드 함수 라고도 한다.
-f(x
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a>
-            </div>
-            <div class="date"><time datetime="2022-03-29T00:00:00.000Z" itemprop="datePublished">2022-03-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/29/Stochastic_R/">Stochastic Gradient Descent</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-Stochastic Gradient Descent?
-
- 확률적 경사 하강법은 간단히 말해서 데이터들 중 무작위로 하나의 샘플 데이터의 경사를 계산하는 법이다. 즉, 학습할 때 하나의 샘플 데이터를 다루기 때문에 한번에 다뤄야 할 데이터 수가 상대적으로 작아서 학습 속도가 빠르고 메모리 소모량이 매우 낮다는 장점이 있다.
-반복적인 학습을 통해 기울기를 보정
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-28T00:00:00.000Z" itemprop="datePublished">2022-03-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/28/venv_setting/">Python - 가상 환경 생성 (PyCharm)</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            이번에는 PyCharm 통해서 가상 환경 설정하는 법을 알아보려 한다.
-가상 환경이 왜 필요한가 우선 가상 환경을 설정하기 전에 가상 환경이 왜 필요한지 알아보면 다음과 같다.
- 예를 들어 파이썬 기본 엔진을 통해서 파이썬의 버전이 다른 웹 2개를 생성했는데 동일한 라이브러리가 필요하다면 에러가 발생할 수 있다.
- 그 이유는 버전이 다른 파이썬에서 동일한 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-            </div>
-            <div class="date"><time datetime="2022-03-26T16:46:15.120Z" itemprop="datePublished">2022-03-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/27/hello-world/">Hello World</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-24T00:00:00.000Z" itemprop="datePublished">2022-03-24</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/24/Matplotlib_Seaborn/">Python - Matplotlib / Seaborn</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Matplotlib1import matplotlib.pyplot as plt
 
 
-주식 데이터 다운
-!pip install yfinance –upgrade –no-cache-dir
+    
+    </section>
 
-1234import yfinance as yfdata = yf.download(&quot;AAPL&quot;, start = &quot;2019-08-01&quot;, end =
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/23/Pandas_Basic/">Python 기초 - Pandas</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-Pandas 자료 구조 살펴보기
-
-
-Data Frame
- 123456t_dict = &#123;&quot;col1&quot; : [1,2,3],          &quot;col2&quot; : [3,4,5]&#125;df = pd.DataFrame(t_dict)print(type(df))df
- 
-
-Series
- 1234t_dict = &#123;&#x2
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-03-23T00:00:00.000Z" itemprop="datePublished">2022-03-23</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/03/23/Numpy_Basic/">Python 기초 - Numpy</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            list와 array 비교123456789math_scores = [10,9,7]eng_scores = [6,9,8]math_arr = np.array(math_scores)eng_arr = np.array(eng_scores)total_scores = math_scores + eng_scores,  total_arr = math_arr + eng_arrt
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 1 of 2</span>
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
-    </nav>
 
 
                         </div>
@@ -562,6 +403,19 @@ Series
 <!--              -->
 <!--         </ul> -->
 <!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/03/31/PCA/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">PCA 주성분 분석</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -704,11 +558,13 @@ Series
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://zerobbang.com/2022/04/06/CNN/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
