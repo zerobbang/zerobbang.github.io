@@ -6,25 +6,25 @@
     
 
     
-    <title>Docker 설치 | Zero</title>
+    <title>Airflow in Windows (WSL2) | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="📎 참고 블로그    Windows PowerShell → 관리자 권한으로 실행 wsl2가 설치되어 있어야 한다. 다음을 참고  1wsl --set-default-version 2  wsl 버전 2 확인하고 Doker 설치 시작하기    Docker  다운여기에서 다운 시작    자신 환경과 맞는 버전을 다운 받는다. (나는 Windows 진행)   Do">
+    <meta name="description" content="📎 참고 블로그    WSL 터미널에서 진행 (airflow_test 경로에서)  WSL에 pip설치   1sudo apt install python3-pip    Virtualenv 라이브러리 설치   1sudo pip3 install virtualenv  가상 환경 생성   1virtualenv venv  가상 환경 접속   1source venv&#x2F;b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker 설치">
-<meta property="og:url" content="http://zerobbang.com/2022/04/12/Docker_set/index.html">
+<meta property="og:title" content="Airflow in Windows (WSL2)">
+<meta property="og:url" content="http://zerobbang.com/2022/04/13/airflow/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="📎 참고 블로그    Windows PowerShell → 관리자 권한으로 실행 wsl2가 설치되어 있어야 한다. 다음을 참고  1wsl --set-default-version 2  wsl 버전 2 확인하고 Doker 설치 시작하기    Docker  다운여기에서 다운 시작    자신 환경과 맞는 버전을 다운 받는다. (나는 Windows 진행)   Do">
+<meta property="og:description" content="📎 참고 블로그    WSL 터미널에서 진행 (airflow_test 경로에서)  WSL에 pip설치   1sudo apt install python3-pip    Virtualenv 라이브러리 설치   1sudo pip3 install virtualenv  가상 환경 생성   1virtualenv venv  가상 환경 접속   1source venv&#x2F;b">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://zerobbang.com/images/Docker_set/Untitled.png">
-<meta property="article:published_time" content="2022-04-12T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-12T12:37:47.504Z">
+<meta property="og:image" content="http://zerobbang.com/images/airflow/Untitled.png">
+<meta property="article:published_time" content="2022-04-13T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-13T14:08:05.891Z">
 <meta property="article:author" content="Lee GaYeong">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zerobbang.com/images/Docker_set/Untitled.png">
+<meta name="twitter:image" content="http://zerobbang.com/images/airflow/Untitled.png">
     
 
     
@@ -165,14 +165,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-Docker_set" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-airflow" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Docker 설치
+        Airflow in Windows (WSL2)
         </h1>
     
 
@@ -183,16 +183,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2022/04/12/Docker_set/" class="article-date">
-       <time datetime="2022-04-12T00:00:00.000Z" itemprop="datePublished">2022-04-12</time>
+    <a href="/2022/04/13/airflow/" class="article-date">
+       <time datetime="2022-04-13T00:00:00.000Z" itemprop="datePublished">2022-04-13</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2022/04/12/Docker_set/" class="article-date">
-     <time datetime="2022-04-12T12:37:47.504Z" itemprop="dateModified">2022-04-12</time>
+  <a href="/2022/04/13/airflow/" class="article-date">
+     <time datetime="2022-04-13T14:08:05.891Z" itemprop="dateModified">2022-04-13</time>
   </a>
 </div>
 
@@ -214,61 +214,67 @@
 
             
 
-            <p>📎 <a target="_blank" rel="noopener" href="https://dschloe.github.io/settings/windows_docker_install/">참고 블로그</a>  </p>
+            <p>📎 <a target="_blank" rel="noopener" href="https://dschloe.github.io/settings/apache_airflow_using_wsl2/">참고 블로그</a>  </p>
 <ul>
-<li>Windows PowerShell → 관리자 권한으로 실행</li>
-<li>wsl2가 설치되어 있어야 한다. <a target="_blank" rel="noopener" href="https://www.lainyzine.com/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">다음을 참고</a></li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--set-default-version</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>wsl 버전 2 확인하고 Doker 설치 시작하기  </p>
-<hr>
-<h3 id="Docker-다운"><a href="#Docker-다운" class="headerlink" title="Docker  다운"></a>Docker  다운</h3><p><a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">여기</a>에서 다운 시작  </p>
-<p><img src="/images/Docker_set/Untitled.png"></p>
-<p>자신 환경과 맞는 버전을 다운 받는다. (나는 Windows 진행)  </p>
-<p>Docker Desktop Installer.exe 실행하여 설치를 진행한다.  </p>
-<p><strong>Configuration</strong> 창에서 Install required Windows components for WSL 2 와 Add shortcut to desktop 체크하여 설치를 계속 진행한다.  </p>
-<p>설치가 완료 되면 재 시작을 진행한다.  </p>
-<p>재 시작 후, 재 접속 하면 약관 동의 창이 나타나고 동의 체크 후 Accept 눌러 설치를 완료한다.</p>
-<hr>
-<h3 id="Docker-초기-설정"><a href="#Docker-초기-설정" class="headerlink" title="Docker 초기 설정"></a>Docker 초기 설정</h3><p>회원 가입 후 Docker 실행하여 Start 눌러 Tutorial 진행  </p>
-<p>Proceed to Docker Desktop 눌러 Docker 실행  </p>
-<ul>
-<li>오른쪽 상단 ⚙️ 환경 설정</li>
-</ul>
-<p>General → Use the WSL 2 based engine  ☑️  → Appply &amp; Restart  </p>
-<p><img src="/images/Docker_set/Untitled%201.png"></p>
-<p>Resource → WSL Integration → Enable Integration with my default WSL distro ☑️ → Apply &amp; Restart  </p>
-<p><img src="/images/Docker_set/Untitled%202.png"></p>
-<hr>
-<h3 id="Docker-설치-확인"><a href="#Docker-설치-확인" class="headerlink" title="Docker 설치 확인"></a>Docker 설치 확인</h3><ul>
-<li>Windows PowerShell → 관리자 권한으로 실행</li>
-<li>다음 코드로 Docker 전용 머신 실행 확인</li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> wsl <span class="literal">-l</span> <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/Docker_set/Untitled%203.png"></p>
-<ul>
-<li>Docker 서버와 클라이언트 정보 확인</li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> docker version</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/Docker_set/Untitled%204.png"></p>
-<ul>
-<li><p>Docker 실행 중인 컨테이너 확인</p>
-<ul>
-<li>실행 중인 컨테이너가 없는 경우</li>
-</ul>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> docker <span class="built_in">ps</span></span><br><span class="line">CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES</span><br></pre></td></tr></table></figure>
-<ul>
-<li>실행 중인 컨테이너가 있는 경우(nginx 실행)</li>
-</ul>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> docker <span class="built_in">ps</span></span><br><span class="line">CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES</span><br><span class="line"><span class="number">762037058</span>fc4   nginx:latest   <span class="string">&quot;/docker-entrypoint.…&quot;</span>   <span class="number">3</span> seconds ago   Up <span class="number">2</span> seconds   <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">4567</span>-&gt;<span class="number">80</span>/tcp   serene_lalande</span><br></pre></td></tr></table></figure>
-
-
+<li><p>WSL 터미널에서 진행 (airflow_test 경로에서)</p>
 </li>
-<li><p>Docker 실행 중인 컨테이너 삭제<br>  -f 다음은 자신의 CONTAINER ID 입력  </p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> docker <span class="built_in">rm</span> <span class="operator">-f</span> <span class="number">762037058</span>fc4</span><br><span class="line"><span class="number">762037058</span>fc4</span><br></pre></td></tr></table></figure></li>
+<li><p>WSL에 pip설치</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3<span class="literal">-pip</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<ul>
+<li><p>Virtualenv 라이브러리 설치</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install virtualenv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>가상 환경 생성</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv venv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>가상 환경 접속</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source venv/bin/activate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.bashrc 파일 수정 ( vi 편집기 사용법 <a target="_blank" rel="noopener" href="https://jhnyang.tistory.com/54">참고</a> )</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.bashrc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파일 열고 다음 코드 추가 ( vi 편집기)</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export AIRFLOW_HOME=/mnt/c/airflow<span class="literal">-test</span> <span class="comment"># 폴더 경로</span></span><br></pre></td></tr></table></figure>
+<p>  <a target="_blank" rel="noopener" href="https://jhnyang.tistory.com/54">참고</a> 통해서 vi 편집기 저장한 후 나온다.</p>
+</li>
+<li><p>수정된 코드 업데이트</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>확인하기</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp; <span class="built_in">echo</span> <span class="variable">$AIRFLOW_HOME</span></span><br><span class="line">/mnt/c/airflow<span class="literal">-test</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="Apache-Airflow-설치"><a href="#Apache-Airflow-설치" class="headerlink" title="Apache Airflow 설치"></a>Apache Airflow 설치</h3><p>venv 가상 환경에서 작업 수행   </p>
+<ul>
+<li><p>PostgreSQL, Slack, Celery 패키지 동시 설치</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install <span class="string">&#x27;apache-airflow[postgres, slack, celery]&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Airflow 초기 실행 정 DB 초기화</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airflow db init</span><br></pre></td></tr></table></figure>
+<p>  <code>Initialization done</code></p>
+</li>
+<li><p>웹 서버 확인</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airflow webserver <span class="literal">-p</span> <span class="number">8081</span></span><br></pre></td></tr></table></figure>
+<p>  다음 링크로 들어가 확인하기. <strong><a target="_blank" rel="noopener" href="http://localhost:8081/login/">http://localhost:8081/login/</a></strong></p>
+<p>  <img src="/images/airflow/Untitled.png"></p>
+</li>
+<li><p>Username 생성</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airflow users create <span class="literal">--username</span> airflow <span class="literal">--password</span> airflow <span class="literal">--firstname</span> evan <span class="literal">--lastname</span> airflow <span class="literal">--role</span> Admin <span class="literal">--email</span> your_email@some.com</span><br></pre></td></tr></table></figure>
+<p>  자신의 상황에 맞게 username과 password, name, email 입력하여 올린다.  </p>
+<p>  그리고 다시 <code>webserver</code> 실행시키고 로그인하면 된다.<br>  종료 : <strong>ctrl c</strong> (주의 ctrl z 하면 제대로 종료가 되지 않아서 좀비 프로세스가 된다.)</p>
+<p>  <img src="/images/airflow/Untitled%201.png"></p>
+<p>  <img src="/images/airflow/Untitled%202.png"></p>
+</li>
+<li><p>Error - The webserver is already running under PID 숫자.</p>
+<ul>
+<li>sudo kill -9 PID 숫자</li>
+</ul>
+<p>  또는 ps -l 해서 확인</p>
+<p>  <a target="_blank" rel="noopener" href="https://blog.daum.net/99lib/114">https://blog.daum.net/99lib/114</a>  </p>
+<p>  <a target="_blank" rel="noopener" href="https://zetawiki.com/wiki/%EC%95%88_%EC%A3%BD%EB%8A%94_%EC%A2%80%EB%B9%84_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EC%A3%BD%EC%9D%B4%EA%B8%B0">https://zetawiki.com/wiki/안_죽는_좀비_프로세스_죽이기</a></p>
+</li>
 </ul>
 <hr>
 <p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
@@ -279,7 +285,7 @@
 
 
 
-    <a data-url="http://zerobbang.com/2022/04/12/Docker_set/" data-id="cl1xnoscj0007ykv7h36mfsx1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://zerobbang.com/2022/04/13/airflow/" data-id="cl1xnosd2000zykv72vjmdzd9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -349,28 +355,32 @@
             "@type": "Person",
             "name": "Lee GaYeong"
         },
-        "headline": "Docker 설치",
-        "image": "http://zerobbang.com/images/Docker_set/Untitled.png",
+        "headline": "Airflow in Windows (WSL2)",
+        "image": "http://zerobbang.com/images/airflow/Untitled.png",
         "keywords": "",
         "genre": "Setting",
-        "datePublished": "2022-04-12",
-        "dateCreated": "2022-04-12",
-        "dateModified": "2022-04-12",
-        "url": "http://zerobbang.com/2022/04/12/Docker_set/",
+        "datePublished": "2022-04-13",
+        "dateCreated": "2022-04-13",
+        "dateModified": "2022-04-13",
+        "url": "http://zerobbang.com/2022/04/13/airflow/",
         "description": "📎 참고 블로그  
 
-Windows PowerShell → 관리자 권한으로 실행
-wsl2가 설치되어 있어야 한다. 다음을 참고
+WSL 터미널에서 진행 (airflow_test 경로에서)
 
-1wsl --set-default-version 2
+WSL에 pip설치
+  1sudo apt install python3-pip
 
-wsl 버전 2 확인하고 Doker 설치 시작하기  
 
-Docker  다운여기에서 다운 시작  
 
-자신 환경과 맞는 버전을 다운 받는다. (나는 Windows 진행)  
-Do",
-        "wordCount": 431
+Virtualenv 라이브러리 설치
+  1sudo pip3 install virtualenv
+
+가상 환경 생성
+  1virtualenv venv
+
+가상 환경 접속
+  1source venv/b",
+        "wordCount": 319
     }
 </script>
 
@@ -451,20 +461,20 @@ Do",
         
 <nav id="article-nav">
     
-        <a href="/2022/04/13/nifi/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2022/04/13/PostgreSQL/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            NiFi (WSL2)
+            PostgreSQL (WSL2)
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2022/04/12/P_Sub/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2022/04/13/nifi/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Plotly - Subplot</p>
+        <p class="article-nav-title">NiFi (WSL2)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -673,7 +683,7 @@ Do",
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://zerobbang.com/2022/04/12/Docker_set/';
+    var disqus_url = 'http://zerobbang.com/2022/04/13/airflow/';
     
     (function() {
     var dsq = document.createElement('script');
