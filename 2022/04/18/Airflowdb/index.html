@@ -6,23 +6,25 @@
     
 
     
-    <title>Hello World | Zero</title>
+    <title>Airflow dag 안 돌아가는 문제 | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="만약 안 뜨면 로그아웃 후 에 창 닫고 다시 airflow db reset후에 서버 올리고 airflow scheduler 돌리기    화살표 클릭 → trigger dag 클릭하여 실행하기   dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow home 에서 scheduler 관련 메세지가 뜨면 터미널에서 Airflow 경로">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://zerobbang.com/2022/03/27/hello-world/index.html">
+<meta property="og:title" content="Airflow dag 안 돌아가는 문제">
+<meta property="og:url" content="http://zerobbang.com/2022/04/18/Airflowdb/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="만약 안 뜨면 로그아웃 후 에 창 닫고 다시 airflow db reset후에 서버 올리고 airflow scheduler 돌리기    화살표 클릭 → trigger dag 클릭하여 실행하기   dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow home 에서 scheduler 관련 메세지가 뜨면 터미널에서 Airflow 경로">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-26T16:46:15.120Z">
-<meta property="article:modified_time" content="2022-04-09T11:07:23.102Z">
+<meta property="og:image" content="http://zerobbang.com/images/Airflowdb/Untitled.png">
+<meta property="article:published_time" content="2022-04-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-18T13:02:19.740Z">
 <meta property="article:author" content="Lee GaYeong">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/Airflowdb/Untitled.png">
     
 
     
@@ -163,14 +165,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-hello-world" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Airflowdb" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Hello World
+        Airflow dag 안 돌아가는 문제
         </h1>
     
 
@@ -181,16 +183,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2022/03/27/hello-world/" class="article-date">
-       <time datetime="2022-03-26T16:46:15.120Z" itemprop="datePublished">2022-03-27</time>
+    <a href="/2022/04/18/Airflowdb/" class="article-date">
+       <time datetime="2022-04-18T00:00:00.000Z" itemprop="datePublished">2022-04-18</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2022/03/27/hello-world/" class="article-date">
-     <time datetime="2022-04-09T11:07:23.102Z" itemprop="dateModified">2022-04-09</time>
+  <a href="/2022/04/18/Airflowdb/" class="article-date">
+     <time datetime="2022-04-18T13:02:19.740Z" itemprop="dateModified">2022-04-18</time>
   </a>
 </div>
 
@@ -212,19 +214,27 @@
 
             
 
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+            <p>만약 안 뜨면 로그아웃 후 에 창 닫고 다시 airflow db reset후에 서버 올리고 airflow scheduler 돌리기  </p>
+<p><img src="/images/Airflowdb/Untitled.png"></p>
+<p>화살표 클릭 → trigger dag 클릭하여 실행하기</p>
+<p><img src="/images/Airflowdb/Untitled%201.png"></p>
+<p><img src="/images/Airflowdb/Untitled%202.png"></p>
+<p>dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow home 에서 scheduler 관련 메세지가 뜨면 터미널에서 Airflow 경로 다시 확인해보기  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo $AIRFLOW_HOME</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>※ web server, web sechduler 둘 다 echo 경로 잡아주고 시작해야 정상적으로 돌아간다.  </p>
+<ul>
+<li>airflow dag 파일 없애려면 다음과 같이 실행해보기</li>
+</ul>
+<ol>
+<li><code>airflow db init</code></li>
+<li>계정 등록</li>
+<li>.cfg → load_examples &#x3D; False 설정</li>
+<li><code>airflow db reset</code></li>
+<li><code>airflow webserver</code> 진행</li>
+</ol>
+<hr>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
 
         </div>
         <footer class="article-footer">
@@ -232,7 +242,7 @@
 
 
 
-    <a data-url="http://zerobbang.com/2022/03/27/hello-world/" data-id="cl24q8vqw001454v7apzf7749" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://zerobbang.com/2022/04/18/Airflowdb/" data-id="cl24q8vp2000054v75my4b713" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -302,17 +312,21 @@
             "@type": "Person",
             "name": "Lee GaYeong"
         },
-        "headline": "Hello World",
-        "image": "http://zerobbang.com",
+        "headline": "Airflow dag 안 돌아가는 문제",
+        "image": "http://zerobbang.com/images/Airflowdb/Untitled.png",
         "keywords": "",
         "genre": "Setting",
-        "datePublished": "2022-03-27",
-        "dateCreated": "2022-03-27",
-        "dateModified": "2022-04-09",
-        "url": "http://zerobbang.com/2022/03/27/hello-world/",
-        "description": "Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick",
-        "wordCount": 128
+        "datePublished": "2022-04-18",
+        "dateCreated": "2022-04-18",
+        "dateModified": "2022-04-18",
+        "url": "http://zerobbang.com/2022/04/18/Airflowdb/",
+        "description": "만약 안 뜨면 로그아웃 후 에 창 닫고 다시 airflow db reset후에 서버 올리고 airflow scheduler 돌리기  
+
+화살표 클릭 → trigger dag 클릭하여 실행하기
+
+
+dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow home 에서 scheduler 관련 메세지가 뜨면 터미널에서 Airflow 경로 ",
+        "wordCount": 102
     }
 </script>
 
@@ -393,20 +407,10 @@ Quick",
         
 <nav id="article-nav">
     
-        <a href="/2022/03/28/Pycharm_set/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            가상 환경 설정(PyCharm)
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2022/03/24/Matplotlib_Seaborn/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2022/04/17/vi/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Python - Matplotlib / Seaborn</p>
+        <p class="article-nav-title">vi 편집기 명령어 정리</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -615,7 +619,7 @@ Quick",
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://zerobbang.com/2022/03/27/hello-world/';
+    var disqus_url = 'http://zerobbang.com/2022/04/18/Airflowdb/';
     
     (function() {
     var dsq = document.createElement('script');
