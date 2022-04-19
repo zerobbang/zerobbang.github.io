@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Hadoop Spark windows 10 | Zero</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="" />
+    
+    <meta name="description" content="📎 참고 블로그   JAVA 설치Spark 설치 하기 전에 JAVA가 설치되어 있어야 한다.   다음을 클릭해서 들어가 컴퓨터에 맞는 버전의 JAVA 설치 (ORACLE 로그인 필수)     관리자 권한으로 실행해서 JAVA 설치 진행       경로에 공백이 있는 경우 추후에 문제가 생길 수 있다. 그래서 c 드라이브 안 새로 생성한 jdk 파일로 경로">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hadoop Spark windows 10">
+<meta property="og:url" content="http://zerobbang.com/2022/04/19/sparksetting/index.html">
+<meta property="og:site_name" content="Zero">
+<meta property="og:description" content="📎 참고 블로그   JAVA 설치Spark 설치 하기 전에 JAVA가 설치되어 있어야 한다.   다음을 클릭해서 들어가 컴퓨터에 맞는 버전의 JAVA 설치 (ORACLE 로그인 필수)     관리자 권한으로 실행해서 JAVA 설치 진행       경로에 공백이 있는 경우 추후에 문제가 생길 수 있다. 그래서 c 드라이브 안 새로 생성한 jdk 파일로 경로">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/sparksetting/Untitled.png">
+<meta property="article:published_time" content="2022-04-19T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-19T11:41:39.789Z">
+<meta property="article:author" content="Lee GaYeong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/sparksetting/Untitled.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Setting/">Setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Setting/">Setting</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-sparksetting" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Hadoop Spark windows 10
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/04/19/sparksetting/" class="article-date">
+       <time datetime="2022-04-19T00:00:00.000Z" itemprop="datePublished">2022-04-19</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/04/19/sparksetting/" class="article-date">
+     <time datetime="2022-04-19T11:41:39.789Z" itemprop="dateModified">2022-04-19</time>
+  </a>
+</div>
+
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>📎 <a target="_blank" rel="noopener" href="https://dschloe.github.io/python/python_edu/00_settings/spark_installation_windows_10/">참고 블로그</a>  </p>
+<h2 id="JAVA-설치"><a href="#JAVA-설치" class="headerlink" title="JAVA 설치"></a>JAVA 설치</h2><p>Spark 설치 하기 전에 JAVA가 설치되어 있어야 한다.  </p>
+<p><a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/javase8u211-later-archive-downloads.html">다음</a>을 클릭해서 들어가 컴퓨터에 맞는 버전의 JAVA 설치 (ORACLE 로그인 필수)  </p>
+<p><img src="/images/sparksetting/Untitled.png"></p>
+<ul>
+<li><p>관리자 권한으로 실행해서 JAVA 설치 진행</p>
+<p>  <img src="/images/sparksetting/Untitled%201.png"></p>
+<p>   경로에 공백이 있는 경우 추후에 문제가 생길 수 있다. 그래서 c 드라이브 안 새로 생성한 jdk 파일로 경로를 잡아주고 설치를 진행한다. <code>c:\jdk</code>  </p>
+</li>
+<li><p>런타임 환경 폴더도 경로를 다시 잡아주고 설치를 진행 <code>c:\jre</code></p>
+<p>  <img src="/images/sparksetting/Untitled%202.png"></p>
+</li>
+</ul>
+<hr>
+<h2 id="설치할-파일-다운로드-하기"><a href="#설치할-파일-다운로드-하기" class="headerlink" title="설치할 파일 다운로드 하기"></a>설치할 파일 다운로드 하기</h2><h3 id="Spark-Download"><a href="#Spark-Download" class="headerlink" title="Spark Download"></a>Spark Download</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://spark.apache.org/downloads.html">Spark</a> 다음 페이지로 들어가서 Spark 파일을 다운 받는다.</p>
+<p>  <img src="/images/sparksetting/Untitled%203.png"></p>
+</li>
+<li><ol start="3">
+<li>Download Spark → <code>spark-3.2.1-bin-hadoop3.2.tgz</code> 클릭</li>
+</ol>
+</li>
+<li><p><strong>HTTP</strong> 아래에 있는 링크를 통해 Spark 다운 받는다.</p>
+<p>  <img src="/images/sparksetting/Untitled%204.png"></p>
+</li>
+<li><p>또 다른 방법 (3.2.0 버전)</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.apache.org/dyn/closer.lua/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz">여기</a>를 클릭하여 다운 받기 ( 다음 그림의 하단 링크로 다운 진행)</li>
+</ul>
+<p>  <img src="/images/sparksetting/Untitled%205.png"></p>
+</li>
+</ul>
+<hr>
+<h3 id="WinRAR-Download"><a href="#WinRAR-Download" class="headerlink" title="WinRAR Download"></a>WinRAR Download</h3><ul>
+<li><p>tgz 압축 풀기 위해 필요한 <strong>WinRAR</strong> 설치</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.rarlab.com/download.htm">WinRAR</a>  : 개인 컴퓨터 사양에 맞는 버전으로 다운로드</li>
+</ul>
+<p>  <img src="/images/sparksetting/Untitled%206.png"></p>
+</li>
+</ul>
+<hr>
+<h3 id="Winutils-Download"><a href="#Winutils-Download" class="headerlink" title="Winutils Download"></a>Winutils Download</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/cdarlint/winutils">여기</a>를 클릭하여 Winutils 다운 진행</p>
+<p>  <img src="/images/sparksetting/Untitled%207.png"></p>
+</li>
+<li><p>다운 받은 Spark의 버전과 동일한 버전의 폴더를 클릭한다. ( 3.2.0 버전 )</p>
+<p>  <img src="/images/sparksetting/Untitled%208.png"></p>
+</li>
+<li><p>다음 항목에서 winutils.exe 다운로드 받기</p>
+<p>  <img src="/images/sparksetting/Untitled%209.png"></p>
+</li>
+</ul>
+<hr>
+<h2 id="설치-하기"><a href="#설치-하기" class="headerlink" title="설치 하기"></a>설치 하기</h2><p> 위에서 다운 받은 spark, winrar, java, winutils 파일을 c드라이브 하단에 생성한 Hadoop폴더로 옮긴다. (다음 사진의 spark 파일은 무시)  </p>
+<p><img src="/images/sparksetting/Untitled%2010.png"></p>
+<ol>
+<li><p>WinRAR 관리자 권한으로 설치 진행</p>
+<ul>
+<li><p>다음과 같이 spark tgz 파일을 압축 해제한다. <code>Extract to “spark-3.2.0-bin-hadoop3.2\”</code></p>
+<p>  <img src="/images/sparksetting/Untitled%2011.png"></p>
+</li>
+</ul>
+</li>
+<li><p>압축 해제한 파일을 복사한 후 c 드라이브 하단에 spark폴더로 저장한다.</p>
+<p> <img src="/images/sparksetting/Untitled%2012.png"></p>
+<ul>
+<li><p><code>conf</code>폴더로 들어가 <code>log4.properties</code> 파일을 다음과 같이 수정한다. ( INFO → ERROR )</p>
+<p>  <img src="/images/sparksetting/Untitled%2013.png"></p>
+</li>
+</ul>
+</li>
+<li><p>c 드라이브 하단에 tmp 폴더를 생성하고 그 안에 hive 폴더도 생성한다.</p>
+<p> <img src="/images/sparksetting/Untitled%2014.png"></p>
+</li>
+<li><p>c 드라이브 하단에 winutils 폴더를 생성하고 bin 폴더를 생성 후 그 안에 winutils를 복사하여 저장한다.</p>
+<p> <img src="/images/sparksetting/Untitled%2015.png"></p>
+<p> 이 파일은 spark 실행 할 때 오류 없이 실행 되도록 파일 사용 권한을 얻도록 한다.</p>
+<ul>
+<li><p>cmd 관리자 권한으로 열기</p>
+</li>
+<li><p>다음 코드를 차례대로 입력한다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd c:\winutils\<span class="built_in">bin</span></span><br><span class="line">winutils.exe chmod <span class="number">777</span> \tmp\hive</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="환경-변수-설정하기"><a href="#환경-변수-설정하기" class="headerlink" title="환경 변수 설정하기"></a>환경 변수 설정하기</h2><ul>
+<li><p>시스템 환경 변수 설정</p>
+</li>
+<li><p>새로 만들기로 다음과 같이 추가 해준다. (변수 값 설정 시 복사 붙이기를 지향)</p>
+<ul>
+<li><p>JAVA_HOME</p>
+<p>  <img src="/images/sparksetting/Untitled%2016.png"></p>
+</li>
+<li><p>SPARK_HOME</p>
+<p>  <img src="/images/sparksetting/Untitled%2017.png"></p>
+</li>
+<li><p>HADOOP_HOME</p>
+<p>  <img src="/images/sparksetting/Untitled%2018.png"></p>
+</li>
+<li><p>PYSPARK_PYTHON</p>
+<p>  <img src="/images/sparksetting/Untitled%2019.png"></p>
+</li>
+</ul>
+</li>
+<li><p>사용자 변수의 Path 편집으로 들어가서 다음을 추가하기</p>
+<ul>
+<li><code>%SPARK_HOME%\bin</code></li>
+<li><code>%JAVA_HOME%\bin</code></li>
+</ul>
+<p>  <img src="/images/sparksetting/Untitled%2020.png"></p>
+</li>
+</ul>
+<hr>
+<h2 id="Spark-테스트"><a href="#Spark-테스트" class="headerlink" title="Spark 테스트"></a>Spark 테스트</h2><ul>
+<li><p>cmd 관리자 권한으로 실행</p>
+</li>
+<li><p><code>c:\spark</code> 경로로 들어가기</p>
+</li>
+<li><p>pyspark 실행</p>
+<p>  <img src="/images/sparksetting/Untitled%2021.png"></p>
+</li>
+<li><p>README.md 파일을 불러와서 코드가 실행되는 확인</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>rd = sc.textFile(<span class="string">&quot;README.md&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>rd.count()</span><br><span class="line"><span class="number">109</span></span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/sparksetting/Untitled%2022.png"></p>
+</li>
+</ul>
+<hr>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/04/19/sparksetting/" data-id="cl262zwhq001gzwv71765gdzi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Lee GaYeong"
+        },
+        "headline": "Hadoop Spark windows 10",
+        "image": "http://zerobbang.com/images/sparksetting/Untitled.png",
+        "keywords": "",
+        "genre": "Setting",
+        "datePublished": "2022-04-19",
+        "dateCreated": "2022-04-19",
+        "dateModified": "2022-04-19",
+        "url": "http://zerobbang.com/2022/04/19/sparksetting/",
+        "description": "📎 참고 블로그  
+JAVA 설치Spark 설치 하기 전에 JAVA가 설치되어 있어야 한다.  
+다음을 클릭해서 들어가 컴퓨터에 맞는 버전의 JAVA 설치 (ORACLE 로그인 필수)  
+
+
+관리자 권한으로 실행해서 JAVA 설치 진행
+  
+   경로에 공백이 있는 경우 추후에 문제가 생길 수 있다. 그래서 c 드라이브 안 새로 생성한 jdk 파일로 경로",
+        "wordCount": 433
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+<!--     <div class="sidebar-top"> -->
+<!--         <p>follow:</p> -->
+<!--         <ul class="social-links"> -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-twitter"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-facebook"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-stack-overflow"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-github"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-weibo"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-rss"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--         </ul> -->
+<!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/04/19/VScodeWSL/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Install VScode (wsl)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/04/18/Airflowdb/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Airflow dag 안 돌아가는 문제</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/19/VScodeWSL/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/VScodeWSL/Untitled.png)" alt="Install VScode (wsl)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/04/19/VScodeWSL/" class="title">Install VScode (wsl)</a></p>
+                            <p class="item-date"><time datetime="2022-04-19T00:00:00.000Z" itemprop="datePublished">2022-04-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/19/sparksetting/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sparksetting/Untitled.png)" alt="Hadoop Spark windows 10" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/04/19/sparksetting/" class="title">Hadoop Spark windows 10</a></p>
+                            <p class="item-date"><time datetime="2022-04-19T00:00:00.000Z" itemprop="datePublished">2022-04-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/18/Airflowdb/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Airflowdb/Untitled.png)" alt="Airflow dag 안 돌아가는 문제" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/04/18/Airflowdb/" class="title">Airflow dag 안 돌아가는 문제</a></p>
+                            <p class="item-date"><time datetime="2022-04-18T00:00:00.000Z" itemprop="datePublished">2022-04-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/17/vi/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2022/04/17/vi/" class="title">vi 편집기 명령어 정리</a></p>
+                            <p class="item-date"><time datetime="2022-04-17T00:00:00.000Z" itemprop="datePublished">2022-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/14/postgreSQLError/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/postgreSQLError/Untitled.png)" alt="PostgreSQL Error" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/04/14/postgreSQLError/" class="title">PostgreSQL Error</a></p>
+                            <p class="item-date"><time datetime="2022-04-14T00:00:00.000Z" itemprop="datePublished">2022-04-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Setting/">Setting</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+
+                <p>&copy; 2022 Lee GaYeong</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+    
+        <span id="busuanzi_container_site_uv">
+    Visitors <span id="busuanzi_value_site_uv"></span>
+</span>
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zerobbang.com/2022/04/19/sparksetting/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
