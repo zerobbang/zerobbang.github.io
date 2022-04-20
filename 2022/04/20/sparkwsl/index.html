@@ -6,25 +6,25 @@
     
 
     
-    <title>Plotly - Pie Charts | Zero</title>
+    <title>Hadoop Spark in Linux (WSL2) | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="keywords" content="" />
     
-    <meta name="description" content="✏️  추가적으로 계속 업데이트   📎 참고 페이지 : Plotly 공식 페이지   Basic Pie Charts express version  1234567import plotly.express as pxdf &#x3D; px.data.tips()# 요일별 팁 현황fig &#x3D; px.pie( df , values &#x3D; &amp;#x27;tip&amp;#x27;, names &#x3D; &amp;#">
+    <meta name="description" content="📎 참고 블로그   이전 시간에 우리는 하둡 스파크를 윈도우 환경에서 세팅을 진행했다.   이번에는 리눅스에서 진행하는 법을 살펴보자. 🍀   사전 작업Spark를 설치하기 전에 작업 할 환경을 설정해준다.    작업 파일 생성 pyspark 설치 및 경로 잡아주기 실행  전체적인 흐름은 위와 같은데 우리는 window에서 설치 할 때 spark 다운을">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Plotly - Pie Charts">
-<meta property="og:url" content="http://zerobbang.com/2022/04/09/Plotly_Pie/index.html">
+<meta property="og:title" content="Hadoop Spark in Linux (WSL2)">
+<meta property="og:url" content="http://zerobbang.com/2022/04/20/sparkwsl/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="✏️  추가적으로 계속 업데이트   📎 참고 페이지 : Plotly 공식 페이지   Basic Pie Charts express version  1234567import plotly.express as pxdf &#x3D; px.data.tips()# 요일별 팁 현황fig &#x3D; px.pie( df , values &#x3D; &amp;#x27;tip&amp;#x27;, names &#x3D; &amp;#">
+<meta property="og:description" content="📎 참고 블로그   이전 시간에 우리는 하둡 스파크를 윈도우 환경에서 세팅을 진행했다.   이번에는 리눅스에서 진행하는 법을 살펴보자. 🍀   사전 작업Spark를 설치하기 전에 작업 할 환경을 설정해준다.    작업 파일 생성 pyspark 설치 및 경로 잡아주기 실행  전체적인 흐름은 위와 같은데 우리는 window에서 설치 할 때 spark 다운을">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://zerobbang.com/images/Plotly_Pie/Untitled.png">
-<meta property="article:published_time" content="2022-04-09T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-12T12:38:22.555Z">
+<meta property="og:image" content="http://zerobbang.com/images/sparkwsl/Untitled.png">
+<meta property="article:published_time" content="2022-04-20T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-20T11:27:20.768Z">
 <meta property="article:author" content="Lee GaYeong">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zerobbang.com/images/Plotly_Pie/Untitled.png">
+<meta name="twitter:image" content="http://zerobbang.com/images/sparkwsl/Untitled.png">
     
 
     
@@ -160,19 +160,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Python/">Python</a>
+    <a class="page-title-link" href="/categories/Setting/">Setting</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-Plotly_Pie" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-sparkwsl" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Plotly - Pie Charts
+        Hadoop Spark in Linux (WSL2)
         </h1>
     
 
@@ -183,16 +183,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2022/04/09/Plotly_Pie/" class="article-date">
-       <time datetime="2022-04-09T00:00:00.000Z" itemprop="datePublished">2022-04-09</time>
+    <a href="/2022/04/20/sparkwsl/" class="article-date">
+       <time datetime="2022-04-20T00:00:00.000Z" itemprop="datePublished">2022-04-20</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2022/04/09/Plotly_Pie/" class="article-date">
-     <time datetime="2022-04-12T12:38:22.555Z" itemprop="dateModified">2022-04-12</time>
+  <a href="/2022/04/20/sparkwsl/" class="article-date">
+     <time datetime="2022-04-20T11:27:20.768Z" itemprop="dateModified">2022-04-20</time>
   </a>
 </div>
 
@@ -214,25 +214,30 @@
 
             
 
-            <p>✏️ <span style="color:#871C1C;"> 추가적으로 계속 업데이트  </span></p>
-<p>📎 참고 페이지 : <a target="_blank" rel="noopener" href="https://plotly.com/python/pie-charts/">Plotly 공식 페이지</a>  </p>
-<h3 id="Basic-Pie-Charts"><a href="#Basic-Pie-Charts" class="headerlink" title="Basic Pie Charts"></a>Basic Pie Charts</h3><ul>
-<li>express version</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.express <span class="keyword">as</span> px</span><br><span class="line"></span><br><span class="line">df = px.data.tips()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 요일별 팁 현황</span></span><br><span class="line">fig = px.pie( df , values = <span class="string">&#x27;tip&#x27;</span>, names = <span class="string">&#x27;day&#x27;</span>)</span><br><span class="line"><span class="comment"># fig.show()</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/Plotly_Pie/Untitled.png"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 성별 팁 현황</span></span><br><span class="line">fig = px.pie( df , values = <span class="string">&#x27;tip&#x27;</span>, names = <span class="string">&#x27;sex&#x27;</span>)</span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/Plotly_Pie/Untitled%201.png"></p>
-<p>values - 시각화할 값  </p>
-<p>names - 시각화할 값을 그룹으로 묶는다.  </p>
+            <p>📎 <a target="_blank" rel="noopener" href="https://dschloe.github.io/settings/spark_install_using_wsl/">참고 블로그</a>  </p>
+<p>이전 시간에 우리는 하둡 스파크를 윈도우 환경에서 세팅을 진행했다.  </p>
+<p>이번에는 리눅스에서 진행하는 법을 살펴보자. 🍀  </p>
+<h3 id="사전-작업"><a href="#사전-작업" class="headerlink" title="사전 작업"></a>사전 작업</h3><p>Spark를 설치하기 전에 작업 할 환경을 설정해준다.  </p>
+<ol>
+<li>작업 파일 생성</li>
+<li>pyspark 설치 및 경로 잡아주기</li>
+<li>실행</li>
+</ol>
+<p>전체적인 흐름은 위와 같은데 우리는 window에서 설치 할 때 spark 다운을 받았기 때문에 다음 작업은 건너뛴다.<br>⇒ 여기에서 <a target="_blank" rel="noopener" href="https://zerobbang.github.io/2022/04/19/sparksetting/">참고</a></p>
+<h3 id="Linux에서-Spark-Web-UI-띄우기"><a href="#Linux에서-Spark-Web-UI-띄우기" class="headerlink" title="Linux에서 Spark Web UI 띄우기"></a>Linux에서 Spark Web UI 띄우기</h3><p>이제 지난 시간에 spark를 설치한 폴더로 가기</p>
+<p><code>pwd</code>로 spark가 있는 경로 확인하고 기억한다.  </p>
 <ul>
-<li>graph_objects version</li>
+<li>~&#x2F;.bashrc 에서 다음과 같이 경로 잡아준다.</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> plotly.graph_objects <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">lab = [<span class="string">&#x27;Oxygen&#x27;</span>,<span class="string">&#x27;Hydrogen&#x27;</span>,<span class="string">&#x27;Carbon_Dioxide&#x27;</span>,<span class="string">&#x27;Nitrogen&#x27;</span>]</span><br><span class="line">val = [<span class="number">4500</span>, <span class="number">2500</span>, <span class="number">1053</span>, <span class="number">500</span>]</span><br><span class="line"></span><br><span class="line">fig = go.Figure()</span><br><span class="line">fig.add_trace(go.Pie(labels = lab , values = val))</span><br><span class="line">fig.show()</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java<span class="literal">-8-openjdk-amd64</span></span><br><span class="line">export SPARK_HOME=/mnt/c/spark</span><br><span class="line"><span class="comment"># 이 밑으로는 복사 붙여넣기 진행 ( 변경 되면 안되는 파트 )</span></span><br><span class="line">export PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line">export PATH=<span class="variable">$SPARK_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line">export PYSPARK_PYTHON=/usr/bin/python3</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images/Plotly_Pie/Untitled%202.png"></p>
+<p>만약에 JAVA와 Spark가 설치가 되어 있지 않다면 다음과 같이 설치하기</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> sudo apt<span class="literal">-get</span> install openjdk<span class="literal">-8-jdk</span></span><br><span class="line"><span class="variable">$</span> sudo <span class="built_in">wget</span> https://archive.apache.org/dist/spark/spark<span class="literal">-3</span>.<span class="number">2.0</span>/spark<span class="literal">-3</span>.<span class="number">2.0</span><span class="literal">-bin-hadoop3</span>.<span class="number">2</span>.tgz</span><br><span class="line"><span class="comment"># 압축 해제</span></span><br><span class="line"><span class="variable">$</span> sudo tar <span class="literal">-xvzf</span> spark<span class="literal">-3</span>.<span class="number">2.0</span><span class="literal">-bin-hadoop3</span>.<span class="number">2</span>.tgz</span><br></pre></td></tr></table></figure>
+
+<p>그리고 경로 잡을 때 java 버전이랑 Spark가 있는 경로를 자신의 컴퓨터 환경에 맞게 바꿔서 잡아주어야 한다.  </p>
+<p>경로를 다 잡아주었으면 bash파일을 업로드 <code>source ~/.bashrc</code> 해주고 pyspark를 실행한다.  </p>
+<p><img src="/images/sparkwsl/Untitled.png"></p>
+<p>종료할 때는 <code>quit( )</code> 해주면 된다.  </p>
 <hr>
 <p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
 
@@ -242,7 +247,7 @@
 
 
 
-    <a data-url="http://zerobbang.com/2022/04/09/Plotly_Pie/" data-id="cl27hqmy1000o3gv794dz2w9c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://zerobbang.com/2022/04/20/sparkwsl/" data-id="cl27hqmyo001l3gv7bmo346gg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -312,21 +317,25 @@
             "@type": "Person",
             "name": "Lee GaYeong"
         },
-        "headline": "Plotly - Pie Charts",
-        "image": "http://zerobbang.com/images/Plotly_Pie/Untitled.png",
+        "headline": "Hadoop Spark in Linux (WSL2)",
+        "image": "http://zerobbang.com/images/sparkwsl/Untitled.png",
         "keywords": "",
-        "genre": "Python",
-        "datePublished": "2022-04-09",
-        "dateCreated": "2022-04-09",
-        "dateModified": "2022-04-12",
-        "url": "http://zerobbang.com/2022/04/09/Plotly_Pie/",
-        "description": "✏️  추가적으로 계속 업데이트  
-📎 참고 페이지 : Plotly 공식 페이지  
-Basic Pie Charts
-express version
+        "genre": "Setting",
+        "datePublished": "2022-04-20",
+        "dateCreated": "2022-04-20",
+        "dateModified": "2022-04-20",
+        "url": "http://zerobbang.com/2022/04/20/sparkwsl/",
+        "description": "📎 참고 블로그  
+이전 시간에 우리는 하둡 스파크를 윈도우 환경에서 세팅을 진행했다.  
+이번에는 리눅스에서 진행하는 법을 살펴보자. 🍀  
+사전 작업Spark를 설치하기 전에 작업 할 환경을 설정해준다.  
 
-1234567import plotly.express as pxdf = px.data.tips()# 요일별 팁 현황fig = px.pie( df , values = &#x27;tip&#x27;, names = &#",
-        "wordCount": 173
+작업 파일 생성
+pyspark 설치 및 경로 잡아주기
+실행
+
+전체적인 흐름은 위와 같은데 우리는 window에서 설치 할 때 spark 다운을",
+        "wordCount": 231
     }
 </script>
 
@@ -407,20 +416,20 @@ express version
         
 <nav id="article-nav">
     
-        <a href="/2022/04/09/Anaconda/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2022/04/20/VStoGit/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            아나콘다, 파이참 설치
+            VSCode git 연동 하기
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2022/04/09/md_bolg/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2022/04/19/VScodeWSL/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">git blog에 R 마크다운 올리기</p>
+        <p class="article-nav-title">Install VScode (wsl)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -629,7 +638,7 @@ express version
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://zerobbang.com/2022/04/09/Plotly_Pie/';
+    var disqus_url = 'http://zerobbang.com/2022/04/20/sparkwsl/';
     
     (function() {
     var dsq = document.createElement('script');
