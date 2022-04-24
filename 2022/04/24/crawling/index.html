@@ -6,25 +6,26 @@
     
 
     
-    <title>PostgreSQL (WSL2) | Zero</title>
+    <title>크롤링 기초 - BeautifulSoup4 | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Crawling" />
     
-    <meta name="description" content="📎 참고 블로그    WSL 터미널에서 진행  Ubuntu 패키지 업데이트 및 업그레이드 진행   1sudo apt-get update &amp;&amp; sudo apt-get upgrade   PostgreSQL 설치   1234sudo apt install postgresql postgresql-contrib# 버전 확인psql --version">
+    <meta name="description" content="📖 공식문서  사전 세팅   123456789# 가상 환경 설정virtualenv venvsource venv&#x2F;Scripts&#x2F;activate# 라이브러리 설치pip install beautifulsoup4pip install numpy pandas matplotlib seabornpip isntall requests    크롤링할 페이지 선택 (예시 네이">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PostgreSQL (WSL2)">
-<meta property="og:url" content="http://zerobbang.com/2022/04/13/PostgreSQL/index.html">
+<meta property="og:title" content="크롤링 기초 - BeautifulSoup4">
+<meta property="og:url" content="http://zerobbang.com/2022/04/24/crawling/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="📎 참고 블로그    WSL 터미널에서 진행  Ubuntu 패키지 업데이트 및 업그레이드 진행   1sudo apt-get update &amp;&amp; sudo apt-get upgrade   PostgreSQL 설치   1234sudo apt install postgresql postgresql-contrib# 버전 확인psql --version">
+<meta property="og:description" content="📖 공식문서  사전 세팅   123456789# 가상 환경 설정virtualenv venvsource venv&#x2F;Scripts&#x2F;activate# 라이브러리 설치pip install beautifulsoup4pip install numpy pandas matplotlib seabornpip isntall requests    크롤링할 페이지 선택 (예시 네이">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://zerobbang.com/images/PostgreSQL/Untitled.png">
-<meta property="article:published_time" content="2022-04-13T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-13T14:11:06.631Z">
+<meta property="og:image" content="http://zerobbang.com/images/crawling/Untitled.png">
+<meta property="article:published_time" content="2022-04-24T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-24T14:20:41.571Z">
 <meta property="article:author" content="Lee GaYeong">
+<meta property="article:tag" content="Crawling">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zerobbang.com/images/PostgreSQL/Untitled.png">
+<meta name="twitter:image" content="http://zerobbang.com/images/crawling/Untitled.png">
     
 
     
@@ -160,19 +161,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Setting/">Setting</a>
+    <a class="page-title-link" href="/categories/Python/">Python</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-PostgreSQL" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-crawling" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        PostgreSQL (WSL2)
+        크롤링 기초 - BeautifulSoup4
         </h1>
     
 
@@ -183,16 +184,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2022/04/13/PostgreSQL/" class="article-date">
-       <time datetime="2022-04-13T00:00:00.000Z" itemprop="datePublished">2022-04-13</time>
+    <a href="/2022/04/24/crawling/" class="article-date">
+       <time datetime="2022-04-24T00:00:00.000Z" itemprop="datePublished">2022-04-24</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2022/04/13/PostgreSQL/" class="article-date">
-     <time datetime="2022-04-13T14:11:06.631Z" itemprop="dateModified">2022-04-13</time>
+  <a href="/2022/04/24/crawling/" class="article-date">
+     <time datetime="2022-04-24T14:20:41.571Z" itemprop="dateModified">2022-04-24</time>
   </a>
 </div>
 
@@ -200,6 +201,11 @@
                 
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Crawling/" rel="tag">Crawling</a>
+    </div>
+
                 
 
                 
@@ -214,75 +220,45 @@
 
             
 
-            <p>📎 <a target="_blank" rel="noopener" href="https://dschloe.github.io/sql/postgreslq_wsl2/">참고 블로그</a>  </p>
+            <p>📖 <a target="_blank" rel="noopener" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#quick-start">공식문서</a></p>
 <ul>
-<li><p>WSL 터미널에서 진행</p>
+<li><p>사전 세팅</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 가상 환경 설정</span></span><br><span class="line">virtualenv venv</span><br><span class="line">source venv/Scripts/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 라이브러리 설치</span></span><br><span class="line">pip install beautifulsoup4</span><br><span class="line">pip install numpy pandas matplotlib seaborn</span><br><span class="line">pip isntall requests</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 </li>
-<li><p>Ubuntu 패키지 업데이트 및 업그레이드 진행</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt<span class="literal">-get</span> update &amp;&amp; sudo apt<span class="literal">-get</span> upgrade</span><br></pre></td></tr></table></figure>
+<li><p>크롤링할 페이지 선택 (예시 네이버)</p>
+</li>
+<li><p>우클릭 → 검사 → Network 에서 Request Method :  GET 형태의 홈페이지 가능 (GET이 아닐 경우 다른 공부가 필요)</p>
+</li>
+</ul>
+<p><img src="/images/crawling/Untitled.png"></p>
+<ul>
+<li><p>referer 과 user-agent 를 복사하기<br><img src="/images/crawling/Untitled1.png"><br><img src="/images/crawling/Untitled2.png"><br>나는 정상적인 브라우즈를 활용해서 접근했다고 알려주기 위하함.</p>
+</li>
+<li><p>기본 코드</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 라이브러리 불러오기</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    HEADER = &#123;</span><br><span class="line">        <span class="string">&#x27;referer&#x27;</span> : <span class="string">&#x27;위에서 복사&#x27;</span></span><br><span class="line">        <span class="string">&#x27;user-agent&#x27;</span> : <span class="string">&#x27;위에서 복사&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    url = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    req = requests.get(url=url, headers=HEADER)</span><br><span class="line">    <span class="comment"># check</span></span><br><span class="line">    <span class="comment"># print(req.status_code)</span></span><br><span class="line"></span><br><span class="line">    soup = BeautifulSoup(req.text, <span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    함수(soup)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>soup를 통해서 해당 웹 페이지에서 text를 가져온다.  </p>
+<p>가져온 다음 원하는 데이터를 뽑는 함수를 만들어 적용하면 된다.  </p>
 <hr>
-</li>
-<li><p>PostgreSQL 설치</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install postgresql postgresql<span class="literal">-contrib</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 버전 확인</span></span><br><span class="line">psql <span class="literal">--version</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB에 접근 가능하도록 활성화</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 상태 확인</span></span><br><span class="line">sudo service postgresql status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 활성화</span></span><br><span class="line">sudo service postgresql <span class="built_in">start</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 종료</span></span><br><span class="line">sudo service postgresql stop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>사용자 계정 설정</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd postgres</span><br></pre></td></tr></table></figure></li>
+<h2 id="Quick-Start-실습-해보기-공식-문서"><a href="#Quick-Start-실습-해보기-공식-문서" class="headerlink" title="Quick Start 실습 해보기 (공식 문서)"></a>Quick Start 실습 해보기 (공식 문서)</h2><ul>
+<li><p>index 파일 만들기</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;The Dormouse<span class="string">&#x27;s story&lt;/title&gt;</span></span><br><span class="line"><span class="string">&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">&lt;p class=&quot;title&quot;&gt;&lt;b&gt;The Dormouse&#x27;</span>s story&lt;/b&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p <span class="keyword">class</span>=<span class="string">&quot;story&quot;</span>&gt;Once upon a time there were three little sisters; <span class="keyword">and</span> their names were</span><br><span class="line">    &lt;a href=<span class="string">&quot;http://example.com/elsie&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;sister&quot;</span> <span class="built_in">id</span>=<span class="string">&quot;link1&quot;</span>&gt;Elsie&lt;/a&gt;,</span><br><span class="line">    &lt;a href=<span class="string">&quot;http://example.com/lacie&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;sister&quot;</span> <span class="built_in">id</span>=<span class="string">&quot;link2&quot;</span>&gt;Lacie&lt;/a&gt; <span class="keyword">and</span></span><br><span class="line">    &lt;a href=<span class="string">&quot;http://example.com/tillie&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;sister&quot;</span> <span class="built_in">id</span>=<span class="string">&quot;link3&quot;</span>&gt;Tillie&lt;/a&gt;;</span><br><span class="line">    <span class="keyword">and</span> they lived at the bottom of a well.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p <span class="keyword">class</span>=<span class="string">&quot;story&quot;</span>&gt;...&lt;/p&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<hr>
-<h3 id="pgAdmin-설치"><a href="#pgAdmin-설치" class="headerlink" title="pgAdmin 설치"></a>pgAdmin 설치</h3><ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.pgadmin.org/download/pgadmin-4-windows/">pgAdmin</a> → 최신 버전 pgAdmin 4 v6.8</p>
-</li>
-<li><p>설치 시 관리자로 실행 및 <strong>install for all users</strong>로 설치 진행</p>
-</li>
-<li><p>서버 설정하기</p>
+<h3 id="간단히-실습하기"><a href="#간단히-실습하기" class="headerlink" title="간단히 실습하기"></a>간단히 실습하기</h3><ul>
+<li>기본 코드  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 기본 코드 및 전체 불러오기</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">soup = BeautifulSoup(<span class="built_in">open</span>(<span class="string">&quot;review.html&quot;</span>), <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># html 파일 전체</span></span><br><span class="line"><span class="built_in">print</span>(soup.prettify())</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>.prettify( ) : index 파일의 내용을 전체 불러온다.  </p>
 <ul>
-<li>Servers → Register → Server…</li>
-</ul>
-<p>  <img src="/images/PostgreSQL/Untitled.png"></p>
-<ul>
-<li><p>General Tab → test</p>
-<p>  <img src="/images/PostgreSQL/Untitled%201.png"></p>
+<li><p>title 추출 → class 등 가능</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#title</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># title tag 전체</span></span><br><span class="line"><span class="built_in">print</span>(soup.title)</span><br><span class="line"></span><br><span class="line"><span class="comment"># title tag 객체 이름</span></span><br><span class="line"><span class="built_in">print</span>(soup.title.name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># title 문자열</span></span><br><span class="line"><span class="built_in">print</span>(soup.title.string)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 상위 tag 이름</span></span><br><span class="line"><span class="built_in">print</span>(soup.title.parent.name)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Connection → Password 입력, Host name 127.0.0.1</p>
-<p>  <img src="/images/PostgreSQL/Untitled%202.png"></p>
-<p>  만약 에러가 난다면 다음과 같이 진행한다.  </p>
-<p>  service 활성화된 상태에서 다음 코드 입력</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> sudo <span class="literal">-u</span> postgres psql <span class="literal">-c</span> <span class="string">&quot;ALTER USER postgres PASSWORD &#x27;&lt;new-password&gt;&#x27;;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>  new-password 에 자신의 비밀 번호 입력  </p>
-<p>  다시 바꾼 비밀번호 입력하고 save</p>
-<p>  <img src="/images/PostgreSQL/Untitled%203.png"></p>
+<li><p>tag a or p</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># body tag</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># p tag 전체 ( 맨 위 )</span></span><br><span class="line"><span class="built_in">print</span>(soup.p)</span><br><span class="line"></span><br><span class="line"><span class="comment"># p tag의 class 이름 ( 맨 위 )</span></span><br><span class="line"><span class="built_in">print</span>(soup.p[<span class="string">&#x27;class&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># a tag 전체 ( 맨 위 )</span></span><br><span class="line"><span class="built_in">print</span>(soup.a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 맨 위에만 불러오기 싫으면 find_all 사용 하거나 find 이용 해서 특정한 값만 가져 오기.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># a tag 전체 find_all</span></span><br><span class="line"><span class="built_in">print</span>(soup.find_all(<span class="string">&#x27;a&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># a tag 특정 id</span></span><br><span class="line"><span class="built_in">print</span>(soup.find(<span class="built_in">id</span>=<span class="string">&#x27;link3&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># p find 이용 해보기</span></span><br><span class="line"><span class="built_in">print</span>(soup.find_all(<span class="string">&#x27;p&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(soup.find(<span class="string">&#x27;p&#x27;</span>,class_=<span class="string">&#x27;story&#x27;</span>))</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</li>
-</ul>
-<h3 id="DB-생성-및-확인"><a href="#DB-생성-및-확인" class="headerlink" title="DB 생성 및 확인"></a>DB 생성 및 확인</h3><ul>
-<li>Database 우클릭 → Create</li>
-</ul>
-<p><img src="/images/PostgreSQL/Untitled%204.png"></p>
-<p><img src="/images/PostgreSQL/Untitled%205.png"></p>
-<ul>
-<li>dataengineering 노드 → shemas → public → Tables 우클릭 → Create - Table 선택<ul>
-<li><p>General 다음과 같이 설정</p>
-<p>  <img src="/images/PostgreSQL/Untitled%206.png"></p>
-</li>
-<li><p>Columns 다음과 같이 설정</p>
-<p>  <img src="/images/PostgreSQL/Untitled%207.png"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="psql-에서-쿼리-실행"><a href="#psql-에서-쿼리-실행" class="headerlink" title="psql 에서 쿼리 실행"></a>psql 에서 쿼리 실행</h3><ul>
-<li><p>psql 실행하면 다음과 같이 된다.</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> sudo <span class="literal">-u</span> postgres psql</span><br><span class="line">psql (<span class="number">12.9</span> (Ubuntu <span class="number">12.9</span><span class="literal">-0ubuntu0</span>.<span class="number">20.04</span>.<span class="number">1</span>))</span><br><span class="line"><span class="built_in">Type</span> <span class="string">&quot;help&quot;</span> <span class="keyword">for</span> help.</span><br><span class="line"></span><br><span class="line">postgres=<span class="comment">#</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB 조회</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">postgres=<span class="comment"># \l</span></span><br><span class="line"></span><br><span class="line">List of databases</span><br><span class="line">      Name       |  Owner   | Encoding | Collate |  Ctype  |   Access privileges</span><br><span class="line"><span class="literal">-----------------</span>+<span class="literal">----------</span>+<span class="literal">----------</span>+<span class="literal">---------</span>+<span class="literal">---------</span>+<span class="literal">-----------------------</span></span><br><span class="line"> dataengineering | postgres | UTF8     | C.UTF<span class="literal">-8</span> | C.UTF<span class="literal">-8</span> |</span><br><span class="line"> postgres        | postgres | UTF8     | C.UTF<span class="literal">-8</span> | C.UTF<span class="literal">-8</span> |</span><br><span class="line"> template0       | postgres | UTF8     | C.UTF<span class="literal">-8</span> | C.UTF<span class="literal">-8</span> | =c/postgres          +</span><br><span class="line">                 |          |          |         |         | postgres=CTc/postgres</span><br><span class="line"> template1       | postgres | UTF8     | C.UTF<span class="literal">-8</span> | C.UTF<span class="literal">-8</span> | =c/postgres          +</span><br><span class="line">                 |          |          |         |         | postgres=CTc/postgres</span><br><span class="line">(<span class="number">4</span> rows)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB 연결 후 테이블 조회</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">postgres=<span class="comment"># \c dataengineering</span></span><br><span class="line">You are now connected to database <span class="string">&quot;dataengineering&quot;</span> as user <span class="string">&quot;postgres&quot;</span>.</span><br><span class="line"></span><br><span class="line">dataengineering=<span class="comment"># \dt</span></span><br><span class="line">         List of relations</span><br><span class="line"> Schema | Name  | <span class="built_in">Type</span>  |  Owner</span><br><span class="line"><span class="literal">--------</span>+<span class="literal">-------</span>+<span class="literal">-------</span>+<span class="literal">----------</span></span><br><span class="line"> public | users | table | postgres</span><br></pre></td></tr></table></figure></li>
+<li><p>부분 불러와서 원하는 값 추출</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> link <span class="keyword">in</span> soup.find_all(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(link.get(<span class="string">&#x27;href&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># text만 추출</span></span><br><span class="line"><span class="built_in">print</span>(soup.get_text())</span><br></pre></td></tr></table></figure></li>
 </ul>
 <hr>
 <p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
@@ -293,7 +269,7 @@
 
 
 
-    <a data-url="http://zerobbang.com/2022/04/13/PostgreSQL/" data-id="cl2ddsow1000opsv72dwd67e2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://zerobbang.com/2022/04/24/crawling/" data-id="cl2ddsowi0019psv7gs8h5rjl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -363,27 +339,23 @@
             "@type": "Person",
             "name": "Lee GaYeong"
         },
-        "headline": "PostgreSQL (WSL2)",
-        "image": "http://zerobbang.com/images/PostgreSQL/Untitled.png",
-        "keywords": "",
-        "genre": "Setting",
-        "datePublished": "2022-04-13",
-        "dateCreated": "2022-04-13",
-        "dateModified": "2022-04-13",
-        "url": "http://zerobbang.com/2022/04/13/PostgreSQL/",
-        "description": "📎 참고 블로그  
+        "headline": "크롤링 기초 - BeautifulSoup4",
+        "image": "http://zerobbang.com/images/crawling/Untitled.png",
+        "keywords": "Crawling",
+        "genre": "Python",
+        "datePublished": "2022-04-24",
+        "dateCreated": "2022-04-24",
+        "dateModified": "2022-04-24",
+        "url": "http://zerobbang.com/2022/04/24/crawling/",
+        "description": "📖 공식문서
 
-WSL 터미널에서 진행
-
-Ubuntu 패키지 업데이트 및 업그레이드 진행
-  1sudo apt-get update &amp;&amp; sudo apt-get upgrade
+사전 세팅
+  123456789# 가상 환경 설정virtualenv venvsource venv/Scripts/activate# 라이브러리 설치pip install beautifulsoup4pip install numpy pandas matplotlib seabornpip isntall requests
 
 
-PostgreSQL 설치
-  1234sudo apt install postgresql postgresql-contrib# 버전 확인psql --version
 
-",
-        "wordCount": 680
+크롤링할 페이지 선택 (예시 네이",
+        "wordCount": 675
     }
 </script>
 
@@ -464,20 +436,10 @@ PostgreSQL 설치
         
 <nav id="article-nav">
     
-        <a href="/2022/04/14/postgreSQLError/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            PostgreSQL Error
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2022/04/13/airflow/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2022/04/23/sparkUI/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Airflow in Windows (WSL2)</p>
+        <p class="article-nav-title">Spark Web Ui 생성하기</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -700,7 +662,7 @@ PostgreSQL 설치
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://zerobbang.com/2022/04/13/PostgreSQL/';
+    var disqus_url = 'http://zerobbang.com/2022/04/24/crawling/';
     
     (function() {
     var dsq = document.createElement('script');

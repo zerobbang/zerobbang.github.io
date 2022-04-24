@@ -6,25 +6,17 @@
     
 
     
-    <title>PostgreSQL (WSL2) | Zero</title>
+    <title>Tag: Spark | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="" />
-    
-    <meta name="description" content="📎 참고 블로그    WSL 터미널에서 진행  Ubuntu 패키지 업데이트 및 업그레이드 진행   1sudo apt-get update &amp;&amp; sudo apt-get upgrade   PostgreSQL 설치   1234sudo apt install postgresql postgresql-contrib# 버전 확인psql --version">
-<meta property="og:type" content="article">
-<meta property="og:title" content="PostgreSQL (WSL2)">
-<meta property="og:url" content="http://zerobbang.com/2022/04/13/PostgreSQL/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Zero">
+<meta property="og:url" content="http://zerobbang.com/tags/Spark/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="📎 참고 블로그    WSL 터미널에서 진행  Ubuntu 패키지 업데이트 및 업그레이드 진행   1sudo apt-get update &amp;&amp; sudo apt-get upgrade   PostgreSQL 설치   1234sudo apt install postgresql postgresql-contrib# 버전 확인psql --version">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://zerobbang.com/images/PostgreSQL/Untitled.png">
-<meta property="article:published_time" content="2022-04-13T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-13T14:11:06.631Z">
 <meta property="article:author" content="Lee GaYeong">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zerobbang.com/images/PostgreSQL/Untitled.png">
     
 
     
@@ -160,245 +152,81 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Setting/">Setting</a>
+    <i class="icon fa fa-tag"></i>Tag: <em>Spark</em>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-PostgreSQL" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2022/04/23/sparkUI/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sparkUI/Untitled.png)" alt="Spark Web Ui 생성하기" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/23/sparkUI/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Setting/">Setting</a>
+            </div>
+            <div class="date"><time datetime="2022-04-23T00:00:00.000Z" itemprop="datePublished">2022-04-23</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        PostgreSQL (WSL2)
+        <a href="/2022/04/23/sparkUI/">Spark Web Ui 생성하기</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2022/04/13/PostgreSQL/" class="article-date">
-       <time datetime="2022-04-13T00:00:00.000Z" itemprop="datePublished">2022-04-13</time>
-    </a>
-  </div>
+        <p class="article-excerpt">
+            VSCode에서 실습  
 
+작업할 폴더 생성
+  1mkdir 폴더 이름
+  
+  나는 pys_pro 이름으로 c 드라이브 하단에 생성.  
 
-<div class="article-date">
-  <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2022/04/13/PostgreSQL/" class="article-date">
-     <time datetime="2022-04-13T14:11:06.631Z" itemprop="dateModified">2022-04-13</time>
-  </a>
-</div>
-
-
-                
-
-                
-                
-
-                
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-
-            
-
-            
-
-            <p>📎 <a target="_blank" rel="noopener" href="https://dschloe.github.io/sql/postgreslq_wsl2/">참고 블로그</a>  </p>
-<ul>
-<li><p>WSL 터미널에서 진행</p>
-</li>
-<li><p>Ubuntu 패키지 업데이트 및 업그레이드 진행</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt<span class="literal">-get</span> update &amp;&amp; sudo apt<span class="literal">-get</span> upgrade</span><br></pre></td></tr></table></figure>
-<hr>
-</li>
-<li><p>PostgreSQL 설치</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install postgresql postgresql<span class="literal">-contrib</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 버전 확인</span></span><br><span class="line">psql <span class="literal">--version</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB에 접근 가능하도록 활성화</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 상태 확인</span></span><br><span class="line">sudo service postgresql status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 활성화</span></span><br><span class="line">sudo service postgresql <span class="built_in">start</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 종료</span></span><br><span class="line">sudo service postgresql stop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>사용자 계정 설정</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd postgres</span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<h3 id="pgAdmin-설치"><a href="#pgAdmin-설치" class="headerlink" title="pgAdmin 설치"></a>pgAdmin 설치</h3><ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.pgadmin.org/download/pgadmin-4-windows/">pgAdmin</a> → 최신 버전 pgAdmin 4 v6.8</p>
-</li>
-<li><p>설치 시 관리자로 실행 및 <strong>install for all users</strong>로 설치 진행</p>
-</li>
-<li><p>서버 설정하기</p>
-<ul>
-<li>Servers → Register → Server…</li>
-</ul>
-<p>  <img src="/images/PostgreSQL/Untitled.png"></p>
-<ul>
-<li><p>General Tab → test</p>
-<p>  <img src="/images/PostgreSQL/Untitled%201.png"></p>
-</li>
-<li><p>Connection → Password 입력, Host name 127.0.0.1</p>
-<p>  <img src="/images/PostgreSQL/Untitled%202.png"></p>
-<p>  만약 에러가 난다면 다음과 같이 진행한다.  </p>
-<p>  service 활성화된 상태에서 다음 코드 입력</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> sudo <span class="literal">-u</span> postgres psql <span class="literal">-c</span> <span class="string">&quot;ALTER USER postgres PASSWORD &#x27;&lt;new-password&gt;&#x27;;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>  new-password 에 자신의 비밀 번호 입력  </p>
-<p>  다시 바꾼 비밀번호 입력하고 save</p>
-<p>  <img src="/images/PostgreSQL/Untitled%203.png"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="DB-생성-및-확인"><a href="#DB-생성-및-확인" class="headerlink" title="DB 생성 및 확인"></a>DB 생성 및 확인</h3><ul>
-<li>Database 우클릭 → Create</li>
-</ul>
-<p><img src="/images/PostgreSQL/Untitled%204.png"></p>
-<p><img src="/images/PostgreSQL/Untitled%205.png"></p>
-<ul>
-<li>dataengineering 노드 → shemas → public → Tables 우클릭 → Create - Table 선택<ul>
-<li><p>General 다음과 같이 설정</p>
-<p>  <img src="/images/PostgreSQL/Untitled%206.png"></p>
-</li>
-<li><p>Columns 다음과 같이 설정</p>
-<p>  <img src="/images/PostgreSQL/Untitled%207.png"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="psql-에서-쿼리-실행"><a href="#psql-에서-쿼리-실행" class="headerlink" title="psql 에서 쿼리 실행"></a>psql 에서 쿼리 실행</h3><ul>
-<li><p>psql 실행하면 다음과 같이 된다.</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> sudo <span class="literal">-u</span> postgres psql</span><br><span class="line">psql (<span class="number">12.9</span> (Ubuntu <span class="number">12.9</span><span class="literal">-0ubuntu0</span>.<span class="number">20.04</span>.<span class="number">1</span>))</span><br><span class="line"><span class="built_in">Type</span> <span class="string">&quot;help&quot;</span> <span class="keyword">for</span> help.</span><br><span class="line"></span><br><span class="line">postgres=<span class="comment">#</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB 조회</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">postgres=<span class="comment"># \l</span></span><br><span class="line"></span><br><span class="line">List of databases</span><br><span class="line">      Name       |  Owner   | Encoding | Collate |  Ctype  |   Access privileges</span><br><span class="line"><span class="literal">-----------------</span>+<span class="literal">----------</span>+<span class="literal">----------</span>+<span class="literal">---------</span>+<span class="literal">---------</span>+<span class="literal">-----------------------</span></span><br><span class="line"> dataengineering | postgres | UTF8     | C.UTF<span class="literal">-8</span> | C.UTF<span class="literal">-8</span> |</span><br><span class="line"> postgres        | postgres | UTF8     | C.UTF<span class="literal">-8</span> | C.UTF<span class="literal">-8</span> |</span><br><span class="line"> template0       | postgres | UTF8     | C.UTF<span class="literal">-8</span> | C.UTF<span class="literal">-8</span> | =c/postgres          +</span><br><span class="line">                 |          |          |         |         | postgres=CTc/postgres</span><br><span class="line"> template1       | postgres | UTF8     | C.UTF<span class="literal">-8</span> | C.UTF<span class="literal">-8</span> | =c/postgres          +</span><br><span class="line">                 |          |          |         |         | postgres=CTc/postgres</span><br><span class="line">(<span class="number">4</span> rows)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>DB 연결 후 테이블 조회</p>
-  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">postgres=<span class="comment"># \c dataengineering</span></span><br><span class="line">You are now connected to database <span class="string">&quot;dataengineering&quot;</span> as user <span class="string">&quot;postgres&quot;</span>.</span><br><span class="line"></span><br><span class="line">dataengineering=<span class="comment"># \dt</span></span><br><span class="line">         List of relations</span><br><span class="line"> Schema | Name  | <span class="built_in">Type</span>  |  Owner</span><br><span class="line"><span class="literal">--------</span>+<span class="literal">-------</span>+<span class="literal">-------</span>+<span class="literal">----------</span></span><br><span class="line"> public | users | table | postgres</span><br></pre></td></tr></table></figure></li>
-</ul>
-<hr>
-<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
-
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="http://zerobbang.com/2022/04/13/PostgreSQL/" data-id="cl2ddsow1000opsv72dwd67e2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+window에서 가상 환경 설정하기 ( 필수 작업 )
+  12345678# 가상 환경 설치pip3 install virtualenv# 가상 환경 생성virtualenv venv# 가상 환경 실행 (Windows)sou
+        </p>
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "Lee GaYeong"
-        },
-        "headline": "PostgreSQL (WSL2)",
-        "image": "http://zerobbang.com/images/PostgreSQL/Untitled.png",
-        "keywords": "",
-        "genre": "Setting",
-        "datePublished": "2022-04-13",
-        "dateCreated": "2022-04-13",
-        "dateModified": "2022-04-13",
-        "url": "http://zerobbang.com/2022/04/13/PostgreSQL/",
-        "description": "📎 참고 블로그  
-
-WSL 터미널에서 진행
-
-Ubuntu 패키지 업데이트 및 업그레이드 진행
-  1sudo apt-get update &amp;&amp; sudo apt-get upgrade
-
-
-PostgreSQL 설치
-  1234sudo apt install postgresql postgresql-contrib# 버전 확인psql --version
-
-",
-        "wordCount": 680
-    }
-</script>
-
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-
+        </div>
     
-    </section>
+
+
+    </div></section>
 
 
 
@@ -460,29 +288,6 @@ PostgreSQL 설치
 <!--              -->
 <!--         </ul> -->
 <!--     </div> -->
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2022/04/14/postgreSQLError/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            PostgreSQL Error
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2022/04/13/airflow/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Airflow in Windows (WSL2)</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -700,13 +505,11 @@ PostgreSQL 설치
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://zerobbang.com/2022/04/13/PostgreSQL/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
