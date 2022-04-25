@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Oracle 설치 | Zero</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Oracle" />
+    
+    <meta name="description" content="orcale database 19c 버전으로 설치를 진행한다.   DownloadOracle 다운   SQL developer 다운 SQL  developer 는  java 사용하기 때문에 다음 버전을 다운로드 한다.     다운로드 받은 2개의 파일을 C 하단 파일로 옮긴다. ( 새로운 폴더 생성 )   Install WINDOWS.X64_193000_d">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle 설치">
+<meta property="og:url" content="http://zerobbang.com/2022/04/25/oracleinstall/index.html">
+<meta property="og:site_name" content="Zero">
+<meta property="og:description" content="orcale database 19c 버전으로 설치를 진행한다.   DownloadOracle 다운   SQL developer 다운 SQL  developer 는  java 사용하기 때문에 다음 버전을 다운로드 한다.     다운로드 받은 2개의 파일을 C 하단 파일로 옮긴다. ( 새로운 폴더 생성 )   Install WINDOWS.X64_193000_d">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/oracleinstall/Untitled.png">
+<meta property="article:published_time" content="2022-04-25T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-25T12:06:00.514Z">
+<meta property="article:author" content="Lee GaYeong">
+<meta property="article:tag" content="Oracle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/oracleinstall/Untitled.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Setting/">Setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sql/">Sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Sql/">Sql</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-oracleinstall" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Oracle 설치
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/04/25/oracleinstall/" class="article-date">
+       <time datetime="2022-04-25T00:00:00.000Z" itemprop="datePublished">2022-04-25</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/04/25/oracleinstall/" class="article-date">
+     <time datetime="2022-04-25T12:06:00.514Z" itemprop="dateModified">2022-04-25</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Oracle/" rel="tag">Oracle</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p><strong>orcale database 19c</strong> 버전으로 설치를 진행한다.  </p>
+<h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><p><a target="_blank" rel="noopener" href="https://www.oracle.com/kr/database/technologies/oracle19c-windows-downloads.html">Oracle 다운</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://www.oracle.com/kr/database/technologies/appdev/sqldeveloper-landing.html">SQL developer 다운</a></p>
+<p>SQL  developer 는  java 사용하기 때문에 다음 버전을 다운로드 한다.  </p>
+<p><img src="/images/oracleinstall/Untitled.png"></p>
+<ul>
+<li>다운로드 받은 2개의 파일을 C 하단 파일로 옮긴다. ( 새로운 폴더 생성 )</li>
+</ul>
+<hr>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><ul>
+<li>WINDOWS.X64_193000_db_home → setUP 관리자 권한으로 실행</li>
+<li>단일 인스턴스 데이터 베이스 생성 및 구성 선택 → 다음</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%201.png"></p>
+<ul>
+<li>데스크톱 클래스 → 다음</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%202.png"></p>
+<ul>
+<li>가상 계정 사용 → 다음</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%203.png"></p>
+<ul>
+<li>다음과 같이 전역 데이터베이스 이름 설정 및 비밀번호 설정하고 <strong>컨테이너 데이터베이스로 생성</strong> 체크 풀어주기</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%204.png"></p>
+<p>※ 다음과 같이 error가 발생했다.  ( 자세한 이유는 모르지만 개인 pc가 아니라서 생긴 문제일 수 있음. )</p>
+<p><img src="/images/oracleinstall/Untitled%205.png"></p>
+<ul>
+<li>다시 처음으로 돌아가 <strong>소프트웨어만 설정</strong>으로 진행. → 추후에 db 생성을 따로 해줘야 한다.</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%206.png"></p>
+<ul>
+<li>단일 인스턴스 데이터베이스 설치 → 다음</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%207.png"></p>
+<ul>
+<li>Enterprise Edition → 다음</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%208.png"></p>
+<ul>
+<li>가상 계정 사용 → 다음</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%209.png"></p>
+<ul>
+<li>다음</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%2010.png"></p>
+<ul>
+<li>완료 되면 설치 클릭</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%2011.png"></p>
+<p><img src="/images/oracleinstall/Untitled%2012.png"></p>
+<p><img src="/images/oracleinstall/Untitled%2013.png"></p>
+<h3 id="DB-설정"><a href="#DB-설정" class="headerlink" title="DB 설정"></a>DB 설정</h3><ul>
+<li><p>따로 DB 설정하기 → 소프트웨어만 설치하기 했을 경우</p>
+</li>
+<li><p>전역 데이터베이스 설정되어 있지 않음.</p>
+</li>
+<li><p>Oracle - OraDB19Home1 파일 생성 확인하기</p>
+<p>  <img src="/images/oracleinstall/Untitled%2014.png"></p>
+</li>
+<li><p>cmd → oracle 다운 받은 파일로 이동 → dir 로 파일 확인 해주기</p>
+<p>  <img src="/images/oracleinstall/Untitled%2015.png"></p>
+</li>
+<li><p><code>dbca</code>  입력해서 DB 생성 시작</p>
+</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%2016.png"></p>
+<ul>
+<li>다음과 같이 설정해주고 다음 클릭한다.</li>
+<li>저장 영역 유형을 ASM으로 하고 db 파일 위치랑 FRA를 다음과 같이 입력하고 다음 눌렀을 때 또 에러가 발생하면  저장 영역 유형을 파일 시스템으로 변경 후 진행한다.</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%2017.png"></p>
+<p><img src="/images/oracleinstall/Untitled%2018.png"></p>
+<ul>
+<li>다음 경고 창은 큰 상관이 없으므로 예를 눌러서 계속 진행한다.</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%2019.png"></p>
+<ul>
+<li>완료를 눌러주고 설치가 다 완료 되면 닫기를 눌러 설치를 마친다.</li>
+</ul>
+<p><img src="/images/oracleinstall/Untitled%2020.png"></p>
+<p><img src="/images/oracleinstall/Untitled%2021.png"></p>
+<ul>
+<li><p>만약에 cmd에서 들어가서 하는 방법도 에러가 나면 다음으로 들어가 위와 같은 방법으로 진행해본다.</p>
+<p>  <img src="/images/oracleinstall/Untitled%2022.png"></p>
+</li>
+</ul>
+<p>지금까지 문제 없이 잘 설치가 되었다면 끝난 것이다.<br>만약 설치 중에 취소 했다가 다시 진행하거나 설치 중에 오류가 발생해서 다시 설치를 진행해야 한다면 다시 설치 진행을 하기 보다는 기존 Oracle 삭제하고 <strong>다시 처음부터 진행</strong>하는 것을 권장한다.</p>
+<p>Oracle 삭제 방법은 다음 블로그를 참고.<br><a target="_blank" rel="noopener" href="https://dschloe.github.io/sql/oracle_deinstallation/">Oracle 삭제하기</a></p>
+<hr>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/04/25/oracleinstall/" data-id="cl2eodhfr001hxov7hb3l8iv9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Lee GaYeong"
+        },
+        "headline": "Oracle 설치",
+        "image": "http://zerobbang.com/images/oracleinstall/Untitled.png",
+        "keywords": "Oracle",
+        "genre": "Sql",
+        "datePublished": "2022-04-25",
+        "dateCreated": "2022-04-25",
+        "dateModified": "2022-04-25",
+        "url": "http://zerobbang.com/2022/04/25/oracleinstall/",
+        "description": "orcale database 19c 버전으로 설치를 진행한다.  
+DownloadOracle 다운  
+SQL developer 다운
+SQL  developer 는  java 사용하기 때문에 다음 버전을 다운로드 한다.  
+
+
+다운로드 받은 2개의 파일을 C 하단 파일로 옮긴다. ( 새로운 폴더 생성 )
+
+
+Install
+WINDOWS.X64_193000_d",
+        "wordCount": 309
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+<!--     <div class="sidebar-top"> -->
+<!--         <p>follow:</p> -->
+<!--         <ul class="social-links"> -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-twitter"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-facebook"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-stack-overflow"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-github"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-weibo"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-rss"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--         </ul> -->
+<!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/04/24/crawling/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">크롤링 기초 - BeautifulSoup4</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/25/oracleinstall/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/oracleinstall/Untitled.png)" alt="Oracle 설치" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Sql/">Sql</a></p>
+                            <p class="item-title"><a href="/2022/04/25/oracleinstall/" class="title">Oracle 설치</a></p>
+                            <p class="item-date"><time datetime="2022-04-25T00:00:00.000Z" itemprop="datePublished">2022-04-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/24/crawling/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/crawling/Untitled.png)" alt="크롤링 기초 - BeautifulSoup4" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/04/24/crawling/" class="title">크롤링 기초 - BeautifulSoup4</a></p>
+                            <p class="item-date"><time datetime="2022-04-24T00:00:00.000Z" itemprop="datePublished">2022-04-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/23/sparkUI/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sparkUI/Untitled.png)" alt="Spark Web Ui 생성하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/04/23/sparkUI/" class="title">Spark Web Ui 생성하기</a></p>
+                            <p class="item-date"><time datetime="2022-04-23T00:00:00.000Z" itemprop="datePublished">2022-04-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/21/vstogitError/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/vstogitError/Untitled.png)" alt="Vscode가 git main에 올라가지 않을 때" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/04/21/vstogitError/" class="title">Vscode가 git main에 올라가지 않을 때</a></p>
+                            <p class="item-date"><time datetime="2022-04-21T00:00:00.000Z" itemprop="datePublished">2022-04-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/04/20/VStoGit/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/VStoGit/Untitled.png)" alt="VSCode git 연동 하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/04/20/VStoGit/" class="title">VSCode git 연동 하기</a></p>
+                            <p class="item-date"><time datetime="2022-04-20T00:00:00.000Z" itemprop="datePublished">2022-04-20</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Setting/">Setting</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sql/">Sql</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crawling/" rel="tag">Crawling</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/" rel="tag">Spark</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Crawling/" style="font-size: 10px;">Crawling</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+
+                <p>&copy; 2022 Lee GaYeong</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+    
+        <span id="busuanzi_container_site_uv">
+    Visitors <span id="busuanzi_value_site_uv"></span>
+</span>
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zerobbang.com/2022/04/25/oracleinstall/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
