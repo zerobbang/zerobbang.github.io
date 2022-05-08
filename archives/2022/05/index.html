@@ -6,25 +6,17 @@
     
 
     
-    <title>Airflow dag 안 돌아가는 문제 | Zero</title>
+    <title>Archive: 2022/5 | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="" />
-    
-    <meta name="description" content="만약 안 뜨면 로그아웃 후 에 창 닫고 다시 airflow db reset후에 서버 올리고 airflow scheduler 돌리기    화살표 클릭 → trigger dag 클릭하여 실행하기   dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow home 에서 scheduler 관련 메세지가 뜨면 터미널에서 Airflow 경로">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Airflow dag 안 돌아가는 문제">
-<meta property="og:url" content="http://zerobbang.com/2022/04/18/Airflowdb/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Zero">
+<meta property="og:url" content="http://zerobbang.com/archives/2022/05/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="만약 안 뜨면 로그아웃 후 에 창 닫고 다시 airflow db reset후에 서버 올리고 airflow scheduler 돌리기    화살표 클릭 → trigger dag 클릭하여 실행하기   dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow home 에서 scheduler 관련 메세지가 뜨면 터미널에서 Airflow 경로">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://zerobbang.com/images/Airflowdb/Untitled.png">
-<meta property="article:published_time" content="2022-04-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-19T11:39:28.851Z">
 <meta property="article:author" content="Lee GaYeong">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zerobbang.com/images/Airflowdb/Untitled.png">
     
 
     
@@ -160,188 +152,76 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Setting/">Setting</a>
+    <i class="icon fa fa-archive"></i>Archive: 2022/5
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-Airflowdb" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2022/05/03/pl_sql/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/05/03/pl_sql/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Sql/">Sql</a>
+            </div>
+            <div class="date"><time datetime="2022-05-03T00:00:00.000Z" itemprop="datePublished">2022-05-03</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        Airflow dag 안 돌아가는 문제
+        <a href="/2022/05/03/pl_sql/">PL/SQL 기본</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2022/04/18/Airflowdb/" class="article-date">
-       <time datetime="2022-04-18T00:00:00.000Z" itemprop="datePublished">2022-04-18</time>
-    </a>
-  </div>
-
-
-<div class="article-date">
-  <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2022/04/18/Airflowdb/" class="article-date">
-     <time datetime="2022-04-19T11:39:28.851Z" itemprop="dateModified">2022-04-19</time>
-  </a>
-</div>
-
-
-                
-
-                
-                
-
-                
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-
-            
-
-            
-
-            <p>만약 안 뜨면 로그아웃 후 에 창 닫고 다시 airflow db reset후에 서버 올리고 airflow scheduler 돌리기  </p>
-<p><img src="/images/Airflowdb/Untitled.png"></p>
-<p>화살표 클릭 → trigger dag 클릭하여 실행하기</p>
-<p><img src="/images/Airflowdb/Untitled%201.png"></p>
-<p><img src="/images/Airflowdb/Untitled%202.png"></p>
-<p>dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow home 에서 scheduler 관련 메세지가 뜨면 터미널에서 Airflow 경로 다시 확인해보기  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo $AIRFLOW_HOME</span><br></pre></td></tr></table></figure>
-
-<p>※ web server, web sechduler 둘 다 echo 경로 잡아주고 시작해야 정상적으로 돌아간다.  </p>
-<ul>
-<li>airflow dag 파일 없애려면 다음과 같이 실행해보기</li>
-</ul>
-<ol>
-<li><code>airflow db init</code></li>
-<li>계정 등록</li>
-<li>.cfg → load_examples &#x3D; False 설정</li>
-<li><code>airflow db reset</code></li>
-<li><code>airflow webserver</code> 진행</li>
-</ol>
-<hr>
-<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
-
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="http://zerobbang.com/2022/04/18/Airflowdb/" data-id="cl2xeegay0000tsv7dk6rgtzh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        <p class="article-excerpt">
+            PL&#x2F;SQLSQL을 확장한 절차적 언어  
+프로시저 생성자와 SQL을 통합한 개념  
+pl&#x2F;sql 블록을 실행시키면 서버 프로세서에서 SQL 과 프로시저로 분류하여 실행한다.
+기본 코드1234567891011121314151617-- DBMS_OUTPUT 실행하기 위한 조건SET SERVEROUTPUT ON-- 경과 시간 출력SET TIM
+        </p>
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "Lee GaYeong"
-        },
-        "headline": "Airflow dag 안 돌아가는 문제",
-        "image": "http://zerobbang.com/images/Airflowdb/Untitled.png",
-        "keywords": "",
-        "genre": "Setting",
-        "datePublished": "2022-04-18",
-        "dateCreated": "2022-04-18",
-        "dateModified": "2022-04-19",
-        "url": "http://zerobbang.com/2022/04/18/Airflowdb/",
-        "description": "만약 안 뜨면 로그아웃 후 에 창 닫고 다시 airflow db reset후에 서버 올리고 airflow scheduler 돌리기  
-
-화살표 클릭 → trigger dag 클릭하여 실행하기
-
-
-dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow home 에서 scheduler 관련 메세지가 뜨면 터미널에서 Airflow 경로 ",
-        "wordCount": 102
-    }
-</script>
-
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-
+        </div>
     
-    </section>
+
+
+    </div></section>
 
 
 
@@ -403,29 +283,6 @@ dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow h
 <!--              -->
 <!--         </ul> -->
 <!--     </div> -->
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2022/04/19/sparksetting/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Hadoop Spark windows 10
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2022/04/17/vi/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">vi 편집기 명령어 정리</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -643,13 +500,11 @@ dag파일은 올라왔는데 안되면 scheduler 문제일 수 있다. airflow h
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://zerobbang.com/2022/04/18/Airflowdb/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
