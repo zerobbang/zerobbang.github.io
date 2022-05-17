@@ -6,16 +6,23 @@
     
 
     
-    <title>Archive | Zero</title>
+    <title>Python schedule 기초 | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Zero">
-<meta property="og:url" content="http://zerobbang.com/archives/index.html">
+    <meta name="keywords" content="Python" />
+    
+    <meta name="description" content="설치 하기1pip install schedule  Schedule 함수 불러오기1import schedule  Schedule 함수 사용하기시간 단위 12345678910# 초 단위schedule.every(10).seconds.do(함수이름)# 분 단위schedule.every(10).minutes.do(함수이름)# 시 단위schedule.every(10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python schedule 기초">
+<meta property="og:url" content="http://zerobbang.com/2022/05/17/python_schedule/index.html">
 <meta property="og:site_name" content="Zero">
+<meta property="og:description" content="설치 하기1pip install schedule  Schedule 함수 불러오기1import schedule  Schedule 함수 사용하기시간 단위 12345678910# 초 단위schedule.every(10).seconds.do(함수이름)# 분 단위schedule.every(10).minutes.do(함수이름)# 시 단위schedule.every(10">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-17T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-17T13:00:46.850Z">
 <meta property="article:author" content="Lee GaYeong">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
     
 
@@ -152,565 +159,188 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive
+    <a class="page-title-link" href="/categories/Python/">Python</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-python_schedule" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/05/17/python_schedule/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/05/17/python_schedule/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2022-05-17T00:00:00.000Z" itemprop="datePublished">2022-05-17</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2022/05/17/python_schedule/">Python schedule 기초</a>
+        Python schedule 기초
         </h1>
     
 
-        <p class="article-excerpt">
-            설치 하기1pip install schedule
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/05/17/python_schedule/" class="article-date">
+       <time datetime="2022-05-17T00:00:00.000Z" itemprop="datePublished">2022-05-17</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/05/17/python_schedule/" class="article-date">
+     <time datetime="2022-05-17T13:00:46.850Z" itemprop="dateModified">2022-05-17</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Python/" rel="tag">Python</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h3 id="설치-하기"><a href="#설치-하기" class="headerlink" title="설치 하기"></a>설치 하기</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install schedule</span><br></pre></td></tr></table></figure>
+
+<h3 id="Schedule-함수-불러오기"><a href="#Schedule-함수-불러오기" class="headerlink" title="Schedule 함수 불러오기"></a>Schedule 함수 불러오기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> schedule</span><br></pre></td></tr></table></figure>
+
+<h3 id="Schedule-함수-사용하기"><a href="#Schedule-함수-사용하기" class="headerlink" title="Schedule 함수 사용하기"></a>Schedule 함수 사용하기</h3><p><strong>시간 단위</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 초 단위</span></span><br><span class="line">schedule.every(<span class="number">10</span>).seconds.do(함수이름)</span><br><span class="line"><span class="comment"># 분 단위</span></span><br><span class="line">schedule.every(<span class="number">10</span>).minutes.do(함수이름)</span><br><span class="line"><span class="comment"># 시 단위</span></span><br><span class="line">schedule.every(<span class="number">10</span>).hour.do(함수이름)</span><br><span class="line"><span class="comment"># 일 단위</span></span><br><span class="line">schedule.every(<span class="number">10</span>).days.do(함수이름)</span><br><span class="line"><span class="comment"># 주 단위</span></span><br><span class="line">schedule.every(<span class="number">10</span>).weeks.do(함수이름)</span><br></pre></td></tr></table></figure>
+
+<p><strong>원하는 타임 설정</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">schedule.every().day.at(<span class="string">&quot;13:00&quot;</span>).do(함수이름)</span><br><span class="line"><span class="comment"># 초 단위까지 설정 가능</span></span><br><span class="line">schedule.every().day.at(<span class="string">&quot;13:00:00&quot;</span>).do(함수이름)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 요일 설정 ( 소문자 입력 )</span></span><br><span class="line">schedule.every().sunday.at(<span class="string">&quot;13:00&quot;</span>).do(함수이름)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Schedule-돌리기"><a href="#Schedule-돌리기" class="headerlink" title="Schedule 돌리기"></a>Schedule 돌리기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> schedule</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;Hi&quot;</span>)</span><br><span class="line"></span><br><span class="line">schedule.every(<span class="number">1</span>).minutes.do(test)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 무한 루프 중요</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">	schedule.run_pending()</span><br><span class="line">	time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://coding-kindergarten.tistory.com/164">[참고]</a></p>
+<hr>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/05/17/python_schedule/" data-id="cl3a60qmz002axwv7275cbgrx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Lee GaYeong"
+        },
+        "headline": "Python schedule 기초",
+        "image": "http://zerobbang.com",
+        "keywords": "Python",
+        "genre": "Python",
+        "datePublished": "2022-05-17",
+        "dateCreated": "2022-05-17",
+        "dateModified": "2022-05-17",
+        "url": "http://zerobbang.com/2022/05/17/python_schedule/",
+        "description": "설치 하기1pip install schedule
 
 Schedule 함수 불러오기1import schedule
 
 Schedule 함수 사용하기시간 단위
-12345678910# 초 단위schedule.every(10).seconds.do(함수이름)# 분 단위schedule.every(10).minutes.do(함수이름)# 시 단위schedule.every(10
-        </p>
-    </div>
+12345678910# 초 단위schedule.every(10).seconds.do(함수이름)# 분 단위schedule.every(10).minutes.do(함수이름)# 시 단위schedule.every(10",
+        "wordCount": 185
+    }
+</script>
+
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/05/13/response_error/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/05/13/response_error/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Error/">Error</a>
-            </div>
-            <div class="date"><time datetime="2022-05-13T00:00:00.000Z" itemprop="datePublished">2022-05-13</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/05/13/response_error/">TypeError - &#39;Response&#39; object is not subscriptable 에러</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            open API를 처음 사용해보면서 값을 받아올 때 다음과 같은 에러와 마주했다.  
-1TypeError: &#x27;Response&#x27; object is not subscriptable
-
-Response는 open API에서 받아온 값의 집합인데 다음 문서를 통해서 해당 open API마다 불러들어와지는 Response를 살펴 볼 수 있다.  
-위
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/05/10/prophet_error/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/prophet_error/Untitled.png)" alt="Python ARIMA &amp; fbprophet 설치 오류" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/05/10/prophet_error/">0</span>
-    
-</span>
 
 
     
-</a>
+    </section>
 
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Error/">Error</a>
-            </div>
-            <div class="date"><time datetime="2022-05-10T00:00:00.000Z" itemprop="datePublished">2022-05-10</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/05/10/prophet_error/">Python ARIMA &amp; fbprophet 설치 오류</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            ARIMA 설치1pip install statsmodels
-
-Facebook prophet123pip install cythonpip install &quot;pystan&lt;2.18&quot;pip install fbprophet
-
-facdbook prophet을 사용하기 위해 차례대로 cython과 pystan을 설치해주었다.cython을 설치가 정상
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/05/03/pl_sql/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/05/03/pl_sql/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-05-03T00:00:00.000Z" itemprop="datePublished">2022-05-03</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/05/03/pl_sql/">PL/SQL 기본</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            PL&#x2F;SQLSQL을 확장한 절차적 언어  
-프로시저 생성자와 SQL을 통합한 개념  
-pl&#x2F;sql 블록을 실행시키면 서버 프로세서에서 SQL 과 프로시저로 분류하여 실행한다.
-기본 코드1234567891011121314151617-- DBMS_OUTPUT 실행하기 위한 조건SET SERVEROUTPUT ON-- 경과 시간 출력SET TIM
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/29/sql_g/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/29/sql_g/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-29T00:00:00.000Z" itemprop="datePublished">2022-04-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/29/sql_g/">SQL 계층형 쿼리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            계층형 쿼리란 ?한 테이블에 담겨 있는 데이터들이 서로 상하 관계를 이루려 존재할 때를 말한다.  
-회사 조직도를 예로 살펴보면 사장 및에 부장, 부장 밑에 과장, 대리가 있고 이는 부서별로 각각 존재한다.  
-이 중 경영 부서 안에 회계팀, 인사팀, 재무 1팀, 재무 2팀이 있다고 하면 여기서 부모는 경영부, 자식은 회계팀, 인사팀, 재무 1팀, 재무 2
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/28/sql_join/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/sql_join/join-outer.png)" alt="SQL JOIN 정리" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/28/sql_join/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-28T00:00:00.000Z" itemprop="datePublished">2022-04-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/28/sql_join/">SQL JOIN 정리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            JOIN에 대해 간단히 설명하면 다음과 같다.  
-보통 메인 쿼리를 a, 서브 쿼리를 b로 명칭 한다.  
-조인 연산자에 따른 구분 : 동등 조인, 안티 조인  
-조인 대상에 따른 구분 : 셀프 조인  
-조인 조건에 따른 구분 : 내부 조인, 외부 조인, 세미 조인, 카타시안 조인  
-기타 : ANSI 조인  
-조인의 관계를 그림으로 간단하게 표현하면 다음
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/28/sql_sub/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/sql_sub/Untitled.png)" alt="SQL 서브 쿼리 정리" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/28/sql_sub/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-28T00:00:00.000Z" itemprop="datePublished">2022-04-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/28/sql_sub/">SQL 서브 쿼리 정리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            SQL 문장 안 보조로 사용되는 또 다른 SELECT 문을 의미한다.SELECT or FROM or WHERE 절에 서브 쿼리가 들어 갈 수 있다.서브 쿼리 안에 서브 쿼리가 들어 갈 수 있다. (중첩 서브 쿼리)  
-SQL 서브 쿼리 종류
-메인 쿼리와의 연관성
-
-연관성이 없는 서브 쿼리
-연관성이 있는 서브 쿼리
-
-
-형태에 따라
-
-일반 서브 쿼리 (SELE
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/28/sql_window/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/28/sql_window/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-28T00:00:00.000Z" itemprop="datePublished">2022-04-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/28/sql_window/">SQL - WINDOW FUNCTION</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            WINDOW 함수WINDOW 함수는 분석 함수 또는 순위 함수라고 하며 OVER를 이용해 작성하기 때문에 OVER 함수라고 말하기도 한다.  
-기존 RDBMS에서는 컬럼간의 연산, 비교, 연결 또는 집합 조회는 가능하지만 행간의 연산은 복잡하다.  
-이는 WINDOW 함수를 사용하면 쉽게 해결할 수 있다.  
-
-WINDOW 함수 종류
-
-
-
-
-구분
-함수 종류
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/25/oracleinstall/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/oracleinstall/Untitled.png)" alt="Oracle 설치" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/25/oracleinstall/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Setting/">Setting</a>
-            </div>
-            <div class="date"><time datetime="2022-04-25T00:00:00.000Z" itemprop="datePublished">2022-04-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/25/oracleinstall/">Oracle 설치</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            orcale database 19c 버전으로 설치를 진행한다.  
-DownloadOracle 다운  
-SQL developer 다운
-SQL  developer 는  java 사용하기 때문에 다음 버전을 다운로드 한다.  
-
-
-다운로드 받은 2개의 파일을 C 하단 파일로 옮긴다. ( 새로운 폴더 생성 )
-
-
-Install
-WINDOWS.X64_193000_d
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/25/sql_basic/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/25/sql_basic/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-25T00:00:00.000Z" itemprop="datePublished">2022-04-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/25/sql_basic/">SQL 기본 (Table , View 생성 및 조회 , SELECT/INSERT/UPDATE문 )</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Table 생성12345CREATE TABLE [스키마.]t_name (			col1  data_type1			, col2 data_type2			, ...) [TABLESPACE 테이블 스페이스 명];
-
-[ ] 생략 가능 한 내용이며, 스키마 생략하면 현재  로그인한 스키마 이름으로 생성된다.  그리고 TABLESPACE는 해당 사용자의 DEFAULT값으
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-    <nav id="page-nav">
-        <span class="pages">Page 1 of 5</span>
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/2/">&raquo;</a>
-    </nav>
 
 
                         </div>
@@ -771,6 +401,19 @@ WINDOWS.X64_193000_d
 <!--              -->
 <!--         </ul> -->
 <!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/05/13/response_error/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">TypeError - &#39;Response&#39; object is not subscriptable 에러</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -988,11 +631,13 @@ WINDOWS.X64_193000_d
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://zerobbang.com/2022/05/17/python_schedule/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
