@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>JAVA - 얕은 복사와 깊은 복사 | Zero</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Java" />
+    
+    <meta name="description" content="얕은 복사 : 주소 값만 복사 깊은 복사  : 실제 데이터 값을 새로운 메모리에 복사 Main class 와 별도의 다른 copy class 을 만들어 다음과 같이 함수를 만든다. 123456789101112131415public class copy &amp;#123;	String name;	int age;		&#x2F;&#x2F; 이름 리턴하는 함수	public String ge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA - 얕은 복사와 깊은 복사">
+<meta property="og:url" content="http://zerobbang.com/2022/06/15/shallow_deep_copy/index.html">
+<meta property="og:site_name" content="Zero">
+<meta property="og:description" content="얕은 복사 : 주소 값만 복사 깊은 복사  : 실제 데이터 값을 새로운 메모리에 복사 Main class 와 별도의 다른 copy class 을 만들어 다음과 같이 함수를 만든다. 123456789101112131415public class copy &amp;#123;	String name;	int age;		&#x2F;&#x2F; 이름 리턴하는 함수	public String ge">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/shallow_deep_copy/Untitled.png">
+<meta property="article:published_time" content="2022-06-15T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-19T14:17:08.357Z">
+<meta property="article:author" content="Lee GaYeong">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/shallow_deep_copy/Untitled.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Error/">Error</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Setting/">Setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sql/">Sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Java/">Java</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-shallow_deep_copy" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        JAVA - 얕은 복사와 깊은 복사
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/06/15/shallow_deep_copy/" class="article-date">
+       <time datetime="2022-06-15T00:00:00.000Z" itemprop="datePublished">2022-06-15</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/06/15/shallow_deep_copy/" class="article-date">
+     <time datetime="2022-06-19T14:17:08.357Z" itemprop="dateModified">2022-06-19</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Java/" rel="tag">Java</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p><strong>얕은 복사</strong> : 주소 값만 복사</p>
+<p><strong>깊은 복사</strong>  : 실제 데이터 값을 새로운 메모리에 복사</p>
+<p>Main class 와 별도의 다른 copy class 을 만들어 다음과 같이 함수를 만든다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">copy</span> &#123;</span><br><span class="line">	String name;</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 이름 리턴하는 함수</span></span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 이름 변경하는 함수</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="얕은-복사-Shallow-Copy"><a href="#얕은-복사-Shallow-Copy" class="headerlink" title="얕은 복사 Shallow Copy"></a>얕은 복사 Shallow Copy</h3><p>Main Class 파일에서 다음과 같이 복사 한 후 결과를 확인 해 보자.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// copy 객체 인스턴스화</span></span><br><span class="line"><span class="type">copy</span> <span class="variable">orginal</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">copy</span>();</span><br><span class="line"><span class="comment">// Shallow Copy</span></span><br><span class="line"><span class="type">copy</span> <span class="variable">copy</span> <span class="operator">=</span> original;</span><br><span class="line"></span><br><span class="line">copy.setName(<span class="string">&quot;gayeong&quot;</span>);</span><br><span class="line"></span><br><span class="line">System.out.println(<span class="string">&quot;Shallow Copy&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Original value : &quot;</span>+original.getName());</span><br><span class="line">System.out.println(<span class="string">&quot;Copy value : &quot;</span>+copy.getName());</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/shallow_deep_copy/Untitled.png"></p>
+<p>인스턴스 copy에서만 이름을 변경.</p>
+<p>얕은 복사는 주소 값만 복사하여 저장하기 때문에 copy의 이름만 변경했어도 같은 메모리 주소를 갖고 있는 Original에도 동일하게 변경된다.</p>
+<h3 id="깊은-복사-Deep-Copy"><a href="#깊은-복사-Deep-Copy" class="headerlink" title="깊은 복사 Deep Copy"></a>깊은 복사 Deep Copy</h3><p>깊은 복사를 하는 방법에는 여러가지가 존재한다.</p>
+<p>대표적으로는 Cloneable 인터페이스를 사용하는 방법과 복사 생성자, 복사 팩터리 등이 있는데 우선, Cloneable 를 이용해서 해보자</p>
+<p>Cloneable 인터페이스를 확장하려면 다음과 같이 추가 코딩이 필요하다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">copy</span> <span class="keyword">implements</span> <span class="title class_">Cloneable</span>&#123;</span><br></pre></td></tr></table></figure>
+<pre><code>생략 (위 copy class와 동일 )
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	protected copy clone() throws CloneNotSupportedException&#123;</span><br><span class="line">		return (copy) super.clone();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<p>Cloneable 인터페이스를 확장 한 후,  clone()을 오버라이드로 리턴 값으로 반환 해야한다.</p>
+<p>그리고 Main Class에서도 다음과 같이 변경해주어야 한다.</p>
+<p><code>public static void main(String[] args) throws CloneNotSupportedException &#123; ``` &#125;</code></p>
+<p>위 처럼 CloneNotSupportedException을 던져주지 않으면 <code>Unhandled exception type CloneNotSupportedException error를</code> 반환한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// In Main class</span></span><br><span class="line"><span class="type">copy</span> <span class="variable">original</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">copy</span>();</span><br><span class="line"><span class="comment">// Deep Copy</span></span><br><span class="line"><span class="type">copy</span> <span class="variable">copyDeep</span> <span class="operator">=</span> original.clone();</span><br><span class="line">		</span><br><span class="line">copyDeep.setName(<span class="string">&quot;Tina&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Deep Copy&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;Original value : &quot;</span>+original.getName());</span><br><span class="line">System.out.println(<span class="string">&quot;Copy value : &quot;</span>+copyDeep.getName());</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/shallow_deep_copy/Untitled%201.png"></p>
+<p>Cloneable 인터페이스를 사용하려면 다음과 같이 사용하면 된다.</p>
+<p>그리고 또 다른 방법으로는 try ~ catch 문을 통해서 CloneNotSupportedException을 cathca로 예외처리 하는 방법이 있다.</p>
+<p>하지만 Cloneable는 지양하는 것이 좋다.</p>
+<p><strong>Cloneable</strong></p>
+<ul>
+<li>복제 가능 여부를 나타내는 class이다. (믹스인 인터페이스)</li>
+<li>Cloneable 구현하지 않은 인스턴스에서 clone을 호출하면 CloneNotSupportedException을 던진다.</li>
+<li>Cloneable 인터페이스는 clone() 메서드의 동작방식 정한다.</li>
+</ul>
+<p><strong>Cloneable 문제점</strong></p>
+<ul>
+<li>상위Object 클래스에 protected 접근자로 된 clone() 메서드가 존재하는데 이를 오버라이드 해줘야 한다.</li>
+<li>생성자를 호출하지 않고 객체를 생성할 수 있게 되어버린다.</li>
+</ul>
+<h3 id="복사-생성자와-복사-팩토리"><a href="#복사-생성자와-복사-팩토리" class="headerlink" title="복사 생성자와 복사 팩토리"></a>복사 생성자와 복사 팩토리</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 복사 생성자</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">copy</span> <span class="params">(copy original)</span>&#123;</span><br><span class="line">	<span class="built_in">this</span>.name = original.name;</span><br><span class="line">	<span class="built_in">this</span>.age = original.age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 복사 팩토리</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> copy <span class="title function_">copyFun</span><span class="params">(copy original)</span> &#123;</span><br><span class="line">		<span class="type">copy</span> <span class="variable">copy</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">copy</span>();</span><br><span class="line">		copy.name = original.name;</span><br><span class="line">		copy.age = original.age;</span><br><span class="line">		<span class="keyword">return</span> copy;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// in Main Class</span></span><br><span class="line"><span class="type">copy</span> <span class="variable">copyConstructor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">copy</span>(original);</span><br><span class="line"><span class="type">copy</span> <span class="variable">copyFactory</span> <span class="operator">=</span> copy.copyFun(original);</span><br><span class="line"></span><br><span class="line">copyConstructor.setName(<span class="string">&quot;Amy&quot;</span>);</span><br><span class="line">copyFactory.setName(<span class="string">&quot;Diane&quot;</span>);</span><br><span class="line">		</span><br><span class="line">System.out.println(original.getName());</span><br><span class="line">System.out.println(copyConstructor.getName());</span><br><span class="line">System.out.println(copyFactory.getName());</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/shallow_deep_copy/Untitled%202.png"></p>
+<hr>
+<h3 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h3><ul>
+<li>인터페이스 만들 때는 절대 Cloneablel 확장해서는 안된다. (지양)</li>
+<li>final Class라면 Clonable을 구현해도 위험은 크지 않지만,  성능 최적화 관점으로 보면 검토한 후에 드물게 허용해야 한다.</li>
+</ul>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://jake-seo-dev.tistory.com/31">[참고 블로그 1]</a></p>
+<p><a target="_blank" rel="noopener" href="https://zzang9ha.tistory.com/372">[참고 블로그 2]</a></p>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/06/15/shallow_deep_copy/" data-id="cl4le88nb0000usv76jm25218" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Lee GaYeong"
+        },
+        "headline": "JAVA - 얕은 복사와 깊은 복사",
+        "image": "http://zerobbang.com/images/shallow_deep_copy/Untitled.png",
+        "keywords": "Java",
+        "genre": "Java",
+        "datePublished": "2022-06-15",
+        "dateCreated": "2022-06-15",
+        "dateModified": "2022-06-19",
+        "url": "http://zerobbang.com/2022/06/15/shallow_deep_copy/",
+        "description": "얕은 복사 : 주소 값만 복사
+깊은 복사  : 실제 데이터 값을 새로운 메모리에 복사
+Main class 와 별도의 다른 copy class 을 만들어 다음과 같이 함수를 만든다.
+123456789101112131415public class copy &#123;	String name;	int age;		// 이름 리턴하는 함수	public String ge",
+        "wordCount": 612
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+<!--     <div class="sidebar-top"> -->
+<!--         <p>follow:</p> -->
+<!--         <ul class="social-links"> -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-twitter"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-facebook"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-stack-overflow"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-github"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-weibo"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-rss"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--         </ul> -->
+<!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/06/14/sts4_install/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">이클립스 sts4, jdk 설치</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/15/shallow_deep_copy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/shallow_deep_copy/Untitled.png)" alt="JAVA - 얕은 복사와 깊은 복사" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2022/06/15/shallow_deep_copy/" class="title">JAVA - 얕은 복사와 깊은 복사</a></p>
+                            <p class="item-date"><time datetime="2022-06-15T00:00:00.000Z" itemprop="datePublished">2022-06-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/14/sts4_install/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sts4_install/Untitled.png)" alt="이클립스 sts4, jdk 설치" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/14/sts4_install/" class="title">이클립스 sts4, jdk 설치</a></p>
+                            <p class="item-date"><time datetime="2022-06-14T00:00:00.000Z" itemprop="datePublished">2022-06-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/22/heroku_romote_error/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Error/">Error</a></p>
+                            <p class="item-title"><a href="/2022/05/22/heroku_romote_error/" class="title">heroku does not appear to be a git repo Error</a></p>
+                            <p class="item-date"><time datetime="2022-05-22T00:00:00.000Z" itemprop="datePublished">2022-05-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/19/request_error/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Error/">Error</a></p>
+                            <p class="item-title"><a href="/2022/05/19/request_error/" class="title">Too many API requests Error 해결</a></p>
+                            <p class="item-date"><time datetime="2022-05-19T00:00:00.000Z" itemprop="datePublished">2022-05-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/05/18/virtualenv_Error/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Error/">Error</a></p>
+                            <p class="item-title"><a href="/2022/05/18/virtualenv_Error/" class="title">virtualenv command not found Error</a></p>
+                            <p class="item-date"><time datetime="2022-05-18T00:00:00.000Z" itemprop="datePublished">2022-05-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Error/">Error</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Setting/">Setting</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sql/">Sql</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Api/" rel="tag">Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arima/" rel="tag">Arima</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crawling/" rel="tag">Crawling</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eclipse/" rel="tag">Eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenAPI/" rel="tag">OpenAPI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/" rel="tag">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sql/" rel="tag">Sql</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fbprophet/" rel="tag">fbprophet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jdk/" rel="tag">jdk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualenv/" rel="tag">virtualenv</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Api/" style="font-size: 10px;">Api</a> <a href="/tags/Arima/" style="font-size: 10px;">Arima</a> <a href="/tags/Crawling/" style="font-size: 10px;">Crawling</a> <a href="/tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/Error/" style="font-size: 13.33px;">Error</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/OpenAPI/" style="font-size: 10px;">OpenAPI</a> <a href="/tags/Oracle/" style="font-size: 16.67px;">Oracle</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sql/" style="font-size: 20px;">Sql</a> <a href="/tags/fbprophet/" style="font-size: 10px;">fbprophet</a> <a href="/tags/heroku/" style="font-size: 10px;">heroku</a> <a href="/tags/jdk/" style="font-size: 10px;">jdk</a> <a href="/tags/virtualenv/" style="font-size: 10px;">virtualenv</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+
+                <p>&copy; 2022 Lee GaYeong</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+    
+        <span id="busuanzi_container_site_uv">
+    Visitors <span id="busuanzi_value_site_uv"></span>
+</span>
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zerobbang.com/2022/06/15/shallow_deep_copy/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
