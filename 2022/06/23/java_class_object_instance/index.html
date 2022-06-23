@@ -6,22 +6,25 @@
     
 
     
-    <title>Plotly - Subplot | Zero</title>
+    <title>JAVA - 객체와 클래스, 인스턴스 | Zero</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Object,Class,Instance" />
     
-    <meta name="description" content="✏️  추가적으로 계속 업데이트   subplotsPlotly에서 그래프를 행과 열의 형태로 시각화 하기 위해서는 다음 메서드를 따로 불러와야 한다.   1from plotly.subplots import make_subplots  기본 틀은 다음과 같이 행과 열의 수를 지정해주면 된다.   1fig &#x3D; make_subplots(rows &#x3D; , cols &#x3D;">
+    <meta name="description" content="♦ 중요 - 객체 vs 클래스 vs 인스턴스  객체 : 구현할 실제 대상클래스 : 객체 만들기 위한 설계도인스터스 : 설계도를 통해 구현한 실체  객체 Object우리가 설계도를 통해 구현할 실제 대상 → 클래스의 인스턴스  클래스 ( 설계도 )에서 선언한 그대로 생설될 실제 대상  객체 지향 프로그래밍 관점에서 보면 클래스의 타입으로 선언 → 객체   1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Plotly - Subplot">
-<meta property="og:url" content="http://zerobbang.com/2022/04/12/P_Sub/index.html">
+<meta property="og:title" content="JAVA - 객체와 클래스, 인스턴스">
+<meta property="og:url" content="http://zerobbang.com/2022/06/23/java_class_object_instance/index.html">
 <meta property="og:site_name" content="Zero">
-<meta property="og:description" content="✏️  추가적으로 계속 업데이트   subplotsPlotly에서 그래프를 행과 열의 형태로 시각화 하기 위해서는 다음 메서드를 따로 불러와야 한다.   1from plotly.subplots import make_subplots  기본 틀은 다음과 같이 행과 열의 수를 지정해주면 된다.   1fig &#x3D; make_subplots(rows &#x3D; , cols &#x3D;">
+<meta property="og:description" content="♦ 중요 - 객체 vs 클래스 vs 인스턴스  객체 : 구현할 실제 대상클래스 : 객체 만들기 위한 설계도인스터스 : 설계도를 통해 구현한 실체  객체 Object우리가 설계도를 통해 구현할 실제 대상 → 클래스의 인스턴스  클래스 ( 설계도 )에서 선언한 그대로 생설될 실제 대상  객체 지향 프로그래밍 관점에서 보면 클래스의 타입으로 선언 → 객체   1">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-12T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-12T12:36:07.697Z">
+<meta property="article:published_time" content="2022-06-23T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-23T14:57:28.461Z">
 <meta property="article:author" content="Lee GaYeong">
+<meta property="article:tag" content="Object">
+<meta property="article:tag" content="Class">
+<meta property="article:tag" content="Instance">
 <meta name="twitter:card" content="summary">
     
 
@@ -158,19 +161,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Python/">Python</a>
+    <a class="page-title-link" href="/categories/Java/">Java</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-P_Sub" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-java_class_object_instance" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Plotly - Subplot
+        JAVA - 객체와 클래스, 인스턴스
         </h1>
     
 
@@ -181,16 +184,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2022/04/12/P_Sub/" class="article-date">
-       <time datetime="2022-04-12T00:00:00.000Z" itemprop="datePublished">2022-04-12</time>
+    <a href="/2022/06/23/java_class_object_instance/" class="article-date">
+       <time datetime="2022-06-23T00:00:00.000Z" itemprop="datePublished">2022-06-23</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2022/04/12/P_Sub/" class="article-date">
-     <time datetime="2022-04-12T12:36:07.697Z" itemprop="dateModified">2022-04-12</time>
+  <a href="/2022/06/23/java_class_object_instance/" class="article-date">
+     <time datetime="2022-06-23T14:57:28.461Z" itemprop="dateModified">2022-06-23</time>
   </a>
 </div>
 
@@ -198,6 +201,11 @@
                 
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Class/" rel="tag">Class</a>, <a class="tag-link-link" href="/tags/Instance/" rel="tag">Instance</a>, <a class="tag-link-link" href="/tags/Object/" rel="tag">Object</a>
+    </div>
+
                 
 
                 
@@ -212,20 +220,46 @@
 
             
 
-            <p>✏️ <span style="color:#871C1C;"> 추가적으로 계속 업데이트  </span></p>
-<h2 id="subplots"><a href="#subplots" class="headerlink" title="subplots"></a><strong>subplots</strong></h2><p>Plotly에서 그래프를 행과 열의 형태로 시각화 하기 위해서는 다음 메서드를 따로 불러와야 한다.  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> plotly.subplots <span class="keyword">import</span> make_subplots</span><br></pre></td></tr></table></figure>
+            <p>♦ <strong>중요</strong> - 객체 vs 클래스 vs 인스턴스</p>
+<blockquote>
+<p>객체 : 구현할 <strong>실제 대상</strong><br>클래스 : 객체 만들기 위한 <strong>설계도</strong><br>인스터스 : 설계도를 통해 <strong>구현</strong>한 실체</p>
+</blockquote>
+<h3 id="객체-Object"><a href="#객체-Object" class="headerlink" title="객체 Object"></a>객체 Object</h3><p>우리가 <strong>설계도</strong>를 통해 <strong>구현</strong>할 실제 대상 → <strong>클래스</strong>의 <strong>인스턴스</strong></p>
+<ul>
+<li><p>클래스 ( 설계도 )에서 선언한 그대로 생설될 실제 대상</p>
+</li>
+<li><p>객체 지향 프로그래밍 관점에서 보면 클래스의 타입으로 선언 → <strong>객체</strong></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Peplel 이라는 class</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">People</span> &#123; ... &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 ( Main 클래스 에서 )</span></span><br><span class="line">People me;</span><br><span class="line">People you;</span><br><span class="line"><span class="comment">// -&gt; People이라는 클래스 (설계도)를 통해서 me와 you 라는 객체를 생성.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 동시 생성 가능</span></span><br><span class="line"><span class="comment">// People me, you;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>모든 인스턴스( 구현 )을 대표하기도 한다.</p>
+</li>
+</ul>
+<h3 id="클래스-Class"><a href="#클래스-Class" class="headerlink" title="클래스 Class"></a>클래스 Class</h3><p>객체를 생성하기 위한 <strong>설계도</strong></p>
+<p>객체의 속성(변수)과 행동(메서드)의 집합</p>
+<h3 id="인스턴스-Instance"><a href="#인스턴스-Instance" class="headerlink" title="인스턴스 Instance"></a>인스턴스 Instance</h3><p>클래스( 설계도 )를 바탕으로 <strong>구현한 설계</strong></p>
+<p>객체 ( 구현 대상 )을 실체화 한 것을 의미</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 위에 이어서</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체의 인스턴스화</span></span><br><span class="line"><span class="comment">// 객체를 메모리에 할당</span></span><br><span class="line">me = <span class="keyword">new</span> <span class="title class_">People</span>();</span><br><span class="line">you = <span class="keyword">new</span> <span class="title class_">People</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// new Class명(); -&gt; 인스턴스 생성</span></span><br></pre></td></tr></table></figure>
 
-<p>기본 틀은 다음과 같이 행과 열의 수를 지정해주면 된다.  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fig = make_subplots(rows = , cols = )</span><br></pre></td></tr></table></figure>
-
-<p>주의할 점은 그래프 형태 중에서 Pie Chart는 다음과 같이 추가적인 설정이 꼭 필요하다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fig = make_subplots(rows=<span class="number">1</span>, cols=<span class="number">2</span>, specs=[[&#123;<span class="string">&#x27;type&#x27;</span>:<span class="string">&#x27;domain&#x27;</span>&#125;, &#123;<span class="string">&#x27;type&#x27;</span>:<span class="string">&#x27;domain&#x27;</span>&#125;]])</span><br></pre></td></tr></table></figure>
-
-<p><code>specs</code>는 만들 형태와 동일하게 만들어 줘야 한다.  </p>
-<p>1행 2열인 경우 위와 같이 <code>specs=[[ &#123;&#125; , &#123;&#125; ]]</code> 형태로 설정해주고, 2행 1열인 경우에는 다음과 같이 <code>specs = [[ &#123;&#125; ] , [ &#123;&#125; ]]</code>설정해주어야 한다.  </p>
-<p>그리고 Pie 차트인 경우에는 <code>&#123;&#125;</code> 안에 <code>&#39;type&#39;:&#39;domain’</code> 를 추가로 넣어줘야 한다.</p>
+<ul>
+<li><p>객체는 클래스의 인스턴스</p>
+</li>
+<li><p>실행 프로세스는 프로그램의 인스턴스(실체화 &#x2F; 구현)이다</p>
+</li>
+<li><p>인스턴스는 한 추상적 개념으로부터 생성된 복제본</p>
+</li>
+<li><p>new</p>
+<p>  다음으로 나오는 생성자( People() )를 인스턴스로 생성하고 Heap 영역 메모리에 할당한다.</p>
+<p>  <code>Class Type 변수명 = new People();</code></p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ClassType 변수명 = new 생성자();</span></span><br><span class="line"><span class="type">People</span> <span class="variable">me</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">People</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// People이라는 클래스 타입으로 me라는 변수명에 객체를 생성한다.</span></span><br><span class="line"><span class="comment">// Class명();을 통해 해당 class의 생성자를 호출하고,</span></span><br><span class="line"><span class="comment">// new를 통해 호출된 생성자를 인스턴스화(메모리에 할당) 하고 </span></span><br><span class="line"><span class="comment">// new로 통해 최종 생성된 인스턴스를 아까 me라는 변수에 저장.</span></span><br></pre></td></tr></table></figure></li>
+</ul>
 <hr>
+<h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><ul>
+<li>클래스 타입으로 선언 하면 객체가 생성이 된다.</li>
+<li>객체가 메모리에 할당되어서 실제 사용되면 인스턴스라고 한다.</li>
+<li>객체를 클래스의 인스턴스화를 통해 실체화하면 메모리에 할당이 된다.</li>
+</ul>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://gmlwjd9405.github.io/2018/09/17/class-object-instance.html">[참고 블로그]</a></p>
 <p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
 
         </div>
@@ -234,7 +268,7 @@
 
 
 
-    <a data-url="http://zerobbang.com/2022/04/12/P_Sub/" data-id="cl3a60qm7000jxwv7co8k97y8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://zerobbang.com/2022/06/23/java_class_object_instance/" data-id="cl4r5dnnb0000pkv78gwq9vug" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -304,21 +338,25 @@
             "@type": "Person",
             "name": "Lee GaYeong"
         },
-        "headline": "Plotly - Subplot",
+        "headline": "JAVA - 객체와 클래스, 인스턴스",
         "image": "http://zerobbang.com",
-        "keywords": "",
-        "genre": "Python",
-        "datePublished": "2022-04-12",
-        "dateCreated": "2022-04-12",
-        "dateModified": "2022-04-12",
-        "url": "http://zerobbang.com/2022/04/12/P_Sub/",
-        "description": "✏️  추가적으로 계속 업데이트  
-subplotsPlotly에서 그래프를 행과 열의 형태로 시각화 하기 위해서는 다음 메서드를 따로 불러와야 한다.  
-1from plotly.subplots import make_subplots
+        "keywords": "Object Class Instance",
+        "genre": "Java",
+        "datePublished": "2022-06-23",
+        "dateCreated": "2022-06-23",
+        "dateModified": "2022-06-23",
+        "url": "http://zerobbang.com/2022/06/23/java_class_object_instance/",
+        "description": "♦ 중요 - 객체 vs 클래스 vs 인스턴스
 
-기본 틀은 다음과 같이 행과 열의 수를 지정해주면 된다.  
-1fig = make_subplots(rows = , cols =",
-        "wordCount": 149
+객체 : 구현할 실제 대상클래스 : 객체 만들기 위한 설계도인스터스 : 설계도를 통해 구현한 실체
+
+객체 Object우리가 설계도를 통해 구현할 실제 대상 → 클래스의 인스턴스
+
+클래스 ( 설계도 )에서 선언한 그대로 생설될 실제 대상
+
+객체 지향 프로그래밍 관점에서 보면 클래스의 타입으로 선언 → 객체
+  1",
+        "wordCount": 344
     }
 </script>
 
@@ -399,20 +437,10 @@ subplotsPlotly에서 그래프를 행과 열의 형태로 시각화 하기 위�
         
 <nav id="article-nav">
     
-        <a href="/2022/04/12/Docker_set/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Docker 설치
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2022/04/09/Anaconda/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2022/06/22/Eclipse_unable_to_launch/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">아나콘다, 파이참 설치</p>
+        <p class="article-nav-title">Eclipse - Unable to launch</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -635,7 +663,7 @@ subplotsPlotly에서 그래프를 행과 열의 형태로 시각화 하기 위�
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://zerobbang.com/2022/04/12/P_Sub/';
+    var disqus_url = 'http://zerobbang.com/2022/06/23/java_class_object_instance/';
     
     (function() {
     var dsq = document.createElement('script');
