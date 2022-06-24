@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>git and SourceTree install | Zero</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Git,Sourcetree" />
+    
+    <meta name="description" content="📌 Sourcetree는 꼭 git이 깔려 있는 상태에서 진행한다. git 설치여기로 가서 로컬 환경에 맞게 다운로드 후, 디폴트 값 그대로 설치 진행  Sourcetree 소스트리 설치 다음으로 가서 다운로드 진행     동의하고 설치 시작     설치 프로그램을 실행하면 다음과 화면이 뜨는데 아무것도 선택하지 않고 건너뛰기 클릭     Mercuria">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git and SourceTree install">
+<meta property="og:url" content="http://zerobbang.com/2022/06/24/sourcetreeInstall/index.html">
+<meta property="og:site_name" content="Zero">
+<meta property="og:description" content="📌 Sourcetree는 꼭 git이 깔려 있는 상태에서 진행한다. git 설치여기로 가서 로컬 환경에 맞게 다운로드 후, 디폴트 값 그대로 설치 진행  Sourcetree 소스트리 설치 다음으로 가서 다운로드 진행     동의하고 설치 시작     설치 프로그램을 실행하면 다음과 화면이 뜨는데 아무것도 선택하지 않고 건너뛰기 클릭     Mercuria">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/sourcetreeInstall/Untitled.png">
+<meta property="article:published_time" content="2022-06-24T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-24T14:13:08.580Z">
+<meta property="article:author" content="Lee GaYeong">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Sourcetree">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/sourcetreeInstall/Untitled.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Error/">Error</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Setting/">Setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sql/">Sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Setting/">Setting</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-sourcetreeInstall" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        git and SourceTree install
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/06/24/sourcetreeInstall/" class="article-date">
+       <time datetime="2022-06-24T00:00:00.000Z" itemprop="datePublished">2022-06-24</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/06/24/sourcetreeInstall/" class="article-date">
+     <time datetime="2022-06-24T14:13:08.580Z" itemprop="dateModified">2022-06-24</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Git/" rel="tag">Git</a>, <a class="tag-link-link" href="/tags/Sourcetree/" rel="tag">Sourcetree</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>📌 Sourcetree는 꼭 git이 깔려 있는 상태에서 진행한다.</p>
+<h3 id="git-설치"><a href="#git-설치" class="headerlink" title="git 설치"></a>git 설치</h3><p><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">여기</a>로 가서 로컬 환경에 맞게 다운로드 후, 디폴트 값 그대로 설치 진행</p>
+<hr>
+<h3 id="Sourcetree-소스트리-설치"><a href="#Sourcetree-소스트리-설치" class="headerlink" title="Sourcetree 소스트리 설치"></a>Sourcetree 소스트리 설치</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.sourcetreeapp.com/">다음</a>으로 가서 다운로드 진행</p>
+<p>  <img src="/images/sourcetreeInstall/Untitled.png"></p>
+</li>
+<li><p>동의하고 설치 시작</p>
+<p>  <img src="/images/sourcetreeInstall/Untitled%201.png"></p>
+</li>
+<li><p>설치 프로그램을 실행하면 다음과 화면이 뜨는데 아무것도 선택하지 않고 <strong>건너뛰기</strong> 클릭</p>
+<p>  <img src="/images/sourcetreeInstall/Untitled%202.png"></p>
+</li>
+<li><p><strong>Mercurial</strong> 클릭 <strong>해제</strong> 후, <strong>다음</strong> 클릭</p>
+<p>  <img src="/images/sourcetreeInstall/Untitled%203.png"></p>
+</li>
+<li><p>여기서 소스트리를 설치하기 전 깃이 우선 설치 되어 있으면 자동으로 깃 계정 정보가 입력 된 상태로 다음과 같이 창이 뜬다.</p>
+</li>
+<li><p>자신의 아이디 맞으면 다음 클릭</p>
+<p>  <img src="/images/sourcetreeInstall/Untitled%204.png"></p>
+</li>
+<li><p>위 과정까지 완료하면 다음 알림 창이 뜨는데 아니오를 누르면 설치는 끝난다.</p>
+<p>  <img src="/images/sourcetreeInstall/Untitled%205.png"></p>
+</li>
+</ul>
+<hr>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/06/24/sourcetreeInstall/" data-id="cl4sj7hoo0000vkv7e7dx4h5m" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Lee GaYeong"
+        },
+        "headline": "git and SourceTree install",
+        "image": "http://zerobbang.com/images/sourcetreeInstall/Untitled.png",
+        "keywords": "Git Sourcetree",
+        "genre": "Setting",
+        "datePublished": "2022-06-24",
+        "dateCreated": "2022-06-24",
+        "dateModified": "2022-06-24",
+        "url": "http://zerobbang.com/2022/06/24/sourcetreeInstall/",
+        "description": "📌 Sourcetree는 꼭 git이 깔려 있는 상태에서 진행한다.
+git 설치여기로 가서 로컬 환경에 맞게 다운로드 후, 디폴트 값 그대로 설치 진행
+
+Sourcetree 소스트리 설치
+다음으로 가서 다운로드 진행
+  
+
+동의하고 설치 시작
+  
+
+설치 프로그램을 실행하면 다음과 화면이 뜨는데 아무것도 선택하지 않고 건너뛰기 클릭
+  
+
+Mercuria",
+        "wordCount": 120
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+<!--     <div class="sidebar-top"> -->
+<!--         <p>follow:</p> -->
+<!--         <ul class="social-links"> -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-twitter"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-facebook"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-stack-overflow"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-github"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-weibo"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-rss"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--         </ul> -->
+<!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/06/23/java_class_object_instance/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">JAVA - 객체와 클래스, 인스턴스</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/24/sourcetreeInstall/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sourcetreeInstall/Untitled.png)" alt="git and SourceTree install" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/24/sourcetreeInstall/" class="title">git and SourceTree install</a></p>
+                            <p class="item-date"><time datetime="2022-06-24T00:00:00.000Z" itemprop="datePublished">2022-06-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/23/java_class_object_instance/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2022/06/23/java_class_object_instance/" class="title">JAVA - 객체와 클래스, 인스턴스</a></p>
+                            <p class="item-date"><time datetime="2022-06-23T00:00:00.000Z" itemprop="datePublished">2022-06-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/22/Eclipse_unable_to_launch/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Eclipse_unable_to_launch/Untitled.png)" alt="Eclipse - Unable to launch" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Error/">Error</a></p>
+                            <p class="item-title"><a href="/2022/06/22/Eclipse_unable_to_launch/" class="title">Eclipse - Unable to launch</a></p>
+                            <p class="item-date"><time datetime="2022-06-22T00:00:00.000Z" itemprop="datePublished">2022-06-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/15/shallow_deep_copy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/shallow_deep_copy/Untitled.png)" alt="JAVA - 얕은 복사와 깊은 복사" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2022/06/15/shallow_deep_copy/" class="title">JAVA - 얕은 복사와 깊은 복사</a></p>
+                            <p class="item-date"><time datetime="2022-06-15T00:00:00.000Z" itemprop="datePublished">2022-06-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/14/sts4_install/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/sts4_install/Untitled.png)" alt="이클립스 sts4, jdk 설치" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/14/sts4_install/" class="title">이클립스 sts4, jdk 설치</a></p>
+                            <p class="item-date"><time datetime="2022-06-14T00:00:00.000Z" itemprop="datePublished">2022-06-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Error/">Error</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Setting/">Setting</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sql/">Sql</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Api/" rel="tag">Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arima/" rel="tag">Arima</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class/" rel="tag">Class</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crawling/" rel="tag">Crawling</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eclipse/" rel="tag">Eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Instance/" rel="tag">Instance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object/" rel="tag">Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenAPI/" rel="tag">OpenAPI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sourcetree/" rel="tag">Sourcetree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/" rel="tag">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sql/" rel="tag">Sql</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fbprophet/" rel="tag">fbprophet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jdk/" rel="tag">jdk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualenv/" rel="tag">virtualenv</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Api/" style="font-size: 10px;">Api</a> <a href="/tags/Arima/" style="font-size: 10px;">Arima</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Crawling/" style="font-size: 10px;">Crawling</a> <a href="/tags/Eclipse/" style="font-size: 12.5px;">Eclipse</a> <a href="/tags/Error/" style="font-size: 15px;">Error</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Instance/" style="font-size: 10px;">Instance</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/OpenAPI/" style="font-size: 10px;">OpenAPI</a> <a href="/tags/Oracle/" style="font-size: 17.5px;">Oracle</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Sourcetree/" style="font-size: 10px;">Sourcetree</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sql/" style="font-size: 20px;">Sql</a> <a href="/tags/fbprophet/" style="font-size: 10px;">fbprophet</a> <a href="/tags/heroku/" style="font-size: 10px;">heroku</a> <a href="/tags/jdk/" style="font-size: 10px;">jdk</a> <a href="/tags/virtualenv/" style="font-size: 10px;">virtualenv</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+
+                <p>&copy; 2022 Lee GaYeong</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+    
+        <span id="busuanzi_container_site_uv">
+    Visitors <span id="busuanzi_value_site_uv"></span>
+</span>
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zerobbang.com/2022/06/24/sourcetreeInstall/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
