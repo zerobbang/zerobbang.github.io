@@ -1,887 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    
-
-    
-    <title>Tag: Sql | Zero</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Zero">
-<meta property="og:url" content="http://zerobbang.com/tags/Sql/index.html">
-<meta property="og:site_name" content="Zero">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Lee GaYeong">
-<meta name="twitter:card" content="summary">
-    
-
-    
-        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
-    
-
-    
-
-    
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-    
-<link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-    
-<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <meta name="author" content="Lee GaYeong">
 
 
-    
-<link rel="stylesheet" href="/css/style.css">
 
 
+
+<title>Tag: Sql | Zero</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
     
-<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
 
     
     
         
-<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-
-    
-    
-    
     
 
-
-
-    
-        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
 
 <meta name="generator" content="Hexo 6.1.0"></head>
 
 <body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
         <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
-                        </h2>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Error/">Error</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Jsp/">Jsp</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Setting/">Setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sql/">Sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
-                                
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-
-<script src="/js/insight.js"></script>
-
-
-</div>
-                        </nav>
-                    </div>
-                </div>
+            <div class="navbar-header header-logo"><a href="/">Zerobbang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
             </div>
         </div>
-    </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Zerobbang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
 </header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                
 
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>Sql</em>
-    </h1>
+<div class="container">
+    <div class="post-wrap tags">
+        <h2 class="post-title">-&nbsp;Tag&nbsp;·&nbsp;Sql-</h2>
+    </div>
+    <div class="post-wrap archive">
+    
+    
+        
+
+        
+            <h3>2022</h3>
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2022/05/03/pl_sql/">PL/SQL 기본</a>
+            <span class="archive-item-date">May 3, 2022</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2022/04/29/sql_g/">SQL 계층형 쿼리</a>
+            <span class="archive-item-date">April 29, 2022</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2022/04/28/sql_join/">SQL JOIN 정리</a>
+            <span class="archive-item-date">April 28, 2022</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2022/04/28/sql_sub/">SQL 서브 쿼리 정리</a>
+            <span class="archive-item-date">April 28, 2022</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2022/04/28/sql_window/">SQL - WINDOW FUNCTION</a>
+            <span class="archive-item-date">April 28, 2022</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2022/04/25/sql_basic/">SQL 기본 (Table , View 생성 및 조회 , SELECT/INSERT/UPDATE문 )</a>
+            <span class="archive-item-date">April 25, 2022</span>
+        </article>
+    
+        
+
+        
+
+        <article class="archive-item">
+            <a class="archive-item-link" href="/2022/04/25/sql_operator_func/">SQL 연산자와 기본 함수 정리</a>
+            <span class="archive-item-date">April 25, 2022</span>
+        </article>
+    
+    
+</div>
 </div>
 
-                        <div class="main-body-content">
-                            
-
-    
-    
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2022" class="archive-year"><i class="icon fa fa-calendar-o"></i>2022</a>
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/05/03/pl_sql/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/05/03/pl_sql/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-05-03T00:00:00.000Z" itemprop="datePublished">2022-05-03</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/05/03/pl_sql/">PL/SQL 기본</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            PL&#x2F;SQLSQL을 확장한 절차적 언어  
-프로시저 생성자와 SQL을 통합한 개념  
-pl&#x2F;sql 블록을 실행시키면 서버 프로세서에서 SQL 과 프로시저로 분류하여 실행한다.
-기본 코드1234567891011121314151617-- DBMS_OUTPUT 실행하기 위한 조건SET SERVEROUTPUT ON-- 경과 시간 출력SET TIM
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/29/sql_g/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/29/sql_g/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-29T00:00:00.000Z" itemprop="datePublished">2022-04-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/29/sql_g/">SQL 계층형 쿼리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            계층형 쿼리란 ?한 테이블에 담겨 있는 데이터들이 서로 상하 관계를 이루려 존재할 때를 말한다.  
-회사 조직도를 예로 살펴보면 사장 및에 부장, 부장 밑에 과장, 대리가 있고 이는 부서별로 각각 존재한다.  
-이 중 경영 부서 안에 회계팀, 인사팀, 재무 1팀, 재무 2팀이 있다고 하면 여기서 부모는 경영부, 자식은 회계팀, 인사팀, 재무 1팀, 재무 2
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/28/sql_join/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/sql_join/join-outer.png)" alt="SQL JOIN 정리" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/28/sql_join/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-28T00:00:00.000Z" itemprop="datePublished">2022-04-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/28/sql_join/">SQL JOIN 정리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            JOIN에 대해 간단히 설명하면 다음과 같다.  
-보통 메인 쿼리를 a, 서브 쿼리를 b로 명칭 한다.  
-조인 연산자에 따른 구분 : 동등 조인, 안티 조인  
-조인 대상에 따른 구분 : 셀프 조인  
-조인 조건에 따른 구분 : 내부 조인, 외부 조인, 세미 조인, 카타시안 조인  
-기타 : ANSI 조인  
-조인의 관계를 그림으로 간단하게 표현하면 다음
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/28/sql_sub/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/sql_sub/Untitled.png)" alt="SQL 서브 쿼리 정리" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/28/sql_sub/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-28T00:00:00.000Z" itemprop="datePublished">2022-04-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/28/sql_sub/">SQL 서브 쿼리 정리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            SQL 문장 안 보조로 사용되는 또 다른 SELECT 문을 의미한다.SELECT or FROM or WHERE 절에 서브 쿼리가 들어 갈 수 있다.서브 쿼리 안에 서브 쿼리가 들어 갈 수 있다. (중첩 서브 쿼리)  
-SQL 서브 쿼리 종류
-메인 쿼리와의 연관성
-
-연관성이 없는 서브 쿼리
-연관성이 있는 서브 쿼리
-
-
-형태에 따라
-
-일반 서브 쿼리 (SELE
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/28/sql_window/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/28/sql_window/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-28T00:00:00.000Z" itemprop="datePublished">2022-04-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/28/sql_window/">SQL - WINDOW FUNCTION</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            WINDOW 함수WINDOW 함수는 분석 함수 또는 순위 함수라고 하며 OVER를 이용해 작성하기 때문에 OVER 함수라고 말하기도 한다.  
-기존 RDBMS에서는 컬럼간의 연산, 비교, 연결 또는 집합 조회는 가능하지만 행간의 연산은 복잡하다.  
-이는 WINDOW 함수를 사용하면 쉽게 해결할 수 있다.  
-
-WINDOW 함수 종류
-
-
-
-
-구분
-함수 종류
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/25/sql_basic/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/25/sql_basic/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-25T00:00:00.000Z" itemprop="datePublished">2022-04-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/25/sql_basic/">SQL 기본 (Table , View 생성 및 조회 , SELECT/INSERT/UPDATE문 )</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Table 생성12345CREATE TABLE [스키마.]t_name (			col1  data_type1			, col2 data_type2			, ...) [TABLESPACE 테이블 스페이스 명];
-
-[ ] 생략 가능 한 내용이며, 스키마 생략하면 현재  로그인한 스키마 이름으로 생성된다.  그리고 TABLESPACE는 해당 사용자의 DEFAULT값으
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2022/04/25/sql_operator_func/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://zerobbang.com/2022/04/25/sql_operator_func/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Sql/">Sql</a>
-            </div>
-            <div class="date"><time datetime="2022-04-25T00:00:00.000Z" itemprop="datePublished">2022-04-25</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2022/04/25/sql_operator_func/">SQL 연산자와 기본 함수 정리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            연산자비교 조건식
-ANY
-  1WHERE 컬럼 = ANY (val1, val2, ...)
-  괄호 안에 있는 값들 중 하나라도 해당되면 추출한다.  
-  🖍️ ANY &#x3D; SOME,  OR과 IN 또한 기능은 같지만 형태가 좀 다르다.  
-  1234567# ORWHERE 컬럼 = val1  OR 컬럼 = val2  OR ...    # INWHE
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-<!--     <div class="sidebar-top"> -->
-<!--         <p>follow:</p> -->
-<!--         <ul class="social-links"> -->
-<!--              -->
-<!--                  -->
-<!--                 <li> -->
-<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
-<!--                         <i class="icon fa fa-twitter"></i> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                  -->
-<!--              -->
-<!--                  -->
-<!--                 <li> -->
-<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
-<!--                         <i class="icon fa fa-facebook"></i> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                  -->
-<!--              -->
-<!--                  -->
-<!--                 <li> -->
-<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
-<!--                         <i class="icon fa fa-stack-overflow"></i> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                  -->
-<!--              -->
-<!--                  -->
-<!--                 <li> -->
-<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
-<!--                         <i class="icon fa fa-github"></i> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                  -->
-<!--              -->
-<!--                  -->
-<!--                 <li> -->
-<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
-<!--                         <i class="icon fa fa-weibo"></i> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                  -->
-<!--              -->
-<!--                  -->
-<!--                 <li> -->
-<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
-<!--                         <i class="icon fa fa-rss"></i> -->
-<!--                     </a> -->
-<!--                 </li> -->
-<!--                  -->
-<!--              -->
-<!--         </ul> -->
-<!--     </div> -->
-    
-    <div class="widgets-container">
-        
-            
-                
-
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/06/27/bootstrap_sts/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/bootstrap_sts/Untitled.png)" alt="bootstrap으로 사용해서 jsp 페이지 만들어보기" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Jsp/">Jsp</a></p>
-                            <p class="item-title"><a href="/2022/06/27/bootstrap_sts/" class="title">bootstrap으로 사용해서 jsp 페이지 만들어보기</a></p>
-                            <p class="item-date"><time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/06/27/tomcat_sts4/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/tomcat_sts4/Untitled.png)" alt="JSP, TomCat sts4에서 시작하기 - JSP로 로그인 페이지 만들기 1" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Jsp/">Jsp</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
-                            <p class="item-title"><a href="/2022/06/27/tomcat_sts4/" class="title">JSP, TomCat sts4에서 시작하기 - JSP로 로그인 페이지 만들기 1</a></p>
-                            <p class="item-date"><time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/06/26/git_change_user/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
-                            <p class="item-title"><a href="/2022/06/26/git_change_user/" class="title">git 로그인 정보 삭제 및 변경</a></p>
-                            <p class="item-date"><time datetime="2022-06-26T00:00:00.000Z" itemprop="datePublished">2022-06-26</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/06/25/git_failed_push/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
-                            <p class="item-title"><a href="/2022/06/25/git_failed_push/" class="title">git - failed to push some refs</a></p>
-                            <p class="item-date"><time datetime="2022-06-25T00:00:00.000Z" itemprop="datePublished">2022-06-25</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/06/24/sourcetreeInstall/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/sourcetreeInstall/Untitled.png)" alt="git and SourceTree install" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
-                            <p class="item-title"><a href="/2022/06/24/sourcetreeInstall/" class="title">git and SourceTree install</a></p>
-                            <p class="item-date"><time datetime="2022-06-24T00:00:00.000Z" itemprop="datePublished">2022-06-24</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">categories</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Error/">Error</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jsp/">Jsp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Setting/">Setting</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sql/">Sql</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">6</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">13</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Api/" rel="tag">Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arima/" rel="tag">Arima</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class/" rel="tag">Class</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crawling/" rel="tag">Crawling</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eclipse/" rel="tag">Eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Instance/" rel="tag">Instance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jsp/" rel="tag">Jsp</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object/" rel="tag">Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenAPI/" rel="tag">OpenAPI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sourcetree/" rel="tag">Sourcetree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/" rel="tag">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sql/" rel="tag">Sql</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/" rel="tag">Tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fbprophet/" rel="tag">fbprophet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jdk/" rel="tag">jdk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualenv/" rel="tag">virtualenv</a><span class="tag-list-count">1</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/Api/" style="font-size: 10px;">Api</a> <a href="/tags/Arima/" style="font-size: 10px;">Arima</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Crawling/" style="font-size: 10px;">Crawling</a> <a href="/tags/Eclipse/" style="font-size: 12.5px;">Eclipse</a> <a href="/tags/Error/" style="font-size: 15px;">Error</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Instance/" style="font-size: 10px;">Instance</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Jsp/" style="font-size: 12.5px;">Jsp</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/OpenAPI/" style="font-size: 10px;">OpenAPI</a> <a href="/tags/Oracle/" style="font-size: 17.5px;">Oracle</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Sourcetree/" style="font-size: 10px;">Sourcetree</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sql/" style="font-size: 20px;">Sql</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/fbprophet/" style="font-size: 10px;">fbprophet</a> <a href="/tags/heroku/" style="font-size: 10px;">heroku</a> <a href="/tags/jdk/" style="font-size: 10px;">jdk</a> <a href="/tags/virtualenv/" style="font-size: 10px;">virtualenv</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
-</aside>
-
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-
-                <p>&copy; 2022 Lee GaYeong</p>
-                
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
-                
-            </div>
-            <div class="footer-plugins">
-              
-    
-    
-        <span id="busuanzi_container_site_uv">
-    Visitors <span id="busuanzi_value_site_uv"></span>
-</span>
-    
-
-
-            </div>
-        </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Lee GaYeong | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
 </footer>
 
     </div>
-    
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
-
-
-
-    
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
-    
-    
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-    
-    
-
-    
-    
-    
-
-
-
-<!-- Custom Scripts -->
-
-<script src="/js/main.js"></script>
-
-
 </body>
+
 </html>
