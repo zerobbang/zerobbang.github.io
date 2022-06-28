@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>소스 트리 사용법 및 충돌 해결 | Zero</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="sourcetree,error,merge" />
+    
+    <meta name="description" content="새로운 repository 만들기 git에서 새로운 레포를 만들고 레포의 주소를 복사해와서 소스 토리에 새 레포 생성한다.      Reset과 RevertReset  완전 초기화 시킨다. 미래( 내가 돌아갈 시점 이후의 푸쉬 )의 내역을 지우면서 되돌아간다. 돌아갈 커밋 시점에서 우클릭 후 → Reset current brach to this commit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="소스 트리 사용법 및 충돌 해결">
+<meta property="og:url" content="http://zerobbang.com/2022/06/24/sourcetree_how/index.html">
+<meta property="og:site_name" content="Zero">
+<meta property="og:description" content="새로운 repository 만들기 git에서 새로운 레포를 만들고 레포의 주소를 복사해와서 소스 토리에 새 레포 생성한다.      Reset과 RevertReset  완전 초기화 시킨다. 미래( 내가 돌아갈 시점 이후의 푸쉬 )의 내역을 지우면서 되돌아간다. 돌아갈 커밋 시점에서 우클릭 후 → Reset current brach to this commit">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/sourcetree_how/Untitled.png">
+<meta property="article:published_time" content="2022-06-24T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-24T00:00:00.000Z">
+<meta property="article:author" content="Lee GaYeong">
+<meta property="article:tag" content="sourcetree">
+<meta property="article:tag" content="error">
+<meta property="article:tag" content="merge">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/sourcetree_how/Untitled.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Error/">Error</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Jsp/">Jsp</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Setting/">Setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sql/">Sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Error/">Error</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Setting/">Setting</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-sourcetree_how" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        소스 트리 사용법 및 충돌 해결
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/06/24/sourcetree_how/" class="article-date">
+       <time datetime="2022-06-24T00:00:00.000Z" itemprop="datePublished">2022-06-24</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/06/24/sourcetree_how/" class="article-date">
+     <time datetime="2022-06-24T00:00:00.000Z" itemprop="dateModified">2022-06-24</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/error/" rel="tag">error</a>, <a class="tag-link-link" href="/tags/merge/" rel="tag">merge</a>, <a class="tag-link-link" href="/tags/sourcetree/" rel="tag">sourcetree</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <h2 id="새로운-repository-만들기"><a href="#새로운-repository-만들기" class="headerlink" title="새로운 repository 만들기"></a>새로운 repository 만들기</h2><ul>
+<li><p>git에서 새로운 레포를 만들고 레포의 주소를 복사해와서 소스 토리에 새 레포 생성한다.</p>
+<p>  <img src="/images/sourcetree_how/Untitled.png"></p>
+</li>
+</ul>
+<h2 id="Reset과-Revert"><a href="#Reset과-Revert" class="headerlink" title="Reset과 Revert"></a>Reset과 Revert</h2><h3 id="Reset"><a href="#Reset" class="headerlink" title="Reset"></a><strong>Reset</strong></h3><p><img src="/images/sourcetree_how/Untitled%201.png"></p>
+<ul>
+<li>완전 <strong>초기화</strong> 시킨다.</li>
+<li>미래( 내가 돌아갈 시점 이후의 푸쉬 )의 내역을 지우면서 되돌아간다.</li>
+<li>돌아갈 커밋 시점에서 우클릭 후 → Reset current brach to this commit. ( 이 커밋까지 현재 브런치 초기화 )</li>
+<li>이 커밋까지 현재 브런치 초기화를 진행하면 돌아간 시점의 <strong>커밋 이전</strong>으로 돌아간다.</li>
+<li>삭제된 커밋들은 staging area로 돌아간다.</li>
+</ul>
+<p><img src="/images/sourcetree_how/Untitled.jpeg"></p>
+<ul>
+<li><p>index - 스테이지에 올라간 상태 &#x2F; working tree - 스테이지에 올라가지 않은 상태</p>
+<p>  <img src="/images/sourcetree_how/Untitled%202.png"></p>
+</li>
+<li><p>종류</p>
+<ul>
+<li>soft<ul>
+<li>index에 올라온 수정사항 보존, working tree에 올라온 수정사항 보존</li>
+<li>Head 위치 변경 O</li>
+</ul>
+</li>
+<li>mixed<ul>
+<li>index에 올라온 수정사항 취소, working tree에 올라온 수정사항 보존</li>
+<li>Head 위치 변경 O</li>
+</ul>
+</li>
+<li>hard<ul>
+<li>index에 올라온 수정사항 취소, working tree에 올라온 수정사항 보존</li>
+<li>Head 위치 변경 O</li>
+<li>staging area까지 모두 삭제 → 지양</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Revert"><a href="#Revert" class="headerlink" title="Revert"></a>Revert</h3><p><img src="/images/sourcetree_how/Untitled%203.png"></p>
+<p><img src="/images/sourcetree_how/Untitled%204.png"></p>
+<ul>
+<li>Reset과 달리 내가 돌아가는 내역까지 기록되면서 돌아간다.</li>
+<li>내가 돌아갈 시점의 커밋 말고 그 다음 커밋인 잘못한 커밋 버전에서 진행한다.</li>
+<li>잘못한 커밋에서 우클릭 후 → Reverse commit</li>
+</ul>
+<h3 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h3><p>reset : 청소 → 역사도 없어지고 선택 상태로 변경</p>
+<p>reverse : 청소 x  ( 백업 기능 )→ 역사는 남아있지만 선택 상태로 변경 </p>
+<h2 id="Checkout"><a href="#Checkout" class="headerlink" title="Checkout"></a>Checkout</h2><ul>
+<li>브랜치 이동 또는 예전 커밋으로 돌아가는 것을 의미.</li>
+<li>원하는 커밋을 더블 클릭 → 해당 버전으로 돌아간다.</li>
+<li>Checkout 후 파일 수정 → Head(임시) 브랜치 생성. 다른 브랜치 이동하면 사라짐.</li>
+<li>사라지지 않기를 원하면 새로운 브랜치 생성하여 병합.</li>
+</ul>
+<p><img src="/images/sourcetree_how/Untitled%205.png"></p>
+<hr>
+<h2 id="소스트리와-깃을-사용해서-협업-환경-만들기-및-충돌-해결"><a href="#소스트리와-깃을-사용해서-협업-환경-만들기-및-충돌-해결" class="headerlink" title="소스트리와 깃을 사용해서 협업 환경 만들기 및 충돌 해결"></a>소스트리와 깃을 사용해서 협업 환경 만들기 및 충돌 해결</h2><h3 id="collaborators-추가"><a href="#collaborators-추가" class="headerlink" title="collaborators 추가"></a>collaborators 추가</h3><ul>
+<li><p>setting &gt; collaborators ( git )</p>
+<p>  <img src="/images/sourcetree_how/Untitled%206.png"></p>
+<p>  사람을 초대하거나 메일을 통해 초대에 응답하면 공동 관리자로 등록 된다.</p>
+</li>
+</ul>
+<h3 id="병합-충돌-해결"><a href="#병합-충돌-해결" class="headerlink" title="병합 충돌 해결"></a>병합 충돌 해결</h3><p>git을 통해서 협업을 하다보면 충돌이 발생하는 일이 발생하는데 다음과 같은 방법으로 충돌 해결이 가능하다.</p>
+<p>우선, 병합 충돌이 일어난 경우에는 같은 트리의 파일을 다른 사용자가 파일을 변경하여 push하였는데 내가 그 사실을 모르고 pull 없이 push를 하게 되면 병합 충돌이 생긴다.</p>
+<ul>
+<li><p>push → 병합 충돌로 push 불가 error 발생</p>
+<p>  <img src="/images/sourcetree_how/Untitled%207.png"></p>
+</li>
+<li><p>pull → pull로 당긴 후 push하려고 해도 pull 자체가 충돌을 해결해야 정상 작동.</p>
+<p>  <img src="/images/sourcetree_how/Untitled%208.png"></p>
+</li>
+<li><p>파일 상태로 가서 우클릭 → 충돌 해결 → 외부 &#x2F; 내것 &#x2F; 저장소 중에서 택 1</p>
+</li>
+</ul>
+<p><img src="/images/sourcetree_how/Untitled%209.png"></p>
+<ul>
+<li><p>둘다 가져와서 할거면 외부 병할 툴 시작하고 꺽새 안의 내용을 수정해주면 된다.</p>
+</li>
+<li><p>내것이나 저장소로 해결하면 다음과 같은 알림창에서 예를 클릭한 후 커밋 해주면 된다.</p>
+<p>  <img src="/images/sourcetree_how/Untitled%2010.png"></p>
+</li>
+</ul>
+<hr>
+<h3 id="사용-팁-임시-저장하기"><a href="#사용-팁-임시-저장하기" class="headerlink" title="사용 팁 - 임시 저장하기"></a>사용 팁 - 임시 저장하기</h3><ul>
+<li><p>지금까지 내용을 커밋하지 않고 임시 저장을 하고 다른 작업을 해야할 경우</p>
+</li>
+<li><p>브랜치를 새로 하나 생성한다 . ( main2 )</p>
+<p>  <img src="/images/sourcetree_how/Untitled%2011.png"></p>
+</li>
+<li><p>원래 main 브랜치에서 임시 커밋 진행</p>
+</li>
+<li><p>main2 ( 새로 만든 브랜치 )로 체크 아웃 진행</p>
+<p>  <img src="/images/sourcetree_how/Untitled%2012.png"></p>
+</li>
+<li><p>그대로 다른 작업을 수행하다가 임시 커밋한 내용으로 다시 돌아가게 된 경우, 다시 main으로 돌아가 임시 저장한 파일을 마무리하고 저장.</p>
+</li>
+<li><p>그러면 다음과 같은 상태가 되고 여기서 커밋 진행 할 때 <strong>덮어쓰기</strong>로 진행</p>
+<p>  <img src="/images/sourcetree_how/Untitled%2013.png"></p>
+</li>
+<li><p>그리고 커밋 내용 번경 후, 다음과 같은 창이 뜨면 예 누르고 완료하면 된다.</p>
+<p>  <img src="/images/sourcetree_how/Untitled%2014.png"></p>
+<p>  <img src="/images/sourcetree_how/Untitled%2015.png"></p>
+</li>
+</ul>
+<h3 id="정리-1"><a href="#정리-1" class="headerlink" title="정리"></a>정리</h3><ol>
+<li>main1 임시 커밋</li>
+<li>main2로 checkout</li>
+<li>다시 main1로 이동 후, 작업 마무리</li>
+<li>커밋 → 덮어쓰기 amend</li>
+<li>필요의 경우 강제 추시 force 진행</li>
+</ol>
+<ul>
+<li>임시 생성한 브랜치에서는 임시 커밋 전 내용이 저장되어 있고, 임시 커밋을 덮어쓰기해도 임시 브랜치에서는 이전 작업과 동일한 상태</li>
+<li>해보고 싶은 방법이 있으면 따로 브랜치를 생성하여 작업하면 코드가 섞이는 것을 방지할 수 있다.</li>
+<li>잘못된 방법의 코딩이어서 되돌아가라면 해당 가지를 삭제하면 된다.</li>
+</ul>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://webstudynote.tistory.com/28">[참고 블로그]</a></p>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/06/24/sourcetree_how/" data-id="cl4y8qlo1000ezsv7hqyxctyl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Lee GaYeong"
+        },
+        "headline": "소스 트리 사용법 및 충돌 해결",
+        "image": "http://zerobbang.com/images/sourcetree_how/Untitled.png",
+        "keywords": "sourcetree error merge",
+        "genre": "Setting Error",
+        "datePublished": "2022-06-24",
+        "dateCreated": "2022-06-24",
+        "dateModified": "2022-06-24",
+        "url": "http://zerobbang.com/2022/06/24/sourcetree_how/",
+        "description": "새로운 repository 만들기
+git에서 새로운 레포를 만들고 레포의 주소를 복사해와서 소스 토리에 새 레포 생성한다.
+  
+
+
+Reset과 RevertReset
+
+완전 초기화 시킨다.
+미래( 내가 돌아갈 시점 이후의 푸쉬 )의 내역을 지우면서 되돌아간다.
+돌아갈 커밋 시점에서 우클릭 후 → Reset current brach to this commit",
+        "wordCount": 549
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+<!--     <div class="sidebar-top"> -->
+<!--         <p>follow:</p> -->
+<!--         <ul class="social-links"> -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-twitter"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-facebook"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-stack-overflow"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-github"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-weibo"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-rss"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--         </ul> -->
+<!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/06/24/sourcetreeInstall/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            git and SourceTree install
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/06/23/java_class_object_instance/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">JAVA - 객체와 클래스, 인스턴스</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/27/bootstrap_sts/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/bootstrap_sts/Untitled.png)" alt="bootstrap으로 사용해서 jsp 페이지 만들어보기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Jsp/">Jsp</a></p>
+                            <p class="item-title"><a href="/2022/06/27/bootstrap_sts/" class="title">bootstrap으로 사용해서 jsp 페이지 만들어보기</a></p>
+                            <p class="item-date"><time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/27/tomcat_sts4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/tomcat_sts4/Untitled.png)" alt="JSP, TomCat sts4에서 시작하기 - JSP로 로그인 페이지 만들기 1" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Jsp/">Jsp</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/27/tomcat_sts4/" class="title">JSP, TomCat sts4에서 시작하기 - JSP로 로그인 페이지 만들기 1</a></p>
+                            <p class="item-date"><time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/27/jsp_login/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/jsp_login/Untitled.png)" alt="JSP - DB 연결하여 로그인 페이지 만들기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2022/06/27/jsp_login/" class="title">JSP - DB 연결하여 로그인 페이지 만들기</a></p>
+                            <p class="item-date"><time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/26/git_change_user/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/26/git_change_user/" class="title">git 로그인 정보 삭제 및 변경</a></p>
+                            <p class="item-date"><time datetime="2022-06-26T00:00:00.000Z" itemprop="datePublished">2022-06-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/25/git_failed_push/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/25/git_failed_push/" class="title">git - failed to push some refs</a></p>
+                            <p class="item-date"><time datetime="2022-06-25T00:00:00.000Z" itemprop="datePublished">2022-06-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Error/">Error</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jsp/">Jsp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Setting/">Setting</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sql/">Sql</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Api/" rel="tag">Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arima/" rel="tag">Arima</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class/" rel="tag">Class</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crawling/" rel="tag">Crawling</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eclipse/" rel="tag">Eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Instance/" rel="tag">Instance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jsp/" rel="tag">Jsp</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object/" rel="tag">Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenAPI/" rel="tag">OpenAPI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sourcetree/" rel="tag">Sourcetree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/" rel="tag">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sql/" rel="tag">Sql</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/" rel="tag">Tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error/" rel="tag">error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fbprophet/" rel="tag">fbprophet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jdk/" rel="tag">jdk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/merge/" rel="tag">merge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sourcetree/" rel="tag">sourcetree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualenv/" rel="tag">virtualenv</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Api/" style="font-size: 10px;">Api</a> <a href="/tags/Arima/" style="font-size: 10px;">Arima</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Crawling/" style="font-size: 10px;">Crawling</a> <a href="/tags/Eclipse/" style="font-size: 12.5px;">Eclipse</a> <a href="/tags/Error/" style="font-size: 15px;">Error</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Instance/" style="font-size: 10px;">Instance</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Jsp/" style="font-size: 15px;">Jsp</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/OpenAPI/" style="font-size: 10px;">OpenAPI</a> <a href="/tags/Oracle/" style="font-size: 17.5px;">Oracle</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Sourcetree/" style="font-size: 10px;">Sourcetree</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sql/" style="font-size: 20px;">Sql</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/fbprophet/" style="font-size: 10px;">fbprophet</a> <a href="/tags/heroku/" style="font-size: 10px;">heroku</a> <a href="/tags/jdk/" style="font-size: 10px;">jdk</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/virtualenv/" style="font-size: 10px;">virtualenv</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+
+                <p>&copy; 2022 Lee GaYeong</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+    
+        <span id="busuanzi_container_site_uv">
+    Visitors <span id="busuanzi_value_site_uv"></span>
+</span>
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zerobbang.com/2022/06/24/sourcetree_how/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>JSP - DB 연결하여 로그인 페이지 만들기 | Zero</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Jsp,Mysql" />
+    
+    <meta name="description" content="이번 글에서는 JSP를 이용해 Mysql과 DB 연동하여 로그인 페이지를 만들어 보겠다. 목차 index.jsp login.jsp loginAction.jsp User.java UserDAO.java   index.jsp 파일 첫 실행은 다음과 같이 자동적으로 default된 값이 있기 때문에 index이름으로 jsp 파일을 생성해준다.   그리고 inde">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP - DB 연결하여 로그인 페이지 만들기">
+<meta property="og:url" content="http://zerobbang.com/2022/06/27/jsp_login/index.html">
+<meta property="og:site_name" content="Zero">
+<meta property="og:description" content="이번 글에서는 JSP를 이용해 Mysql과 DB 연동하여 로그인 페이지를 만들어 보겠다. 목차 index.jsp login.jsp loginAction.jsp User.java UserDAO.java   index.jsp 파일 첫 실행은 다음과 같이 자동적으로 default된 값이 있기 때문에 index이름으로 jsp 파일을 생성해준다.   그리고 inde">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://zerobbang.com/images/jsp_login/Untitled.png">
+<meta property="article:published_time" content="2022-06-27T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-27T00:00:00.000Z">
+<meta property="article:author" content="Lee GaYeong">
+<meta property="article:tag" content="Jsp">
+<meta property="article:tag" content="Mysql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zerobbang.com/images/jsp_login/Untitled.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Zero" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">If I had to choose my destiny, even if I close my eyes and walk, I choose the right path</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Error/">Error</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Java/">Java</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Jsp/">Jsp</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Linux/">Linux</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Setting/">Setting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sql/">Sql</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study/">Study</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Java/">Java</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-jsp_login" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        JSP - DB 연결하여 로그인 페이지 만들기
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2022/06/27/jsp_login/" class="article-date">
+       <time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2022/06/27/jsp_login/" class="article-date">
+     <time datetime="2022-06-27T00:00:00.000Z" itemprop="dateModified">2022-06-27</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Jsp/" rel="tag">Jsp</a>, <a class="tag-link-link" href="/tags/Mysql/" rel="tag">Mysql</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>이번 글에서는 JSP를 이용해 Mysql과 DB 연동하여 로그인 페이지를 만들어 보겠다.</p>
+<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><ol>
+<li>index.jsp</li>
+<li>login.jsp</li>
+<li>loginAction.jsp</li>
+<li>User.java</li>
+<li>UserDAO.java</li>
+</ol>
+<hr>
+<h3 id="index-jsp-파일"><a href="#index-jsp-파일" class="headerlink" title="index.jsp 파일"></a>index.jsp 파일</h3><p> 첫 실행은 다음과 같이 자동적으로 default된 값이 있기 때문에 index이름으로 jsp 파일을 생성해준다.</p>
+<p><img src="/images/jsp_login/Untitled.png" alt="Untitled"></p>
+<p> 그리고 index 파일에서 로그인 링크를 달아주고 로그인 jsp 파일로 넘겨준다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;login.jsp&quot;</span>&gt;</span>로그인<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="login-jsp-파일"><a href="#login-jsp-파일" class="headerlink" title="login.jsp 파일"></a>login.jsp 파일</h3><p>[다음] bootstrap 파일로 로그인 jsp파일과 css 파일을 불러온다.</p>
+<h3 id="body"><a href="#body" class="headerlink" title="body"></a>body</h3><p>body부분에 있는 <strong>form</strong> 에서 우리 환경에 맞게 변경해주어야 한다.</p>
+<ul>
+<li>form action에 loginAction.jsp 파일과 연결해준다.</li>
+<li>method 방법은 다른 사람이 관여 하면 안되기 때문에 POST방식</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action =<span class="string">&quot;loginAction.jsp&quot;</span> method=<span class="string">&quot;POST&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/jsp_login/Untitled%201.png" alt="Untitled"></p>
+<p>여기서 loginAction.jsp는 login이 돌아가는 환경을 만들어주는 jsp파일로 개인이 생성한 파일 명에 맞춰서 넣어주면 된다.</p>
+<ul>
+<li><p>✏ 여기서 주의할 점!</p>
+<p>  form 안의 데이터 들은 submit 되는 순간 name의 이름으로 백엔단으로 값을 넘겨준다. 그래서 다음과 같은 작업을 해줘야 한다.</p>
+</li>
+<li><p>그 다음 userID와 userPassword를 logoinAction파일에 넘겨주기 위해 값을 다음과 같이 바꿔준다. ( id와 name과 label을 db에 맞춰 바꿔준다. )</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;form-floating&quot;</span>&gt;</span><br><span class="line">				<span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;email&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;userID&quot;</span> <span class="attr">name</span>=<span class="string">&quot;userID&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">					<span class="attr">placeholder</span>=<span class="string">&quot;name@example.com&quot;</span>&gt;</span> <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;userID&quot;</span>&gt;</span>Email</span></span><br><span class="line"><span class="language-xml">					address<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-floating&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">				<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">id</span>=<span class="string">&quot;userPassword&quot;</span> <span class="attr">name</span>=<span class="string">&quot;userPassword&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">					<span class="attr">placeholder</span>=<span class="string">&quot;Password&quot;</span>&gt;</span> <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;userPassword&quot;</span>&gt;</span>Password<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="loginAction-jsp-파일"><a href="#loginAction-jsp-파일" class="headerlink" title="loginAction.jsp 파일"></a>loginAction.jsp 파일</h3><p>여기에서는 사용자가 자신의 ID와 Password를 입력하고 로그인 버튼을 클릭했을 때의 과정을 처리하는 jsp파일이다.</p>
+<ul>
+<li><strong>class import 하기</strong></li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="variable constant_">DAO</span> 인스턴스 --&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span> = <span class="string">&quot;User.UserDAO&quot;</span> %&gt;</span><br><span class="line">&lt;!-- 출력 라이브러리 --&gt;</span><br><span class="line">&lt;%@ page <span class="keyword">import</span> = <span class="string">&quot;java.io.PrintWriter&quot;</span> %&gt;</span><br><span class="line">&lt;!-- 인코딩 설정 --&gt;</span><br><span class="line">&lt;% request.<span class="title function_">setCharacterEncoding</span>(<span class="string">&quot;UTF-8&quot;</span>); %&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>bean 생성<ul>
+<li>패키지 이름 :  User</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="attr">jsp</span>:useBean id=<span class="string">&quot;User&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;User.User&quot;</span> scope=<span class="string">&quot;page&quot;</span>&gt;&lt;/<span class="attr">jsp</span>:useBean&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">jsp:setProperty</span> <span class="attr">name</span>=<span class="string">&quot;User&quot;</span> <span class="attr">property</span>=<span class="string">&quot;userID&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">jsp:setProperty</span> <span class="attr">name</span>=<span class="string">&quot;User&quot;</span> <span class="attr">property</span>=<span class="string">&quot;userPassword&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>bean 사용 방법</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="attr">jsp</span>:useBean id=<span class="string">&quot;빈이름&quot;</span> <span class="keyword">class</span>=<span class="string">&quot;자바빈클래스명풀패키지로&quot;</span> scope=<span class="string">&quot;사용범위&quot;</span>/&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">jsp:setProperty</span> <span class="attr">name</span>=<span class="string">&quot;빈이름&quot;</span> <span class="attr">property</span>=<span class="string">&quot;속성명&quot;</span>  <span class="attr">value</span>=<span class="string">&quot;설정할값&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">jsp:getProperty</span> <span class="attr">name</span>=<span class="string">&quot;속성명&quot;</span> <span class="attr">property</span>=<span class="string">&quot;파라미터명&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>body</strong></p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">		<span class="comment">// class UserDAO 객체 생성</span></span><br><span class="line">		<span class="title class_">UserDAO</span> userDAO = <span class="keyword">new</span> <span class="title class_">UserDAO</span>();</span><br><span class="line">		<span class="comment">// login 함수 불러오기</span></span><br><span class="line">		<span class="comment">// jsp파일에서는 User class를 인스턴스화 하지 않았기 때문에</span></span><br><span class="line">		<span class="comment">// 다음과 같이 클래스명.함수로 값을 받아온다.</span></span><br><span class="line">		int result = userDAO.<span class="title function_">login</span>(<span class="title class_">User</span>.<span class="title function_">getUserID</span>(), <span class="title class_">User</span>.<span class="title function_">getUserPassword</span>());</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 1이면 로그인 성공</span></span><br><span class="line">		<span class="comment">// 로그인 실행 결과에 따라 화면에 띄울 스크립트 생성</span></span><br><span class="line">		<span class="keyword">if</span>(result==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="title class_">PrintWriter</span> script = response.<span class="title function_">getWriter</span>();</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;&lt;script&gt;&quot;</span>);</span><br><span class="line">			<span class="comment">// 대소문자 조심</span></span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;location.href=&#x27;index.jsp&#x27;&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;&lt;/script&gt;&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(result ==<span class="number">0</span> )&#123;</span><br><span class="line">			<span class="title class_">PrintWriter</span> script = response.<span class="title function_">getWriter</span>();</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;&lt;script&gt;&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;alert(&#x27;비밀번호가 잘못되었습니다.&#x27;)&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;history.back();&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;&lt;/script&gt;&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(result==-<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="title class_">PrintWriter</span> script = response.<span class="title function_">getWriter</span>();</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;&lt;script&gt;&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;alert(&#x27;아이디가 존재하지 않습니다.&#x27;)&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;history.back();&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;&lt;/script&gt;&quot;</span>);</span><br><span class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(result == -<span class="number">2</span>)&#123;</span><br><span class="line">			<span class="title class_">PrintWriter</span> script = response.<span class="title function_">getWriter</span>();</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;&lt;script&gt;&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;alert(&#x27;DB에서 오류가 발생했습니다.&#x27;)&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;history.back();&quot;</span>);</span><br><span class="line">			script.<span class="title function_">println</span>(<span class="string">&quot;&lt;/script&gt;&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		%&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="User-java-파일"><a href="#User-java-파일" class="headerlink" title="User.java 파일"></a>User.java 파일</h3><p>User 파일에서는 DB에서 불러온 값들을 변수명으로 지정해준다.</p>
+<p>개인 아이디와 비밀번호 같이 db에 있는 값들은 개인 정보 이기 때문에 접근 제한자가 public이 아니라 private으로 다른 사용자가 접근하지 못하도록 생성해야 한다.</p>
+<ul>
+<li><p>db 컬럼 명 변수 생성</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">private <span class="title class_">String</span> userID;</span><br><span class="line">private <span class="title class_">String</span> userPassword;</span><br><span class="line">private <span class="title class_">String</span> userName;</span><br><span class="line">private <span class="title class_">String</span> userGender;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>toString</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="title class_">Override</span></span><br><span class="line">	public <span class="title class_">String</span> <span class="title function_">toString</span>(<span class="params"></span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;User [userID=&quot;</span> + userID + <span class="string">&quot;, userPassword=&quot;</span> + userPassword + <span class="string">&quot;, userName=&quot;</span> + userName + <span class="string">&quot;, userGender=&quot;</span></span><br><span class="line">				+ userGender + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Getter and Setter</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> public <span class="title class_">String</span> <span class="title function_">getUserID</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> userID;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">void</span> <span class="title function_">setUserID</span>(<span class="params"><span class="built_in">String</span> userID</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">userID</span> = userID;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="title class_">String</span> <span class="title function_">getUserPassword</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> userPassword;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">void</span> <span class="title function_">setUserPassword</span>(<span class="params"><span class="built_in">String</span> userPassword</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">userPassword</span> = userPassword;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="title class_">String</span> <span class="title function_">getUserName</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> userName;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">void</span> <span class="title function_">setUserName</span>(<span class="params"><span class="built_in">String</span> userName</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">userName</span> = userName;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="title class_">String</span> <span class="title function_">getUserGender</span>(<span class="params"></span>) &#123;</span><br><span class="line">	<span class="keyword">return</span> userGender;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="keyword">void</span> <span class="title function_">setUserGender</span>(<span class="params"><span class="built_in">String</span> userGender</span>) &#123;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">userGender</span> = userGender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>source를 통해 getter and setter와 tostring값을 자동으로 불러올 수 있다.</p>
+<p>위 함수들을 통해서 불러온 데이터들을 변수에 저장하고 그 변수를 불러올 수 있게 한다.</p>
+<hr>
+<h3 id="UserDAO-java-파일"><a href="#UserDAO-java-파일" class="headerlink" title="UserDAO.java 파일"></a>UserDAO.java 파일</h3><blockquote>
+<p>🎈 DAO 란?<br>Data Access Object 의미로 데이터에 접근하는 역할을 맡는 객체를 뜻한다.</p>
+</blockquote>
+<ul>
+<li><p>Private 접근 제한자로 db 연결 객체 생성</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 자바와 db연결을 위한 객체</span></span><br><span class="line"><span class="keyword">private</span> Connection conn;</span><br><span class="line"><span class="comment">// 쿼리 시작을 위한 준비 객체</span></span><br><span class="line"><span class="keyword">private</span> PreparedStatement pstmt;</span><br><span class="line"><span class="comment">// 쿼리 실행 결과를 담아줄 객체</span></span><br><span class="line"><span class="keyword">private</span> ResultSet rs;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>생성자 설정 - db연결 준비 ( dbURL, dbID, dbPassword )</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">UserDAO</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="type">String</span> <span class="variable">dbURL</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3306/JSP_TEST?serverTimezone=UTC&quot;</span>;</span><br><span class="line">			<span class="comment">// JSP_TEST는 자신이 생성한 db에 맞춰 바꿔줘야 한다.</span></span><br><span class="line">			<span class="comment">// jdbc : java db connectivity</span></span><br><span class="line"></span><br><span class="line">			<span class="type">String</span> <span class="variable">dbID</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">			<span class="type">String</span> <span class="variable">dbPassword</span> <span class="operator">=</span> <span class="string">&quot;system123&quot;</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// db 드라이버와 연결 준비</span></span><br><span class="line">			<span class="comment">// db와 연결하는 드라이버 클래스 찾아 로드</span></span><br><span class="line">			Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line">			<span class="comment">// 데이터베이스 드라이버 로드 할 뿐 연결에 관한 행동은 아무것도 안함.</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// 입력받은 dbURL, dbID, dbPassword를 통해 db 연결</span></span><br><span class="line">			<span class="comment">// 입력받은 파라미터를 갖고 있는 드라이브 서버에 접속할 수 있는 커넥션 객체 가져온다.</span></span><br><span class="line">			conn = DriverManager.getConnection(dbURL,dbID,dbPassword);</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>로그인 함수</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">login</span><span class="params">(String userID, String userPassword)</span> &#123;</span><br><span class="line">		<span class="comment">// 유저가 친 해당 아이디 비번 가져옴</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 실행할 쿼리문 준비</span></span><br><span class="line">		<span class="type">String</span> <span class="variable">SQL</span> <span class="operator">=</span> <span class="string">&quot;SELECT userPassword FROM TABLE_USER WHERE userID=?&quot;</span>;</span><br><span class="line">		<span class="comment">// 유저로부터 입력받은 userID와 동일한 값을 갖는 데이터의 suerPassword를 가져온다.</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;conn : &quot;</span>+conn);</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 문자열 쿼리를 pstmt에 대입</span></span><br><span class="line">			<span class="comment">// 실행할 쿼리문을 prepareStatement로 쿼리 실행 준비</span></span><br><span class="line">			pstmt = conn.prepareStatement(SQL);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 첫 번째 물음표에 userId 값 세팅</span></span><br><span class="line">			pstmt.setString(<span class="number">1</span>, userID);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 프로그래밍 언어에서 인덱스는 0부터 시작이지만 쿼리에서는 1부터 시작.</span></span><br><span class="line">			rs = pstmt.executeQuery(); <span class="comment">// 쿼리 실행</span></span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(rs.next()) &#123;</span><br><span class="line">				<span class="comment">//결과 리스트의 다음 행의 값이 존재하면</span></span><br><span class="line">				<span class="keyword">if</span>(rs.getString(<span class="number">1</span>).equals(userPassword)) &#123;</span><br><span class="line">					<span class="comment">// 남은 것의 첫번째 값이 login 함수로 호출 할 때 전달받은 비번과 같은지 검사</span></span><br><span class="line">					<span class="keyword">return</span> <span class="number">1</span>; <span class="comment">// 로그인 성공</span></span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//  실패</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// 아이디 없음</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="comment">// <span class="doctag">TODO:</span> handle exception</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">2</span>; <span class="comment">// db 오류</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="서버-Error-잡기"><a href="#서버-Error-잡기" class="headerlink" title="서버 Error 잡기"></a>서버 Error 잡기</h3><ul>
+<li><p><code>com.mysql.jdbc.Driver</code> error</p>
+<p>  <img src="/images/jsp_login/Untitled%202.png"></p>
+<p>  드라이버 다운 진행</p>
+<ul>
+<li><p>드라이브 다운</p>
+<p>  <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/connector/j/">여기</a> 또는 <a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/c-j/">여기</a>로 가서 다운 받기 - Platform Independent → zip 다운 진행</p>
+<p>  <img src="/images/jsp_login/Untitled%203.png"></p>
+</li>
+<li><p>TomCat 파일 → lib 안에 추가</p>
+<p>  <img src="/images/jsp_login/Untitled%204.png"></p>
+</li>
+<li><p>jdk → lib 안에 추가 후, class path 경로 잡아주기</p>
+<p>  <img src="/images/jsp_login/Untitled%205.png"></p>
+</li>
+</ul>
+</li>
+<li><p>500에러 : server 클린 후 재 실행</p>
+</li>
+</ul>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://bug41.tistory.com/100">[참고 블로그]</a></p>
+<p><strong><em><span style="color:#4682B4;"> 이 블로그는 혼자 공부하며 기록하는 블로그로 잘못된 정보에 대한 의견은 격하게 환영합니다.🤩 </span></em></strong></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://zerobbang.com/2022/06/27/jsp_login/" data-id="cl4y8ldbv0000zsv727nh0sox" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Lee GaYeong"
+        },
+        "headline": "JSP - DB 연결하여 로그인 페이지 만들기",
+        "image": "http://zerobbang.com/images/jsp_login/Untitled.png",
+        "keywords": "Jsp Mysql",
+        "genre": "Java",
+        "datePublished": "2022-06-27",
+        "dateCreated": "2022-06-27",
+        "dateModified": "2022-06-27",
+        "url": "http://zerobbang.com/2022/06/27/jsp_login/",
+        "description": "이번 글에서는 JSP를 이용해 Mysql과 DB 연동하여 로그인 페이지를 만들어 보겠다.
+목차
+index.jsp
+login.jsp
+loginAction.jsp
+User.java
+UserDAO.java
+
+
+index.jsp 파일 첫 실행은 다음과 같이 자동적으로 default된 값이 있기 때문에 index이름으로 jsp 파일을 생성해준다.
+
+ 그리고 inde",
+        "wordCount": 1477
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+<!--     <div class="sidebar-top"> -->
+<!--         <p>follow:</p> -->
+<!--         <ul class="social-links"> -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-twitter"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-facebook"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-stack-overflow"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-github"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-weibo"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--                  -->
+<!--                 <li> -->
+<!--                     <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener"> -->
+<!--                         <i class="icon fa fa-rss"></i> -->
+<!--                     </a> -->
+<!--                 </li> -->
+<!--                  -->
+<!--              -->
+<!--         </ul> -->
+<!--     </div> -->
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/06/27/tomcat_sts4/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            JSP, TomCat sts4에서 시작하기 - JSP로 로그인 페이지 만들기 1
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2022/06/26/git_change_user/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">git 로그인 정보 삭제 및 변경</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/27/bootstrap_sts/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/bootstrap_sts/Untitled.png)" alt="bootstrap으로 사용해서 jsp 페이지 만들어보기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Jsp/">Jsp</a></p>
+                            <p class="item-title"><a href="/2022/06/27/bootstrap_sts/" class="title">bootstrap으로 사용해서 jsp 페이지 만들어보기</a></p>
+                            <p class="item-date"><time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/27/tomcat_sts4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/tomcat_sts4/Untitled.png)" alt="JSP, TomCat sts4에서 시작하기 - JSP로 로그인 페이지 만들기 1" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Jsp/">Jsp</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/27/tomcat_sts4/" class="title">JSP, TomCat sts4에서 시작하기 - JSP로 로그인 페이지 만들기 1</a></p>
+                            <p class="item-date"><time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/27/jsp_login/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/jsp_login/Untitled.png)" alt="JSP - DB 연결하여 로그인 페이지 만들기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2022/06/27/jsp_login/" class="title">JSP - DB 연결하여 로그인 페이지 만들기</a></p>
+                            <p class="item-date"><time datetime="2022-06-27T00:00:00.000Z" itemprop="datePublished">2022-06-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/26/git_change_user/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/26/git_change_user/" class="title">git 로그인 정보 삭제 및 변경</a></p>
+                            <p class="item-date"><time datetime="2022-06-26T00:00:00.000Z" itemprop="datePublished">2022-06-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/06/25/git_failed_push/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Setting/">Setting</a></p>
+                            <p class="item-title"><a href="/2022/06/25/git_failed_push/" class="title">git - failed to push some refs</a></p>
+                            <p class="item-date"><time datetime="2022-06-25T00:00:00.000Z" itemprop="datePublished">2022-06-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Error/">Error</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jsp/">Jsp</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Setting/">Setting</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sql/">Sql</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">29</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Api/" rel="tag">Api</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arima/" rel="tag">Arima</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bootstrap/" rel="tag">Bootstrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Class/" rel="tag">Class</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crawling/" rel="tag">Crawling</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eclipse/" rel="tag">Eclipse</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Error/" rel="tag">Error</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Instance/" rel="tag">Instance</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jsp/" rel="tag">Jsp</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Object/" rel="tag">Object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenAPI/" rel="tag">OpenAPI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sourcetree/" rel="tag">Sourcetree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/" rel="tag">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sql/" rel="tag">Sql</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tomcat/" rel="tag">Tomcat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error/" rel="tag">error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fbprophet/" rel="tag">fbprophet</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jdk/" rel="tag">jdk</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/merge/" rel="tag">merge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sourcetree/" rel="tag">sourcetree</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualenv/" rel="tag">virtualenv</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Api/" style="font-size: 10px;">Api</a> <a href="/tags/Arima/" style="font-size: 10px;">Arima</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Class/" style="font-size: 10px;">Class</a> <a href="/tags/Crawling/" style="font-size: 10px;">Crawling</a> <a href="/tags/Eclipse/" style="font-size: 12.5px;">Eclipse</a> <a href="/tags/Error/" style="font-size: 15px;">Error</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/Instance/" style="font-size: 10px;">Instance</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Jsp/" style="font-size: 15px;">Jsp</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/Object/" style="font-size: 10px;">Object</a> <a href="/tags/OpenAPI/" style="font-size: 10px;">OpenAPI</a> <a href="/tags/Oracle/" style="font-size: 17.5px;">Oracle</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Sourcetree/" style="font-size: 10px;">Sourcetree</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Sql/" style="font-size: 20px;">Sql</a> <a href="/tags/Tomcat/" style="font-size: 10px;">Tomcat</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/fbprophet/" style="font-size: 10px;">fbprophet</a> <a href="/tags/heroku/" style="font-size: 10px;">heroku</a> <a href="/tags/jdk/" style="font-size: 10px;">jdk</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/sourcetree/" style="font-size: 10px;">sourcetree</a> <a href="/tags/virtualenv/" style="font-size: 10px;">virtualenv</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+
+                <p>&copy; 2022 Lee GaYeong</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+    
+        <span id="busuanzi_container_site_uv">
+    Visitors <span id="busuanzi_value_site_uv"></span>
+</span>
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://zerobbang.com/2022/06/27/jsp_login/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>
